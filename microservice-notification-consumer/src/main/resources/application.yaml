@@ -11,8 +11,10 @@ spring:
         consumer:
             group-id: employee-group
             auto-offset-reset: earliest
-            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-            value-deserializer: org.springframework.kafka.support.serializer.JsonSerializer
+            key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
+            value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
             enable-auto-commit: false
+        properties:
+            spring.json.trusted.packages: "com.kafka.microservice_producer.dto"
 server:
     port: 8082

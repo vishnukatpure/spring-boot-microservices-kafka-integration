@@ -49,7 +49,7 @@ Few Commands to remember
 		bin\windows\kafka-topics.bat -bootstrap-server localhost:9092 -describe -topic employee-topic
 
 	Count Topic messages
-		bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --describe --group employee-group
+		bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --describe --group person-group
 
 # Current Implementation
 	1. Manual offset acknowledgement

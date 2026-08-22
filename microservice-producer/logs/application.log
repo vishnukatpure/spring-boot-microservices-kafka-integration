@@ -4104,3 +4104,1216 @@ org.springframework.security.authorization.AuthorizationDeniedException: Access 
 2026-08-22 18:39:25.524 INFO  [RMI TCP Connection(4)-10.87.222.245] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-08-22 18:39:25.527 INFO  [RMI TCP Connection(4)-10.87.222.245] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2026-08-22 18:39:25.537 INFO  [RMI TCP Connection(4)-10.87.222.245] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-22 18:39:48.240 INFO  [main] c.k.m.MicroserviceProducerApplication - Starting MicroserviceProducerApplication using Java 17.0.12 with PID 21596 (D:\Project Development\My-github\spring-boot-microservices-kafka-integration\microservice-producer\target\classes started by Vishnu Katpure in D:\Project Development\My-github\spring-boot-microservices-kafka-integration\microservice-producer)
+2026-08-22 18:39:48.247 INFO  [main] c.k.m.MicroserviceProducerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-08-22 18:39:48.748 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-08-22 18:39:49.266 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-22 18:39:49.340 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
+2026-08-22 18:39:50.000 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-22 18:39:50.018 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-22 18:39:50.021 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-22 18:39:50.022 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-08-22 18:39:50.099 INFO  [main] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1800 ms
+2026-08-22 18:39:50.312 INFO  [main] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-08-22 18:39:50.372 INFO  [main] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-08-22 18:39:50.902 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-22 18:39:50.971 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-22 18:39:51.147 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b340615
+2026-08-22 18:39:51.149 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-22 18:39:51.208 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-22 18:39:51.228 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/demo?useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.15
+	Default catalog/schema: demo/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-22 18:39:52.560 INFO  [main] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-22 18:39:52.669 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-22 18:39:52.768 INFO  [main] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-22 18:39:53.349 WARN  [main] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-22 18:39:53.445 TRACE [main] o.s.s.c.a.a.c.AuthenticationConfiguration$EnableGlobalAuthenticationAutowiredConfigurer - Eagerly initializing {org.springframework.boot.security.autoconfigure.web.servlet.ServletWebSecurityAutoConfiguration$EnableWebSecurityConfiguration=org.springframework.boot.security.autoconfigure.web.servlet.ServletWebSecurityAutoConfiguration$EnableWebSecurityConfiguration@d1b9dd7}
+2026-08-22 18:39:53.448 INFO  [main] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-08-22 18:39:53.449 WARN  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-08-22 18:39:53.624 DEBUG [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-08-22 18:39:53.731 TRACE [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	c.k.m.c.l.LoginController:
+	{GET [/get-token]}: getToken()
+	{GET [/]}: welcomePage()
+	{GET [/logout]}: logoutPage(HttpServletRequest,HttpServletResponse)
+	{GET [/login]}: loginPage(String,String,HttpServletRequest)
+	{GET [/home]}: homePage()
+2026-08-22 18:39:53.748 TRACE [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	c.k.m.c.PersonResource:
+	{GET [/person/all]}: getAll()
+	{GET [/person/{id}]}: getAllUsers(Long)
+	{GET [/person/aop/testing/{type}]}: aopTesting(String)
+	{POST [/person]}: insertPersone(PersonDTO)
+	{GET [/person/personByName/{name}]}: getPersoneByName(String)
+	{PUT [/person]}: updatePerson(PersonDTO)
+	{DELETE [/person/{id}]}: deletePerson(Long)
+2026-08-22 18:39:53.755 TRACE [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	c.k.m.c.UserResource:
+	{GET [/user-info/{userId}]}: getUser(String)
+	{GET [/user-json-meta]}: getUser()
+	{POST [/create-user]}: createUser(UserDTO)
+2026-08-22 18:39:53.762 TRACE [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	o.s.b.w.a.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2026-08-22 18:39:53.784 TRACE [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	o.s.w.a.OpenApiWebMvcResource:
+	{GET [/v3/api-docs], produces [application/json]}: openapiJson(HttpServletRequest,String,Locale)
+	{GET [/v3/api-docs.yaml], produces [application/vnd.oai.openapi]}: openapiYaml(HttpServletRequest,String,Locale)
+2026-08-22 18:39:53.793 TRACE [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	o.s.w.u.SwaggerWelcomeWebMvc:
+	{GET [/swagger-ui.html]}: redirectToUi(HttpServletRequest)
+2026-08-22 18:39:53.799 TRACE [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	o.s.w.u.SwaggerConfigResource:
+	{GET [/v3/api-docs/swagger-config], produces [application/json]}: openapiJson(HttpServletRequest)
+2026-08-22 18:39:53.808 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 21 mappings in 'requestMappingHandlerMapping'
+2026-08-22 18:39:53.826 DEBUG [main] o.s.w.s.h.BeanNameUrlHandlerMapping - Detected 0 mappings in 'beanNameHandlerMapping'
+2026-08-22 18:39:53.835 TRACE [main] o.s.w.s.f.s.RouterFunctionMapping - 0 RouterFunction(s) in 'routerFunctionMapping'
+2026-08-22 18:39:53.858 TRACE [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-08-22 18:39:53.858 TRACE [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-08-22 18:39:53.859 TRACE [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped [/swagger-ui*/*swagger-initializer.js] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-08-22 18:39:53.859 TRACE [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped [/swagger-ui*/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-08-22 18:39:53.860 DEBUG [main] o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-08-22 18:39:53.919 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-08-22 18:39:53.977 DEBUG [main] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-08-22 18:39:54.309 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-22 18:39:54.334 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-22 18:39:54.348 INFO  [main] c.k.m.MicroserviceProducerApplication - Started MicroserviceProducerApplication in 6.817 seconds (process running for 7.435)
+2026-08-22 18:40:04.768 INFO  [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:40:04.768 INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-22 18:40:04.768 TRACE [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.multipart.support.StandardServletMultipartResolver@186f7553
+2026-08-22 18:40:04.768 TRACE [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver@6a40e660
+2026-08-22 18:40:04.773 TRACE [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Detected DefaultRequestToViewNameTranslator
+2026-08-22 18:40:04.773 TRACE [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Detected SessionFlashMapManager
+2026-08-22 18:40:04.773 DEBUG [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-08-22 18:40:04.773 INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2026-08-22 18:40:04.801 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:40:04.801 DEBUG [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Securing GET /get-token
+2026-08-22 18:40:04.804 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:40:04.804 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:40:04.812 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:40:04.815 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:40:04.815 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:40:04.815 TRACE [http-nio-8081-exec-1] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:40:04.823 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:40:04.823 TRACE [http-nio-8081-exec-1] o.s.s.w.a.w.BasicAuthenticationFilter - Did not process authentication request since failed to find username and password in Basic Authorization header
+2026-08-22 18:40:04.823 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:40:04.823 TRACE [http-nio-8081-exec-1] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:40:04.825 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:40:04.828 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:40:04.828 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:40:04.828 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:40:04.828 TRACE [http-nio-8081-exec-1] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /get-token
+2026-08-22 18:40:04.828 TRACE [http-nio-8081-exec-1] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /get-token using AuthorityAuthorizationManager[authorities=[ROLE_ADMIN, ROLE_USER]]
+2026-08-22 18:40:04.828 TRACE [http-nio-8081-exec-1] o.s.s.w.c.HttpSessionSecurityContextRepository - No HttpSession currently exists
+2026-08-22 18:40:04.828 TRACE [http-nio-8081-exec-1] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:40:04.828 TRACE [http-nio-8081-exec-1] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:40:04.828 TRACE [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to AnonymousAuthenticationToken [Principal=anonymousUser, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ANONYMOUS]]
+2026-08-22 18:40:04.839 TRACE [http-nio-8081-exec-1] o.s.s.w.a.ExceptionTranslationFilter - Sending AnonymousAuthenticationToken [Principal=anonymousUser, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ANONYMOUS]] to authentication entry point since access is denied
+org.springframework.security.authorization.AuthorizationDeniedException: Access Denied
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:99)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:198)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-08-22 18:40:04.943 DEBUG [http-nio-8081-exec-1] o.s.s.w.s.HttpSessionRequestCache - Saved request http://localhost:8081/get-token?continue to session
+2026-08-22 18:40:04.943 DEBUG [http-nio-8081-exec-1] o.s.s.w.a.DelegatingAuthenticationEntryPoint - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2026-08-22 18:40:04.943 DEBUG [http-nio-8081-exec-1] o.s.s.w.a.DelegatingAuthenticationEntryPoint - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@7eb5a0ac
+2026-08-22 18:40:04.946 TRACE [http-nio-8081-exec-1] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:40:04.958 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:40:04.958 DEBUG [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Securing GET /error
+2026-08-22 18:40:04.958 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:40:04.958 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:40:04.958 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:40:04.958 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:40:04.958 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:40:04.958 TRACE [http-nio-8081-exec-1] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:40:04.961 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:40:04.962 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:40:04.962 TRACE [http-nio-8081-exec-1] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:40:04.962 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:40:04.964 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:40:04.966 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:40:04.966 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:40:04.966 TRACE [http-nio-8081-exec-1] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /error
+2026-08-22 18:40:04.966 TRACE [http-nio-8081-exec-1] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /error using AuthorityAuthorizationManager[authorities=[ROLE_ADMIN, ROLE_USER]]
+2026-08-22 18:40:04.966 TRACE [http-nio-8081-exec-1] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:40:04.966 TRACE [http-nio-8081-exec-1] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:40:04.966 TRACE [http-nio-8081-exec-1] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:40:04.966 TRACE [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to AnonymousAuthenticationToken [Principal=anonymousUser, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[ROLE_ANONYMOUS]]
+2026-08-22 18:40:04.966 TRACE [http-nio-8081-exec-1] o.s.s.w.a.ExceptionTranslationFilter - Sending AnonymousAuthenticationToken [Principal=anonymousUser, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[ROLE_ANONYMOUS]] to authentication entry point since access is denied
+org.springframework.security.authorization.AuthorizationDeniedException: Access Denied
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:99)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:206)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:149)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-08-22 18:40:04.971 DEBUG [http-nio-8081-exec-1] o.s.s.w.s.HttpSessionRequestCache - Saved request http://localhost:8081/error?continue to session
+2026-08-22 18:40:04.971 DEBUG [http-nio-8081-exec-1] o.s.s.w.a.DelegatingAuthenticationEntryPoint - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2026-08-22 18:40:04.971 DEBUG [http-nio-8081-exec-1] o.s.s.w.a.DelegatingAuthenticationEntryPoint - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@7eb5a0ac
+2026-08-22 18:40:31.655 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:40:31.655 DEBUG [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Securing GET /get-token
+2026-08-22 18:40:31.657 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:40:31.657 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:40:31.657 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:40:31.657 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:40:31.657 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:40:31.657 TRACE [http-nio-8081-exec-2] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:40:31.657 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:40:31.657 TRACE [http-nio-8081-exec-2] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:40:31.657 TRACE [http-nio-8081-exec-2] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:40:31.657 TRACE [http-nio-8081-exec-2] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:40:31.657 TRACE [http-nio-8081-exec-2] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:40:31.666 TRACE [http-nio-8081-exec-2] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:40:33.124 DEBUG [http-nio-8081-exec-2] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:40:33.126 DEBUG [http-nio-8081-exec-2] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@3029031, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@309d890b, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:10:33.124153800Z]]]
+2026-08-22 18:40:33.126 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:40:33.128 TRACE [http-nio-8081-exec-2] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:40:33.128 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:40:33.128 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:40:33.133 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:40:33.133 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:40:33.133 TRACE [http-nio-8081-exec-2] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /get-token
+2026-08-22 18:40:33.137 TRACE [http-nio-8081-exec-2] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /get-token using AuthorityAuthorizationManager[authorities=[ROLE_ADMIN, ROLE_USER]]
+2026-08-22 18:40:33.139 TRACE [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@3029031, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@309d890b, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:10:33.124153800Z]]]
+2026-08-22 18:40:33.139 DEBUG [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Secured GET /get-token
+2026-08-22 18:40:33.147 TRACE [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet - GET "/get-token", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:40:33.170 TRACE [http-nio-8081-exec-2] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kafka.microservice_producer.controller.login.LoginController#getToken()
+2026-08-22 18:40:33.198 TRACE [http-nio-8081-exec-2] o.s.web.method.HandlerMethod - Arguments: []
+2026-08-22 18:40:33.606 DEBUG [http-nio-8081-exec-2] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json, application/yaml]
+2026-08-22 18:40:33.614 TRACE [http-nio-8081-exec-2] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["{"token":"eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiIsIkZBQ1RPUl9QQVNTV09SRCJdLCJzdWIiOiJ0ZXN0dDAxMDIxOTkwQGdtYWlsLmNvbSIsImlhdCI6MTc4NzQwNDIzMywiZXhwIjoxNzg3NDA0NTMzfQ.j4LQ0Rh8NBYwVALLQU9HJbK3-IERGZMmO9dUmSxkjd0","token-expiry":"Sat Aug 22 18:45:33 IST 2026","token-type":"Bearer "}"]
+2026-08-22 18:40:33.623 TRACE [http-nio-8081-exec-2] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:40:33.629 TRACE [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:40:33.633 DEBUG [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:40:58.210 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:40:58.211 DEBUG [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Securing GET /get-token
+2026-08-22 18:40:58.211 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:40:58.211 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:40:58.211 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:40:58.211 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:40:58.211 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:40:58.211 TRACE [http-nio-8081-exec-4] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:40:58.211 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:40:58.211 TRACE [http-nio-8081-exec-4] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:40:58.211 TRACE [http-nio-8081-exec-4] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:40:58.211 TRACE [http-nio-8081-exec-4] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:40:58.211 TRACE [http-nio-8081-exec-4] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:40:58.211 TRACE [http-nio-8081-exec-4] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:40:58.488 DEBUG [http-nio-8081-exec-4] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:40:58.488 DEBUG [http-nio-8081-exec-4] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@5c6662f1, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@3fe05d3, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:10:58.488232Z]]]
+2026-08-22 18:40:58.490 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:40:58.490 TRACE [http-nio-8081-exec-4] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:40:58.490 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:40:58.490 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:40:58.490 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:40:58.490 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:40:58.490 TRACE [http-nio-8081-exec-4] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /get-token
+2026-08-22 18:40:58.492 TRACE [http-nio-8081-exec-4] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /get-token using AuthorityAuthorizationManager[authorities=[ROLE_ADMIN, ROLE_USER]]
+2026-08-22 18:40:58.492 TRACE [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@5c6662f1, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@3fe05d3, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:10:58.488232Z]]]
+2026-08-22 18:40:58.492 DEBUG [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Secured GET /get-token
+2026-08-22 18:40:58.497 TRACE [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet - GET "/get-token", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:40:58.497 TRACE [http-nio-8081-exec-4] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kafka.microservice_producer.controller.login.LoginController#getToken()
+2026-08-22 18:40:58.498 TRACE [http-nio-8081-exec-4] o.s.web.method.HandlerMethod - Arguments: []
+2026-08-22 18:40:58.503 DEBUG [http-nio-8081-exec-4] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json, application/yaml]
+2026-08-22 18:40:58.503 TRACE [http-nio-8081-exec-4] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["{"token":"eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiIsIkZBQ1RPUl9QQVNTV09SRCJdLCJzdWIiOiJ0ZXN0dDAxMDIxOTkwQGdtYWlsLmNvbSIsImlhdCI6MTc4NzQwNDI1OCwiZXhwIjoxNzg3NDA0NTU4fQ.ZwrVz7Io_nfG-B7ZdeucgoN94Zt_vDppMOIMB2ngGQI","token-expiry":"Sat Aug 22 18:45:58 IST 2026","token-type":"Bearer "}"]
+2026-08-22 18:40:58.505 TRACE [http-nio-8081-exec-4] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:40:58.546 TRACE [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:40:58.548 DEBUG [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:41:01.480 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:41:01.480 DEBUG [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.html
+2026-08-22 18:41:01.480 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:41:01.482 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:41:01.482 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:41:01.482 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:41:01.482 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:41:01.482 TRACE [http-nio-8081-exec-5] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:41:01.482 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:41:01.482 TRACE [http-nio-8081-exec-5] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:41:01.482 TRACE [http-nio-8081-exec-5] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:41:01.482 TRACE [http-nio-8081-exec-5] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:01.487 TRACE [http-nio-8081-exec-5] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:01.487 TRACE [http-nio-8081-exec-5] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:41:01.709 DEBUG [http-nio-8081-exec-5] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:41:01.709 DEBUG [http-nio-8081-exec-5] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@732c57ae, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@58b76a97, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:01.709450100Z]]]
+2026-08-22 18:41:01.709 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:41:01.709 TRACE [http-nio-8081-exec-5] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:41:01.709 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:41:01.709 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:41:01.709 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:41:01.719 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:41:01.721 TRACE [http-nio-8081-exec-5] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /swagger-ui/index.html
+2026-08-22 18:41:01.721 TRACE [http-nio-8081-exec-5] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /swagger-ui/index.html using org.springframework.security.authorization.SingleResultAuthorizationManager@1097f863
+2026-08-22 18:41:01.721 DEBUG [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.html
+2026-08-22 18:41:01.725 TRACE [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:41:01.731 TRACE [http-nio-8081-exec-5] o.s.w.s.h.SimpleUrlHandlerMapping - Matching patterns [/swagger-ui*/**, /**]
+2026-08-22 18:41:01.735 TRACE [http-nio-8081-exec-5] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]] and 4 interceptors
+2026-08-22 18:41:01.775 TRACE [http-nio-8081-exec-5] o.s.w.s.r.ResourceHttpRequestHandler - Applying default cacheSeconds=-1
+2026-08-22 18:41:01.779 TRACE [http-nio-8081-exec-5] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:41:01.781 TRACE [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:41:01.782 DEBUG [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:41:01.782 TRACE [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@732c57ae, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@58b76a97, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:01.709450100Z]]]
+2026-08-22 18:41:01.855 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:41:01.855 DEBUG [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui.css
+2026-08-22 18:41:01.928 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:41:01.930 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:41:01.932 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:41:01.934 TRACE [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:41:01.949 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:41:01.949 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:41:01.949 TRACE [http-nio-8081-exec-6] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:41:01.949 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:41:01.934 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:41:01.949 TRACE [http-nio-8081-exec-6] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:41:01.960 TRACE [http-nio-8081-exec-6] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:41:01.962 TRACE [http-nio-8081-exec-6] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:01.962 TRACE [http-nio-8081-exec-6] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:01.962 TRACE [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:41:01.962 DEBUG [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-initializer.js
+2026-08-22 18:41:01.962 TRACE [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:41:01.964 TRACE [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:41:01.949 DEBUG [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-bundle.js
+2026-08-22 18:41:01.949 TRACE [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:41:01.964 DEBUG [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy - Securing GET /.well-known/appspecific/com.chrome.devtools.json
+2026-08-22 18:41:01.964 TRACE [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:41:01.949 DEBUG [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.css
+2026-08-22 18:41:02.025 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:41:01.991 TRACE [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:41:02.022 TRACE [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:41:02.036 TRACE [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:41:02.046 TRACE [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:41:02.025 TRACE [http-nio-8081-exec-6] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:41:02.046 TRACE [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:41:02.046 TRACE [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:41:02.046 TRACE [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:41:02.046 TRACE [http-nio-8081-exec-8] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:41:02.046 TRACE [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:41:02.046 TRACE [http-nio-8081-exec-8] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:41:02.038 TRACE [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:41:02.046 DEBUG [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2026-08-22 18:41:02.046 TRACE [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:41:02.036 TRACE [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:41:02.046 TRACE [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:41:02.046 TRACE [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:41:02.036 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:41:02.046 TRACE [http-nio-8081-exec-9] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:41:02.054 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:41:02.046 TRACE [http-nio-8081-exec-8] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:41:02.054 TRACE [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:41:02.060 TRACE [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:41:02.060 TRACE [http-nio-8081-exec-10] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:41:02.060 TRACE [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:41:02.060 TRACE [http-nio-8081-exec-10] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:41:02.060 TRACE [http-nio-8081-exec-10] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:41:02.060 TRACE [http-nio-8081-exec-10] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:02.060 TRACE [http-nio-8081-exec-10] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:02.060 TRACE [http-nio-8081-exec-10] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:41:02.060 TRACE [http-nio-8081-exec-8] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:02.060 TRACE [http-nio-8081-exec-8] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:02.060 TRACE [http-nio-8081-exec-8] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:41:02.058 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:41:02.070 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:41:02.077 TRACE [http-nio-8081-exec-7] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:41:02.054 TRACE [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:41:02.092 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:41:02.096 TRACE [http-nio-8081-exec-7] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:41:02.096 TRACE [http-nio-8081-exec-7] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:41:02.096 TRACE [http-nio-8081-exec-7] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:02.096 TRACE [http-nio-8081-exec-7] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:02.096 TRACE [http-nio-8081-exec-7] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:41:02.103 TRACE [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:41:02.070 TRACE [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:41:02.103 TRACE [http-nio-8081-exec-9] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:41:02.103 TRACE [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:41:02.103 TRACE [http-nio-8081-exec-9] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:41:02.103 TRACE [http-nio-8081-exec-9] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:02.103 TRACE [http-nio-8081-exec-9] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:02.103 TRACE [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:41:02.103 TRACE [http-nio-8081-exec-9] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:41:02.103 TRACE [http-nio-8081-exec-3] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:41:02.103 TRACE [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:41:02.110 TRACE [http-nio-8081-exec-3] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:41:02.110 TRACE [http-nio-8081-exec-3] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:41:02.112 TRACE [http-nio-8081-exec-3] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:02.112 TRACE [http-nio-8081-exec-3] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:02.128 TRACE [http-nio-8081-exec-3] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:41:03.140 DEBUG [http-nio-8081-exec-6] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:41:03.156 DEBUG [http-nio-8081-exec-6] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@6876092b, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@6b6430b2, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:03.140490300Z]]]
+2026-08-22 18:41:03.173 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:41:03.173 TRACE [http-nio-8081-exec-6] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:41:03.173 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:41:03.173 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:41:03.173 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:41:03.173 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:41:03.173 TRACE [http-nio-8081-exec-6] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /swagger-ui/swagger-ui.css
+2026-08-22 18:41:03.181 TRACE [http-nio-8081-exec-6] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /swagger-ui/swagger-ui.css using org.springframework.security.authorization.SingleResultAuthorizationManager@1097f863
+2026-08-22 18:41:03.181 DEBUG [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui.css
+2026-08-22 18:41:03.208 TRACE [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui.css", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:41:03.225 DEBUG [http-nio-8081-exec-7] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:41:03.225 DEBUG [http-nio-8081-exec-7] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@7d79ae47, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@56e294f9, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:03.208117700Z]]]
+2026-08-22 18:41:03.225 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:41:03.225 TRACE [http-nio-8081-exec-7] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:41:03.225 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:41:03.225 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:41:03.225 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:41:03.225 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:41:03.225 TRACE [http-nio-8081-exec-7] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /swagger-ui/index.css
+2026-08-22 18:41:03.225 TRACE [http-nio-8081-exec-6] o.s.w.s.h.SimpleUrlHandlerMapping - Matching patterns [/swagger-ui*/**, /**]
+2026-08-22 18:41:03.225 TRACE [http-nio-8081-exec-7] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /swagger-ui/index.css using org.springframework.security.authorization.SingleResultAuthorizationManager@1097f863
+2026-08-22 18:41:03.225 DEBUG [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.css
+2026-08-22 18:41:03.225 TRACE [http-nio-8081-exec-6] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]] and 4 interceptors
+2026-08-22 18:41:03.225 TRACE [http-nio-8081-exec-7] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.css", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:41:03.229 TRACE [http-nio-8081-exec-7] o.s.w.s.h.SimpleUrlHandlerMapping - Matching patterns [/swagger-ui*/**, /**]
+2026-08-22 18:41:03.229 TRACE [http-nio-8081-exec-7] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]] and 4 interceptors
+2026-08-22 18:41:03.229 TRACE [http-nio-8081-exec-6] o.s.w.s.r.ResourceHttpRequestHandler - Applying default cacheSeconds=-1
+2026-08-22 18:41:03.231 DEBUG [http-nio-8081-exec-9] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:41:03.231 DEBUG [http-nio-8081-exec-8] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:41:03.231 DEBUG [http-nio-8081-exec-9] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@1ef0a4cd, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@2ecf338c, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:03.231685100Z]]]
+2026-08-22 18:41:03.231 TRACE [http-nio-8081-exec-7] o.s.w.s.r.ResourceHttpRequestHandler - Applying default cacheSeconds=-1
+2026-08-22 18:41:03.231 TRACE [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:41:03.231 TRACE [http-nio-8081-exec-9] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:41:03.231 DEBUG [http-nio-8081-exec-8] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@55e94617, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@6666dec5, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:03.231685100Z]]]
+2026-08-22 18:41:03.231 TRACE [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:41:03.233 TRACE [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:41:03.233 TRACE [http-nio-8081-exec-6] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:41:03.233 TRACE [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:41:03.233 TRACE [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:41:03.233 TRACE [http-nio-8081-exec-9] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /swagger-ui/swagger-initializer.js
+2026-08-22 18:41:03.233 TRACE [http-nio-8081-exec-9] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /swagger-ui/swagger-initializer.js using org.springframework.security.authorization.SingleResultAuthorizationManager@1097f863
+2026-08-22 18:41:03.233 DEBUG [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-initializer.js
+2026-08-22 18:41:03.233 TRACE [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:41:03.233 TRACE [http-nio-8081-exec-8] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:41:03.235 TRACE [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:41:03.235 TRACE [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:41:03.235 TRACE [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:41:03.235 TRACE [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:41:03.235 TRACE [http-nio-8081-exec-8] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /swagger-ui/swagger-ui-bundle.js
+2026-08-22 18:41:03.235 TRACE [http-nio-8081-exec-8] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /swagger-ui/swagger-ui-bundle.js using org.springframework.security.authorization.SingleResultAuthorizationManager@1097f863
+2026-08-22 18:41:03.235 DEBUG [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-bundle.js
+2026-08-22 18:41:03.235 TRACE [http-nio-8081-exec-8] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-bundle.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:41:03.235 TRACE [http-nio-8081-exec-8] o.s.w.s.h.SimpleUrlHandlerMapping - Matching patterns [/swagger-ui*/**, /**]
+2026-08-22 18:41:03.235 TRACE [http-nio-8081-exec-8] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]] and 4 interceptors
+2026-08-22 18:41:03.237 TRACE [http-nio-8081-exec-7] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:41:03.237 TRACE [http-nio-8081-exec-9] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-initializer.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:41:03.237 TRACE [http-nio-8081-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping - Matching patterns [/swagger-ui*/*swagger-initializer.js, /swagger-ui*/**, /**]
+2026-08-22 18:41:03.241 TRACE [http-nio-8081-exec-7] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:41:03.242 DEBUG [http-nio-8081-exec-7] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:41:03.243 TRACE [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@7d79ae47, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@56e294f9, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:03.208117700Z]]]
+2026-08-22 18:41:03.245 TRACE [http-nio-8081-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]] and 4 interceptors
+2026-08-22 18:41:03.247 TRACE [http-nio-8081-exec-8] o.s.w.s.r.ResourceHttpRequestHandler - Applying default cacheSeconds=-1
+2026-08-22 18:41:03.279 TRACE [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:41:03.290 DEBUG [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:41:03.290 TRACE [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@6876092b, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@6b6430b2, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:03.140490300Z]]]
+2026-08-22 18:41:03.285 TRACE [http-nio-8081-exec-8] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:41:03.288 DEBUG [http-nio-8081-exec-10] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:41:03.306 DEBUG [http-nio-8081-exec-10] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@40f1e549, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@1d67b4c2, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:03.288832100Z]]]
+2026-08-22 18:41:03.310 TRACE [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:41:03.310 TRACE [http-nio-8081-exec-10] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:41:03.310 TRACE [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:41:03.310 TRACE [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:41:03.310 TRACE [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:41:03.310 TRACE [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:41:03.310 TRACE [http-nio-8081-exec-10] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /.well-known/appspecific/com.chrome.devtools.json
+2026-08-22 18:41:03.310 TRACE [http-nio-8081-exec-10] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /.well-known/appspecific/com.chrome.devtools.json using AuthorityAuthorizationManager[authorities=[ROLE_ADMIN, ROLE_USER]]
+2026-08-22 18:41:03.318 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:41:03.318 DEBUG [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui.css.map
+2026-08-22 18:41:03.318 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:41:03.318 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:41:03.318 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:41:03.318 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:41:03.318 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:41:03.318 TRACE [http-nio-8081-exec-1] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:41:03.318 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:41:03.334 TRACE [http-nio-8081-exec-1] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:41:03.340 TRACE [http-nio-8081-exec-1] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:41:03.340 TRACE [http-nio-8081-exec-1] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:03.340 TRACE [http-nio-8081-exec-1] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:03.340 TRACE [http-nio-8081-exec-1] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:41:03.359 DEBUG [http-nio-8081-exec-3] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:41:03.326 TRACE [http-nio-8081-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@40f1e549, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@1d67b4c2, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:03.288832100Z]]]
+2026-08-22 18:41:03.368 TRACE [http-nio-8081-exec-9] o.s.w.s.r.ResourceHttpRequestHandler - Applying default cacheSeconds=0
+2026-08-22 18:41:03.407 DEBUG [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy - Secured GET /.well-known/appspecific/com.chrome.devtools.json
+2026-08-22 18:41:03.409 TRACE [http-nio-8081-exec-9] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:41:03.409 TRACE [http-nio-8081-exec-10] o.s.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:41:03.406 DEBUG [http-nio-8081-exec-3] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@7b751786, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@66a4ad73, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:03.359824200Z]]]
+2026-08-22 18:41:03.409 TRACE [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:41:03.409 TRACE [http-nio-8081-exec-3] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:41:03.410 TRACE [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:41:03.410 TRACE [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:41:03.410 TRACE [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:41:03.410 TRACE [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:41:03.410 TRACE [http-nio-8081-exec-3] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /swagger-ui/swagger-ui-standalone-preset.js
+2026-08-22 18:41:03.410 TRACE [http-nio-8081-exec-9] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:41:03.411 TRACE [http-nio-8081-exec-3] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /swagger-ui/swagger-ui-standalone-preset.js using org.springframework.security.authorization.SingleResultAuthorizationManager@1097f863
+2026-08-22 18:41:03.411 DEBUG [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2026-08-22 18:41:03.414 DEBUG [http-nio-8081-exec-9] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:41:03.415 TRACE [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@1ef0a4cd, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@2ecf338c, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:03.231685100Z]]]
+2026-08-22 18:41:03.417 TRACE [http-nio-8081-exec-10] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]] and 4 interceptors
+2026-08-22 18:41:03.411 TRACE [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:41:03.420 TRACE [http-nio-8081-exec-3] o.s.w.s.h.SimpleUrlHandlerMapping - Matching patterns [/swagger-ui*/**, /**]
+2026-08-22 18:41:03.421 TRACE [http-nio-8081-exec-3] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]] and 4 interceptors
+2026-08-22 18:41:03.429 TRACE [http-nio-8081-exec-3] o.s.w.s.r.ResourceHttpRequestHandler - Applying default cacheSeconds=-1
+2026-08-22 18:41:03.433 TRACE [http-nio-8081-exec-3] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:41:03.450 DEBUG [http-nio-8081-exec-10] o.s.w.s.r.ResourceHttpRequestHandler - Resource not found for path [.well-known/appspecific/com.chrome.devtools.json]
+2026-08-22 18:41:03.475 DEBUG [http-nio-8081-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.kafka.microservice_producer.exceptionhandler.ExceptionHandling#handleException(Exception)
+2026-08-22 18:41:03.483 TRACE [http-nio-8081-exec-10] o.s.web.method.HandlerMethod - Arguments: [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json for request '/.well-known/appspecific/com.chrome.devtools.json'.]
+2026-08-22 18:41:03.525 TRACE [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:41:03.525 DEBUG [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:41:03.534 TRACE [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@7b751786, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@66a4ad73, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:03.359824200Z]]]
+2026-08-22 18:41:03.660 TRACE [http-nio-8081-exec-8] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:41:03.660 DEBUG [http-nio-8081-exec-8] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:41:03.662 TRACE [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@55e94617, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@6666dec5, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:03.231685100Z]]]
+2026-08-22 18:41:03.663 DEBUG [http-nio-8081-exec-10] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-08-22 18:41:03.665 TRACE [http-nio-8081-exec-10] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.kafka.microservice_producer.dto.ResponseDTO@15c62f0e]
+2026-08-22 18:41:03.861 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:41:03.861 DEBUG [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Securing GET /v3/api-docs/swagger-config
+2026-08-22 18:41:03.864 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:41:03.864 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:41:03.864 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:41:03.864 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:41:03.864 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:41:03.864 TRACE [http-nio-8081-exec-2] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:41:03.864 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:41:03.859 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:41:03.880 TRACE [http-nio-8081-exec-2] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-2] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-2] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-2] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-2] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:41:03.866 DEBUG [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/favicon-32x32.png
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-4] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-4] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-4] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-4] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-4] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:03.897 TRACE [http-nio-8081-exec-4] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:41:04.123 DEBUG [http-nio-8081-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json for request '/.well-known/appspecific/com.chrome.devtools.json'.]
+2026-08-22 18:41:04.126 TRACE [http-nio-8081-exec-10] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:41:04.126 DEBUG [http-nio-8081-exec-10] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:41:04.214 TRACE [http-nio-8081-exec-10] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:41:04.230 DEBUG [http-nio-8081-exec-1] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:41:04.230 DEBUG [http-nio-8081-exec-1] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@4a19d64, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@1c077939, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:04.230941900Z]]]
+2026-08-22 18:41:04.230 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:41:04.230 TRACE [http-nio-8081-exec-1] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:41:04.230 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:41:04.230 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:41:04.230 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:41:04.230 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:41:04.230 TRACE [http-nio-8081-exec-1] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /swagger-ui/swagger-ui.css.map
+2026-08-22 18:41:04.230 TRACE [http-nio-8081-exec-1] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /swagger-ui/swagger-ui.css.map using org.springframework.security.authorization.SingleResultAuthorizationManager@1097f863
+2026-08-22 18:41:04.230 DEBUG [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui.css.map
+2026-08-22 18:41:04.230 TRACE [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui.css.map", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:41:04.248 TRACE [http-nio-8081-exec-1] o.s.w.s.h.SimpleUrlHandlerMapping - Matching patterns [/swagger-ui*/**, /**]
+2026-08-22 18:41:04.248 TRACE [http-nio-8081-exec-1] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]] and 4 interceptors
+2026-08-22 18:41:04.250 DEBUG [http-nio-8081-exec-1] o.s.w.s.r.ResourceHttpRequestHandler - Resource not found for path [swagger-ui/swagger-ui.css.map]
+2026-08-22 18:41:04.252 DEBUG [http-nio-8081-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.kafka.microservice_producer.exceptionhandler.ExceptionHandling#handleException(Exception)
+2026-08-22 18:41:04.252 TRACE [http-nio-8081-exec-1] o.s.web.method.HandlerMethod - Arguments: [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui/swagger-ui.css.map for request '/swagger-ui/swagger-ui.css.map'.]
+2026-08-22 18:41:04.252 DEBUG [http-nio-8081-exec-1] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-08-22 18:41:04.252 TRACE [http-nio-8081-exec-1] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.kafka.microservice_producer.dto.ResponseDTO@54f81770]
+2026-08-22 18:41:04.284 DEBUG [http-nio-8081-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui/swagger-ui.css.map for request '/swagger-ui/swagger-ui.css.map'.]
+2026-08-22 18:41:04.284 TRACE [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:41:04.284 DEBUG [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:41:04.284 TRACE [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@4a19d64, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@1c077939, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:04.230941900Z]]]
+2026-08-22 18:41:04.284 TRACE [http-nio-8081-exec-1] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:41:04.401 DEBUG [http-nio-8081-exec-4] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:41:04.401 DEBUG [http-nio-8081-exec-4] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@4b1b5c98, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@bfe3073, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:04.401156700Z]]]
+2026-08-22 18:41:04.401 DEBUG [http-nio-8081-exec-2] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:41:04.401 DEBUG [http-nio-8081-exec-2] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@5938dc31, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@14fe3000, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:04.401156700Z]]]
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-4] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-2] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-4] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /swagger-ui/favicon-32x32.png
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-4] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /swagger-ui/favicon-32x32.png using org.springframework.security.authorization.SingleResultAuthorizationManager@1097f863
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:41:04.401 DEBUG [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/favicon-32x32.png
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-2] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /v3/api-docs/swagger-config
+2026-08-22 18:41:04.401 TRACE [http-nio-8081-exec-2] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /v3/api-docs/swagger-config using org.springframework.security.authorization.SingleResultAuthorizationManager@1097f863
+2026-08-22 18:41:04.401 DEBUG [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Secured GET /v3/api-docs/swagger-config
+2026-08-22 18:41:04.414 TRACE [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet - GET "/v3/api-docs/swagger-config", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:41:04.414 TRACE [http-nio-8081-exec-2] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2026-08-22 18:41:04.419 TRACE [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/favicon-32x32.png", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:41:04.419 TRACE [http-nio-8081-exec-4] o.s.w.s.h.SimpleUrlHandlerMapping - Matching patterns [/swagger-ui*/**, /**]
+2026-08-22 18:41:04.419 TRACE [http-nio-8081-exec-4] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]] and 4 interceptors
+2026-08-22 18:41:04.423 TRACE [http-nio-8081-exec-4] o.s.w.s.r.ResourceHttpRequestHandler - Applying default cacheSeconds=-1
+2026-08-22 18:41:04.423 TRACE [http-nio-8081-exec-4] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:41:04.425 TRACE [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:41:04.423 TRACE [http-nio-8081-exec-2] o.s.web.method.HandlerMethod - Arguments: [SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@4c7940ba]]
+2026-08-22 18:41:04.427 DEBUG [http-nio-8081-exec-2] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
+2026-08-22 18:41:04.427 TRACE [http-nio-8081-exec-2] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8081/swagger-ui/oauth2-redirect.html, url=/v3/api-docs, validatorUrl=}]
+2026-08-22 18:41:04.429 DEBUG [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:41:04.430 TRACE [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@4b1b5c98, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@bfe3073, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:04.401156700Z]]]
+2026-08-22 18:41:04.444 TRACE [http-nio-8081-exec-2] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Applying default cacheSeconds=-1
+2026-08-22 18:41:04.444 TRACE [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:41:04.444 DEBUG [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:41:04.444 TRACE [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@5938dc31, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@14fe3000, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:04.401156700Z]]]
+2026-08-22 18:41:04.444 TRACE [http-nio-8081-exec-2] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:41:04.487 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:41:04.487 DEBUG [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Securing GET /v3/api-docs
+2026-08-22 18:41:04.487 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:41:04.487 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:41:04.487 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:41:04.487 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:41:04.487 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:41:04.487 TRACE [http-nio-8081-exec-5] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:41:04.487 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:41:04.487 TRACE [http-nio-8081-exec-5] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:41:04.487 TRACE [http-nio-8081-exec-5] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:41:04.487 TRACE [http-nio-8081-exec-5] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:04.487 TRACE [http-nio-8081-exec-5] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:04.487 TRACE [http-nio-8081-exec-5] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:41:04.755 DEBUG [http-nio-8081-exec-5] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:41:04.755 DEBUG [http-nio-8081-exec-5] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@6faf522b, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@7581336f, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:04.755420200Z]]]
+2026-08-22 18:41:04.755 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:41:04.755 TRACE [http-nio-8081-exec-5] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:41:04.755 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:41:04.755 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:41:04.755 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:41:04.755 TRACE [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:41:04.755 TRACE [http-nio-8081-exec-5] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /v3/api-docs
+2026-08-22 18:41:04.755 TRACE [http-nio-8081-exec-5] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /v3/api-docs using org.springframework.security.authorization.SingleResultAuthorizationManager@1097f863
+2026-08-22 18:41:04.755 DEBUG [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy - Secured GET /v3/api-docs
+2026-08-22 18:41:04.759 TRACE [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet - GET "/v3/api-docs", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:41:04.760 TRACE [http-nio-8081-exec-5] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2026-08-22 18:41:04.791 TRACE [http-nio-8081-exec-5] o.s.web.method.HandlerMethod - Arguments: [SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@1d5eb3dd], /v3/api-docs, en_US]
+2026-08-22 18:41:05.421 INFO  [http-nio-8081-exec-5] o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 629 ms
+2026-08-22 18:41:05.474 DEBUG [http-nio-8081-exec-5] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, */*] and supported [application/json]
+2026-08-22 18:41:05.476 TRACE [http-nio-8081-exec-5] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{7b226f70656e617069223a22332e312e30222c22696e666f223a7b227469746c65223a224f70656e41504920646566696e6974696f6e222c2276657273696f6e223a227630227d2c2273657276657273223a5b7b2275726c223a22687474703a2f2f6c6f63616c686f73743a38303831222c226465736372697074696f6e223a2247656e657261746564207365727665722075726c227d5d2c227365637572697479223a5b7b2262656172657241757468223a5b5d7d5d2c227061746873223a7b222f706572736f6e223a7b22707574223a7b2274616773223a5b22706572736f6e2d7265736f75726365225d2c226f7065726174696f6e4964223a22757064617465506572736f6e222c2272657175657374426f6479223a7b22636f6e74656e74223a7b226170706c69636174696f6e2f6a736f6e223a7b22736368656d61223a7b2224726566223a22232f636f6d706f6e656e74732f736368656d61732f506572736f6e44544f227d7d7d2c227265717569726564223a747275657d2c22726573706f6e736573223a7b22323030223a7b226465736372697074696f6e223a224f4b222c22636f6e74656e74223a7b222a2f2a223a7b22736368656d61223a7b2224726566223a22232f636f6d706f6e656e74732f736368656d61732f526573706f6e736544544f227d7d7d7d7d7d2c22706f7374223a7b2274616773223a5b22706572736f6e2d7265736f75726365225d2c226f7065726174696f6e4964223a22696e73657274506572736f6e65222c2272657175657374426f6479223a7b22636f6e74656e74223a7b226170706c69636174696f6e2f6a736f6e223a7b22736368656d61223a7b2224726566223a22232f636f6d706f6e656e74732f736368656d61732f506572736f6e44544f227d7d7d2c227265717569726564223a747275657d2c22726573706f6e736573223a7b22323030223a7b226465736372697074696f6e223a224f4b222c22636f6e74656e74223a7b222a2f2a223a7b22736368656d61223a7b2224726566223a22232f636f6d706f6e656e74732f736368656d61732f526573706f6e736544544f227d7d7d7d7d7d7d2c222f6372656174652d75736572223a7b22706f7374223a7b2274616773223a5b22757365722d7265736f75726365225d2c226f7065726174696f6e4964223a2263726561746555736572222c2272657175657374426f6479223a7b22636f6e74656e74223a7b226170706c69636174696f6e2f6a736f6e223a7b22736368656d61223a7b2224726566223a22232f636f6d706f6e656e74732f736368656d61732f5573657244544f227d7d7d2c227265717569726564223a747275657d2c22726573706f6e736573223a7b22323030223a7b226465736372697074696f6e223a224f4b222c22636f6e74656e74223a7b222a2f2a223a7b22736368656d61223a7b2224726566223a22232f636f6d706f6e656e74732f736368656d61732f526573706f6e736544544f227d7d7d7d7d7d7d2c222f757365722d6a736f6e2d6d657461223a7b22676574223a7b2274616773223a5b22757365722d7265736f75726365225d2c226f7065726174696f6e4964223a2267657455736572222c22726573706f6e736573223a7b22323030223a7b226465736372697074696f6e223a224f4b222c22636f6e74656e74223a7b222a2f2a223a7b22736368656d61223a7b2224726566223a22232f636f6d706f6e656e74732f736368656d61732f526573706f6e736544544f227d7d7d7d7d7d7d2c222f757365722d696e666f2f7b7573657249647d223a7b22676574223a7b2274616773223a5b22757365722d7265736f75726365225d2c226f7065726174696f6e4964223a22676574557365725f31222c22706172616d6574657273223a5b7b226e616d65223a22757365724964222c22696e223a2270617468222c227265717569726564223a747275652c22736368656d61223a7b2274797065223a22737472696e67227d7d5d2c22726573706f6e736573223a7b22323030223a7b226465736372697074696f6e223a224f4b222c22636f6e74656e74223a7b222a2f2a223a7b22736368656d61223a7b2224726566223a22232f636f6d706f6e656e74732f736368656d61732f526573706f6e736544544f227d7d7d7d7d7d7d2c222f706572736f6e2f7b69647d223a7b22676574223a7b2274616773223a5b22706572736f6e2d7265736f75726365225d2c226f7065726174696f6e4964223a22676574416c6c5573657273222c22706172616d6574657273223a5b7b226e616d65223a226964222c22696e223a2270617468222c227265717569726564223a747275652c22736368656d61223a7b2274797065223a22696e7465676572222c22666f726d6174223a22696e743634227d7d5d2c22726573706f6e736573223a7b22323030223a7b226465736372697074696f6e223a224f4b222c22636f6e74656e74223a7b222a2f2a223a7b22736368656d61223a7b2224726566223a22232f636f6d706f6e656e74732f736368656d61732f526573706f6e736544544f227d7d7d7d7d7d2c2264656c657465223a7b2274616773223a5b22706572736f6e2d7265736f75726365225d2c226f7065726174696f6e4964223a2264656c657465506572736f6e222c22706172616d6574657273223a5b7b226e616d65223a226964222c22696e223a2270617468222c227265717569726564223a747275652c22736368656d61223a7b2274797065223a22696e7465676572222c22666f726d6174223a22696e743634227d7d5d2c22726573706f6e736573223a7b22323030223a7b226465736372697074696f6e223a224f4b222c22636f6e74656e74223a7b222a2f2a223a7b22736368656d61223a7b2274797065223a22737472696e67222c22656e756d223a5b2231303020434f4e54494e5545222c2231303120535749544348494e475f50524f544f434f4c53222c223130322050524f43455353494e47222c22313033204541524c595f48494e5453222c22323030204f4b222c223230312043524541544544222c22323032204143434550544544222c22323033204e4f4e5f415554484f52495441544956455f494e464f524d4154494f4e222c22323034204e4f5f434f4e54454e54222c223230352052455345545f434f4e54454e54222c22323036205041525449414c5f434f4e54454e54222c22323037204d554c54495f535441545553222c2232303820414c52454144595f5245504f52544544222c2232323620494d5f55534544222c22333030204d554c5449504c455f43484f49434553222c22333031204d4f5645445f5045524d414e454e544c59222c2233303220464f554e44222c22333033205345455f4f54484552222c22333034204e4f545f4d4f444946494544222c223330372054454d504f524152595f5245444952454354222c22333038205045524d414e454e545f5245444952454354222c22343030204241445f52455155455354222c2234303120554e415554484f52495a4544222c22343032205041594d454e545f5245515549524544222c2234303320464f5242494444454e222c22343034204e4f545f464f554e44222c22343035204d4554484f445f4e4f545f414c4c4f574544222c22343036204e4f545f41434345505441424c45222c223430372050524f58595f41555448454e5449434154494f4e5f5245515549524544222c2234303820524551554553545f54494d454f5554222c2234303920434f4e464c494354222c2234313020474f4e45222c22343131204c454e4754485f5245515549524544222c2234313220505245434f4e444954494f4e5f4641494c4544222c2234313320434f4e54454e545f544f4f5f4c41524745222c22343133205041594c4f41445f544f4f5f4c41524745222c22343134205552495f544f4f5f4c4f4e47222c2234313520554e535550504f525445445f4d454449415f54595045222c22343136205245515545535445445f52414e47455f4e4f545f5341544953464941424c45222c22343137204558504543544154494f4e5f4641494c4544222c2234313820495f414d5f415f544541504f54222c22343231204d495344495245435445445f52455155455354222c2234323220554e50524f4345535341424c455f434f4e54454e54222c2234323220554e50524f4345535341424c455f454e54495459222c22343233204c4f434b4544222c22343234204641494c45445f444550454e44454e4359222c2234323520544f4f5f4541524c59222c2234323620555047524144455f5245515549524544222c2234323820505245434f4e444954494f4e5f5245515549524544222c2234323920544f4f5f4d414e595f5245515545535453222c2234333120524551554553545f4845414445525f4649454c44535f544f4f5f4c41524745222c2234353120554e415641494c41424c455f464f525f4c4547414c5f524541534f4e53222c2235303020494e5445524e414c5f5345525645525f4552524f52222c22353031204e4f545f494d504c454d454e544544222c22353032204241445f47415445574159222c2235303320534552564943455f554e415641494c41424c45222c2235303420474154455741595f54494d454f5554222c2235303520485454505f56455253494f4e5f4e4f545f535550504f52544544222c223530362056415249414e545f414c534f5f4e45474f544941544553222c2235303720494e53554646494349454e545f53544f52414745222c22353038204c4f4f505f4445544543544544222c223530392042414e4457494454485f4c494d49545f4558434545444544222c22353130204e4f545f455854454e444544222c22353131204e4554574f524b5f41555448454e5449434154494f4e5f5245515549524544225d7d7d7d7d7d7d7d2c222f706572736f6e2f706572736f6e42794e616d652f7b6e616d657d223a7b22676574223a7b2274616773223a5b22706572736f6e2d7265736f75726365225d2c226f7065726174696f6e4964223a22676574506572736f6e6542794e616d65222c22706172616d6574657273223a5b7b226e616d65223a226e616d65222c22696e223a2270617468222c227265717569726564223a747275652c22736368656d61223a7b2274797065223a22737472696e67227d7d5d2c22726573706f6e736573223a7b22323030223a7b226465736372697074696f6e223a224f4b222c22636f6e74656e74223a7b222a2f2a223a7b22736368656d61223a7b2224726566223a22232f636f6d706f6e656e74732f736368656d61732f526573706f6e736544544f227d7d7d7d7d7d7d2c222f706572736f6e2f616f702f74657374696e672f7b747970657d223a7b22676574223a7b2274616773223a5b22706572736f6e2d7265736f75726365225d2c226f7065726174696f6e4964223a22616f7054657374696e67222c22706172616d6574657273223a5b7b226e616d65223a2274797065222c22696e223a2270617468222c227265717569726564223a747275652c22736368656d61223a7b2274797065223a22737472696e67227d7d5d2c22726573706f6e736573223a7b22323030223a7b226465736372697074696f6e223a224f4b222c22636f6e74656e74223a7b222a2f2a223a7b22736368656d61223a7b2224726566223a22232f636f6d706f6e656e74732f736368656d61732f526573706f6e736544544f227d7d7d7d7d7d7d2c222f706572736f6e2f616c6c223a7b22676574223a7b2274616773223a5b22706572736f6e2d7265736f75726365225d2c226f7065726174696f6e4964223a22676574416c6c222c22726573706f6e736573223a7b22323030223a7b226465736372697074696f6e223a224f4b222c22636f6e74656e74223a7b222a2f2a223a7b22736368656d61223a7b2224726566223a22232f636f6d706f6e656e74732f736368656d61732f526573706f6e736544544f227d7d7d7d7d7d7d2c222f6765742d746f6b656e223a7b22676574223a7b2274616773223a5b226c6f67696e2d636f6e74726f6c6c6572225d2c226f7065726174696f6e4964223a22676574546f6b656e222c22726573706f6e736573223a7b22323030223a7b226465736372697074696f6e223a224f4b222c22636f6e74656e74223a7b222a2f2a223a7b22736368656d61223a7b2274797065223a22737472696e67227d7d7d7d7d7d7d7d2c22636f6d706f6e656e7473223a7b22736368656d6173223a7b22506572736f6e44544f223a7b2274797065223a226f626a656374222c2270726f70657274696573223a7b226964223a7b2274797065223a22696e7465676572222c22666f726d6174223a22696e743634227d2c226372656174654279223a7b2274797065223a22696e7465676572222c22666f726d6174223a22696e743634227d2c2263726561746544617465223a7b2274797065223a22737472696e67222c22666f726d6174223a22646174652d74696d65227d2c22757064617465644279223a7b2274797065223a22696e7465676572222c22666f726d6174223a22696e743634227d2c227570646174656444617465223a7b2274797065223a22737472696e67222c22666f726d6174223a22646174652d74696d65227d2c22616765223a7b2274797065223a22696e7465676572222c22666f726d6174223a22696e743332227d2c2266697273744e616d65223a7b2274797065223a22737472696e67227d2c226c6173744e616d65223a7b2274797065223a22737472696e67227d7d7d2c22526573706f6e736544544f223a7b2274797065223a226f626a656374222c2270726f70657274696573223a7b22737461747573223a7b2274797065223a22737472696e67222c22656e756d223a5b2253554343455353222c22455843455054494f4e5f4f434349524544222c2256414c49444154494f4e5f4641494c555245222c224143434553535f44454e494544225d7d2c226d657373616765223a7b2274797065223a22737472696e67227d2c226f626a656374223a7b7d7d7d2c225573657244544f223a7b2274797065223a226f626a656374222c2270726f70657274696573223a7b2266697273744e616d65223a7b2274797065223a22737472696e67227d2c226c6173744e616d65223a7b2274797065223a22737472696e67227d2c22656d61696c223a7b2274797065223a22737472696e67227d2c22736578223a7b2274797065223a22737472696e67227d2c2270617373776f7264223a7b2274797065223a22737472696e67227d2c22757365724964223a7b2274797065223a22737472696e67227d7d7d7d2c227365637572697479536368656d6573223a7b2262656172657241757468223a7b2274797065223a2268747470222c226e616d65223a2262656172657241757468222c22736368656d65223a22626561726572222c22626561726572466f726d6174223a224a5754227d2c22626173696341757468223a7b2274797065223a2268747470222c22736368656d65223a226261736963227d7d7d7d}]
+2026-08-22 18:41:05.480 TRACE [http-nio-8081-exec-5] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:41:05.482 TRACE [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:41:05.483 DEBUG [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:41:05.497 TRACE [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@6faf522b, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@7581336f, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:04.755420200Z]]]
+2026-08-22 18:41:25.758 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:41:25.758 DEBUG [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Securing GET /get-token
+2026-08-22 18:41:25.758 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:41:25.758 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:41:25.758 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:41:25.775 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:41:25.775 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:41:25.775 TRACE [http-nio-8081-exec-7] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:41:25.775 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:41:25.775 TRACE [http-nio-8081-exec-7] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:41:25.775 TRACE [http-nio-8081-exec-7] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:41:25.775 TRACE [http-nio-8081-exec-7] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:25.775 TRACE [http-nio-8081-exec-7] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:25.775 TRACE [http-nio-8081-exec-7] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:41:26.052 DEBUG [http-nio-8081-exec-7] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:41:26.052 DEBUG [http-nio-8081-exec-7] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@28286458, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@1eeafbf, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:26.052976500Z]]]
+2026-08-22 18:41:26.052 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:41:26.052 TRACE [http-nio-8081-exec-7] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:41:26.052 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:41:26.052 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:41:26.052 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:41:26.052 TRACE [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:41:26.052 TRACE [http-nio-8081-exec-7] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /get-token
+2026-08-22 18:41:26.052 TRACE [http-nio-8081-exec-7] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /get-token using AuthorityAuthorizationManager[authorities=[ROLE_ADMIN, ROLE_USER]]
+2026-08-22 18:41:26.052 TRACE [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@28286458, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@1eeafbf, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:26.052976500Z]]]
+2026-08-22 18:41:26.052 DEBUG [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy - Secured GET /get-token
+2026-08-22 18:41:26.052 TRACE [http-nio-8081-exec-7] o.s.web.servlet.DispatcherServlet - GET "/get-token", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:41:26.052 TRACE [http-nio-8081-exec-7] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kafka.microservice_producer.controller.login.LoginController#getToken()
+2026-08-22 18:41:26.059 TRACE [http-nio-8081-exec-7] o.s.web.method.HandlerMethod - Arguments: []
+2026-08-22 18:41:26.059 DEBUG [http-nio-8081-exec-7] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json, application/yaml]
+2026-08-22 18:41:26.059 TRACE [http-nio-8081-exec-7] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["{"token":"eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiIsIkZBQ1RPUl9QQVNTV09SRCJdLCJzdWIiOiJ0ZXN0dDAxMDIxOTkwQGdtYWlsLmNvbSIsImlhdCI6MTc4NzQwNDI4NiwiZXhwIjoxNzg3NDA0NTg2fQ.viAuyw_hOfIXf_qloGtqrULsn-VkZlptA6UnCmSMxWo","token-expiry":"Sat Aug 22 18:46:26 IST 2026","token-type":"Bearer "}"]
+2026-08-22 18:41:26.061 TRACE [http-nio-8081-exec-7] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:41:26.061 TRACE [http-nio-8081-exec-7] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:41:26.064 DEBUG [http-nio-8081-exec-7] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:41:43.755 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:41:43.755 DEBUG [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Securing GET /person/all
+2026-08-22 18:41:43.755 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:41:43.755 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:41:43.757 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:41:43.757 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:41:43.757 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:41:43.757 TRACE [http-nio-8081-exec-6] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:41:43.757 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:41:43.757 TRACE [http-nio-8081-exec-6] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:41:43.757 TRACE [http-nio-8081-exec-6] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:41:43.757 TRACE [http-nio-8081-exec-6] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:43.757 TRACE [http-nio-8081-exec-6] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:41:43.757 TRACE [http-nio-8081-exec-6] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:41:44.024 DEBUG [http-nio-8081-exec-6] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:41:44.024 DEBUG [http-nio-8081-exec-6] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@17fbac77, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@57bb7ad2, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:44.024738900Z]]]
+2026-08-22 18:41:44.024 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:41:44.024 TRACE [http-nio-8081-exec-6] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:41:44.026 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:41:44.026 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:41:44.026 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:41:44.026 TRACE [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:41:44.026 TRACE [http-nio-8081-exec-6] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing GET /person/all
+2026-08-22 18:41:44.026 TRACE [http-nio-8081-exec-6] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on GET /person/all using AuthorityAuthorizationManager[authorities=[ROLE_ADMIN, ROLE_USER]]
+2026-08-22 18:41:44.026 TRACE [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@17fbac77, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@57bb7ad2, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:11:44.024738900Z]]]
+2026-08-22 18:41:44.026 DEBUG [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy - Secured GET /person/all
+2026-08-22 18:41:44.026 TRACE [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet - GET "/person/all", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:41:44.026 TRACE [http-nio-8081-exec-6] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kafka.microservice_producer.controller.PersonResource#getAll()
+2026-08-22 18:41:44.026 TRACE [http-nio-8081-exec-6] o.s.web.method.HandlerMethod - Arguments: []
+2026-08-22 18:41:44.088 DEBUG [http-nio-8081-exec-6] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-08-22 18:41:44.088 TRACE [http-nio-8081-exec-6] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.kafka.microservice_producer.dto.ResponseDTO@ab29615]
+2026-08-22 18:41:44.088 TRACE [http-nio-8081-exec-6] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Applying default cacheSeconds=-1
+2026-08-22 18:41:44.088 TRACE [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:41:44.095 DEBUG [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:41:44.095 TRACE [http-nio-8081-exec-6] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 18:53:30.814 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m39s463ms872µs500ns).
+2026-08-22 18:58:50.762 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 18:58:50.762 DEBUG [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Securing POST /person
+2026-08-22 18:58:50.762 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 18:58:50.762 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 18:58:50.762 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 18:58:50.762 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 18:58:50.762 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 18:58:50.762 TRACE [http-nio-8081-exec-2] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 18:58:50.762 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 18:58:50.762 TRACE [http-nio-8081-exec-2] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 18:58:50.762 TRACE [http-nio-8081-exec-2] o.s.s.w.c.HttpSessionSecurityContextRepository - Did not find SecurityContext in HttpSession BC9D49407C3885C9B65A91BEE1D21C1A using the SPRING_SECURITY_CONTEXT session attribute
+2026-08-22 18:58:50.762 TRACE [http-nio-8081-exec-2] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:58:50.762 TRACE [http-nio-8081-exec-2] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 18:58:50.762 TRACE [http-nio-8081-exec-2] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 18:58:51.074 DEBUG [http-nio-8081-exec-2] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 18:58:51.074 DEBUG [http-nio-8081-exec-2] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@30317d19, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@7cefca1e, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:28:51.074502500Z]]]
+2026-08-22 18:58:51.074 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 18:58:51.074 TRACE [http-nio-8081-exec-2] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 18:58:51.074 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 18:58:51.074 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 18:58:51.074 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 18:58:51.074 TRACE [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 18:58:51.074 TRACE [http-nio-8081-exec-2] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing POST /person
+2026-08-22 18:58:51.074 TRACE [http-nio-8081-exec-2] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on POST /person using AuthorityAuthorizationManager[authorities=[ROLE_ADMIN, ROLE_USER]]
+2026-08-22 18:58:51.074 TRACE [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@30317d19, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BC9D49407C3885C9B65A91BEE1D21C1A], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@7cefca1e, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:28:51.074502500Z]]]
+2026-08-22 18:58:51.074 DEBUG [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy - Secured POST /person
+2026-08-22 18:58:51.074 TRACE [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet - POST "/person", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 18:58:51.074 TRACE [http-nio-8081-exec-2] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kafka.microservice_producer.controller.PersonResource#insertPersone(PersonDTO)
+2026-08-22 18:58:51.202 TRACE [http-nio-8081-exec-2] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.kafka.microservice_producer.dto.PersonDTO@2f38f787]
+2026-08-22 18:58:51.211 TRACE [http-nio-8081-exec-2] o.s.web.method.HandlerMethod - Arguments: [com.kafka.microservice_producer.dto.PersonDTO@2f38f787]
+2026-08-22 18:58:51.450 INFO  [http-nio-8081-exec-2] o.a.k.common.config.AbstractConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = microservice-producer-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	config.providers = []
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transaction.two.phase.commit.enable = false
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2026-08-22 18:58:51.526 INFO  [http-nio-8081-exec-2] o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2026-08-22 18:58:51.571 INFO  [http-nio-8081-exec-2] o.a.k.clients.producer.KafkaProducer - [Producer clientId=microservice-producer-producer-1] Instantiated an idempotent producer.
+2026-08-22 18:58:51.741 INFO  [http-nio-8081-exec-2] o.a.kafka.common.utils.AppInfoParser - Kafka version: 4.2.1
+2026-08-22 18:58:51.741 INFO  [http-nio-8081-exec-2] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 92f61c44867f39dc
+2026-08-22 18:58:51.741 INFO  [http-nio-8081-exec-2] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1787405331731
+2026-08-22 18:58:53.058 WARN  [kafka-producer-network-thread | microservice-producer-producer-1] o.apache.kafka.clients.NetworkClient - [Producer clientId=microservice-producer-producer-1] The metadata response from the cluster reported a recoverable issue with correlation id 1 : {person-topic=UNKNOWN_TOPIC_OR_PARTITION}
+2026-08-22 18:58:53.068 INFO  [kafka-producer-network-thread | microservice-producer-producer-1] org.apache.kafka.clients.Metadata - [Producer clientId=microservice-producer-producer-1] Cluster ID: zMZJNlcGTb62vJDRC71YTw
+2026-08-22 18:58:53.309 INFO  [kafka-producer-network-thread | microservice-producer-producer-1] o.a.k.c.p.i.TransactionManager - [Producer clientId=microservice-producer-producer-1] ProducerId set to 0 with epoch 0
+2026-08-22 18:58:53.316 DEBUG [http-nio-8081-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.kafka.microservice_producer.exceptionhandler.ExceptionHandling#handleException(Exception)
+2026-08-22 18:58:53.316 TRACE [http-nio-8081-exec-2] o.s.web.method.HandlerMethod - Arguments: [org.apache.kafka.common.errors.SerializationException: Can't convert key of class java.lang.Long to class org.apache.kafka.common.serialization.StringSerializer specified in key.serializer]
+2026-08-22 18:58:53.318 DEBUG [http-nio-8081-exec-2] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-08-22 18:58:53.321 TRACE [http-nio-8081-exec-2] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.kafka.microservice_producer.dto.ResponseDTO@6b97dc3f]
+2026-08-22 18:58:53.322 DEBUG [http-nio-8081-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.apache.kafka.common.errors.SerializationException: Can't convert key of class java.lang.Long to class org.apache.kafka.common.serialization.StringSerializer specified in key.serializer]
+2026-08-22 18:58:53.322 TRACE [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 18:58:53.322 DEBUG [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 18:58:53.324 TRACE [http-nio-8081-exec-2] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 19:00:47.318 INFO  [RMI TCP Connection(16)-10.87.222.245] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2026-08-22 19:00:47.324 INFO  [RMI TCP Connection(16)-10.87.222.245] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-22 19:00:47.325 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2026-08-22 19:00:47.414 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-08-22 19:00:47.414 INFO  [RMI TCP Connection(16)-10.87.222.245] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2026-08-22 19:00:47.417 INFO  [RMI TCP Connection(16)-10.87.222.245] o.a.k.clients.producer.KafkaProducer - [Producer clientId=microservice-producer-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2026-08-22 19:00:47.427 INFO  [RMI TCP Connection(16)-10.87.222.245] o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2026-08-22 19:00:47.427 INFO  [RMI TCP Connection(16)-10.87.222.245] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-08-22 19:00:47.427 INFO  [RMI TCP Connection(16)-10.87.222.245] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-08-22 19:00:47.427 INFO  [RMI TCP Connection(16)-10.87.222.245] o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2026-08-22 19:00:47.430 INFO  [RMI TCP Connection(16)-10.87.222.245] o.a.kafka.common.utils.AppInfoParser - App info kafka.producer for microservice-producer-producer-1 unregistered
+2026-08-22 19:00:47.435 INFO  [RMI TCP Connection(16)-10.87.222.245] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-22 19:00:47.439 INFO  [RMI TCP Connection(16)-10.87.222.245] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-22 19:00:47.449 INFO  [RMI TCP Connection(16)-10.87.222.245] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-22 19:01:56.469 INFO  [main] c.k.m.MicroserviceProducerApplication - Starting MicroserviceProducerApplication using Java 17.0.12 with PID 17100 (D:\Project Development\My-github\spring-boot-microservices-kafka-integration\microservice-producer\target\classes started by Vishnu Katpure in D:\Project Development\My-github\spring-boot-microservices-kafka-integration\microservice-producer)
+2026-08-22 19:01:56.474 INFO  [main] c.k.m.MicroserviceProducerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-08-22 19:01:56.977 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-08-22 19:01:57.502 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-22 19:01:57.565 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 4 JPA repository interfaces.
+2026-08-22 19:01:59.519 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-22 19:01:59.664 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-22 19:01:59.674 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-22 19:01:59.674 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-08-22 19:02:00.623 INFO  [main] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 4094 ms
+2026-08-22 19:02:01.993 INFO  [main] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-08-22 19:02:02.573 INFO  [main] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-08-22 19:02:05.724 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-22 19:02:06.027 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-22 19:02:07.131 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b0525a8
+2026-08-22 19:02:07.138 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-22 19:02:07.561 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-22 19:02:07.722 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/demo?useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.15
+	Default catalog/schema: demo/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-22 19:02:10.108 INFO  [main] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-22 19:02:10.314 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-22 19:02:10.503 INFO  [main] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-22 19:02:11.617 WARN  [main] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-22 19:02:11.876 TRACE [main] o.s.s.c.a.a.c.AuthenticationConfiguration$EnableGlobalAuthenticationAutowiredConfigurer - Eagerly initializing {org.springframework.boot.security.autoconfigure.web.servlet.ServletWebSecurityAutoConfiguration$EnableWebSecurityConfiguration=org.springframework.boot.security.autoconfigure.web.servlet.ServletWebSecurityAutoConfiguration$EnableWebSecurityConfiguration@39240aa3}
+2026-08-22 19:02:11.884 INFO  [main] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-08-22 19:02:11.892 WARN  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-08-22 19:02:12.095 DEBUG [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-08-22 19:02:12.221 TRACE [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	c.k.m.c.l.LoginController:
+	{GET [/get-token]}: getToken()
+	{GET [/home]}: homePage()
+	{GET [/]}: welcomePage()
+	{GET [/logout]}: logoutPage(HttpServletRequest,HttpServletResponse)
+	{GET [/login]}: loginPage(String,String,HttpServletRequest)
+2026-08-22 19:02:12.236 TRACE [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	c.k.m.c.PersonResource:
+	{GET [/person/all]}: getAll()
+	{GET [/person/{id}]}: getAllUsers(Long)
+	{GET [/person/personByName/{name}]}: getPersoneByName(String)
+	{GET [/person/aop/testing/{type}]}: aopTesting(String)
+	{DELETE [/person/{id}]}: deletePerson(Long)
+	{POST [/person]}: insertPersone(PersonDTO)
+	{PUT [/person]}: updatePerson(PersonDTO)
+2026-08-22 19:02:12.243 TRACE [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	c.k.m.c.UserResource:
+	{GET [/user-info/{userId}]}: getUser(String)
+	{GET [/user-json-meta]}: getUser()
+	{POST [/create-user]}: createUser(UserDTO)
+2026-08-22 19:02:12.249 TRACE [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	o.s.b.w.a.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2026-08-22 19:02:12.271 TRACE [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	o.s.w.a.OpenApiWebMvcResource:
+	{GET [/v3/api-docs], produces [application/json]}: openapiJson(HttpServletRequest,String,Locale)
+	{GET [/v3/api-docs.yaml], produces [application/vnd.oai.openapi]}: openapiYaml(HttpServletRequest,String,Locale)
+2026-08-22 19:02:12.277 TRACE [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	o.s.w.u.SwaggerWelcomeWebMvc:
+	{GET [/swagger-ui.html]}: redirectToUi(HttpServletRequest)
+2026-08-22 19:02:12.285 TRACE [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 
+	o.s.w.u.SwaggerConfigResource:
+	{GET [/v3/api-docs/swagger-config], produces [application/json]}: openapiJson(HttpServletRequest)
+2026-08-22 19:02:12.290 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 21 mappings in 'requestMappingHandlerMapping'
+2026-08-22 19:02:12.308 DEBUG [main] o.s.w.s.h.BeanNameUrlHandlerMapping - Detected 0 mappings in 'beanNameHandlerMapping'
+2026-08-22 19:02:12.319 TRACE [main] o.s.w.s.f.s.RouterFunctionMapping - 0 RouterFunction(s) in 'routerFunctionMapping'
+2026-08-22 19:02:12.357 TRACE [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-08-22 19:02:12.358 TRACE [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-08-22 19:02:12.360 TRACE [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped [/swagger-ui*/*swagger-initializer.js] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-08-22 19:02:12.360 TRACE [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped [/swagger-ui*/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-08-22 19:02:12.361 DEBUG [main] o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-08-22 19:02:12.413 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-08-22 19:02:12.494 DEBUG [main] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-08-22 19:02:12.760 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-22 19:02:12.809 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-22 19:02:12.821 INFO  [main] c.k.m.MicroserviceProducerApplication - Started MicroserviceProducerApplication in 17.099 seconds (process running for 17.729)
+2026-08-22 19:02:38.675 INFO  [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-22 19:02:38.675 INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-22 19:02:38.675 TRACE [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.multipart.support.StandardServletMultipartResolver@652cb87d
+2026-08-22 19:02:38.675 TRACE [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver@1014c825
+2026-08-22 19:02:38.675 TRACE [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Detected DefaultRequestToViewNameTranslator
+2026-08-22 19:02:38.684 TRACE [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Detected SessionFlashMapManager
+2026-08-22 19:02:38.686 DEBUG [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-08-22 19:02:38.686 INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+2026-08-22 19:02:38.717 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Trying to match request against DefaultSecurityFilterChain defined as 'securityFilterChain' in [class path resource [com/kafka/microservice_producer/config/SecurityConfig.class]] matching [any request] and having filters [DisableEncodeUrl, WebAsyncManagerIntegration, SecurityContextHolder, HeaderWriter, Logout, BasicAuthentication, RequestCacheAware, SecurityContextHolderAwareRequest, AnonymousAuthentication, ExceptionTranslation, Authorization] (1/1)
+2026-08-22 19:02:38.717 DEBUG [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Securing POST /person
+2026-08-22 19:02:38.717 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking DisableEncodeUrlFilter (1/11)
+2026-08-22 19:02:38.717 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking WebAsyncManagerIntegrationFilter (2/11)
+2026-08-22 19:02:38.729 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderFilter (3/11)
+2026-08-22 19:02:38.735 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking HeaderWriterFilter (4/11)
+2026-08-22 19:02:38.739 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking LogoutFilter (5/11)
+2026-08-22 19:02:38.745 TRACE [http-nio-8081-exec-1] o.s.s.w.a.logout.LogoutFilter - Did not match request to Or [PathPattern [GET /logout], PathPattern [POST /logout], PathPattern [PUT /logout], PathPattern [DELETE /logout]]
+2026-08-22 19:02:38.745 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking BasicAuthenticationFilter (6/11)
+2026-08-22 19:02:38.752 TRACE [http-nio-8081-exec-1] o.s.s.w.a.w.BasicAuthenticationFilter - Found username 'testt01021990@gmail.com' in Basic Authorization header
+2026-08-22 19:02:38.754 TRACE [http-nio-8081-exec-1] o.s.s.w.c.HttpSessionSecurityContextRepository - No HttpSession currently exists
+2026-08-22 19:02:38.754 TRACE [http-nio-8081-exec-1] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 19:02:38.754 TRACE [http-nio-8081-exec-1] o.s.s.w.c.SupplierDeferredSecurityContext - Created SecurityContextImpl [Null authentication]
+2026-08-22 19:02:38.756 TRACE [http-nio-8081-exec-1] o.s.s.authentication.ProviderManager - Authenticating request with DaoAuthenticationProvider (1/1)
+2026-08-22 19:02:40.207 DEBUG [http-nio-8081-exec-1] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-08-22 19:02:40.207 DEBUG [http-nio-8081-exec-1] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@1729fa0d, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@5cc5bd7f, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:32:40.207223500Z]]]
+2026-08-22 19:02:40.207 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking RequestCacheAwareFilter (7/11)
+2026-08-22 19:02:40.207 TRACE [http-nio-8081-exec-1] o.s.s.w.s.HttpSessionRequestCache - matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2026-08-22 19:02:40.207 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking SecurityContextHolderAwareRequestFilter (8/11)
+2026-08-22 19:02:40.215 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking AnonymousAuthenticationFilter (9/11)
+2026-08-22 19:02:40.215 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking ExceptionTranslationFilter (10/11)
+2026-08-22 19:02:40.215 TRACE [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Invoking AuthorizationFilter (11/11)
+2026-08-22 19:02:40.215 TRACE [http-nio-8081-exec-1] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Authorizing POST /person
+2026-08-22 19:02:40.215 TRACE [http-nio-8081-exec-1] o.s.s.w.a.i.RequestMatcherDelegatingAuthorizationManager - Checking authorization on POST /person using AuthorityAuthorizationManager[authorities=[ROLE_USER, ROLE_ADMIN]]
+2026-08-22 19:02:40.215 TRACE [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter - Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=com.kafka.microservice_producer.model.User@1729fa0d, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[com.kafka.microservice_producer.model.Authorities@5cc5bd7f, FactorGrantedAuthority [authority=FACTOR_PASSWORD, issuedAt=2026-08-22T13:32:40.207223500Z]]]
+2026-08-22 19:02:40.215 DEBUG [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy - Secured POST /person
+2026-08-22 19:02:40.223 TRACE [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - POST "/person", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2026-08-22 19:02:40.248 TRACE [http-nio-8081-exec-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.kafka.microservice_producer.controller.PersonResource#insertPersone(PersonDTO)
+2026-08-22 19:02:40.600 TRACE [http-nio-8081-exec-1] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.kafka.microservice_producer.dto.PersonDTO@53238312]
+2026-08-22 19:02:40.608 TRACE [http-nio-8081-exec-1] o.s.web.method.HandlerMethod - Arguments: [com.kafka.microservice_producer.dto.PersonDTO@53238312]
+2026-08-22 19:02:40.856 INFO  [http-nio-8081-exec-1] o.a.k.common.config.AbstractConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = microservice-producer-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	config.providers = []
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.LongSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transaction.two.phase.commit.enable = false
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2026-08-22 19:02:40.929 INFO  [http-nio-8081-exec-1] o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2026-08-22 19:02:40.989 INFO  [http-nio-8081-exec-1] o.a.k.clients.producer.KafkaProducer - [Producer clientId=microservice-producer-producer-1] Instantiated an idempotent producer.
+2026-08-22 19:02:41.106 INFO  [http-nio-8081-exec-1] o.a.kafka.common.utils.AppInfoParser - Kafka version: 4.2.1
+2026-08-22 19:02:41.106 INFO  [http-nio-8081-exec-1] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 92f61c44867f39dc
+2026-08-22 19:02:41.106 INFO  [http-nio-8081-exec-1] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1787405561102
+2026-08-22 19:02:42.091 INFO  [kafka-producer-network-thread | microservice-producer-producer-1] org.apache.kafka.clients.Metadata - [Producer clientId=microservice-producer-producer-1] Cluster ID: zMZJNlcGTb62vJDRC71YTw
+2026-08-22 19:02:42.091 INFO  [kafka-producer-network-thread | microservice-producer-producer-1] o.a.k.c.p.i.TransactionManager - [Producer clientId=microservice-producer-producer-1] ProducerId set to 1 with epoch 0
+2026-08-22 19:02:42.265 DEBUG [http-nio-8081-exec-1] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-08-22 19:02:42.265 TRACE [http-nio-8081-exec-1] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.kafka.microservice_producer.dto.ResponseDTO@51cc4783]
+2026-08-22 19:02:42.420 TRACE [http-nio-8081-exec-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Applying default cacheSeconds=-1
+2026-08-22 19:02:42.421 TRACE [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - No view rendering, null ModelAndView returned.
+2026-08-22 19:02:42.427 DEBUG [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed 200 OK, headers={masked}
+2026-08-22 19:02:42.431 TRACE [http-nio-8081-exec-1] o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match request to [Is Secure]
+2026-08-22 19:21:52.441 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m44s978ms238µs500ns).

@@ -4,14 +4,16 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.stereotype.Service;
 
+import com.kafka.microservice_producer.dto.PersonDTO;
+
 @Service
 public class KafkaMessageConsumer {
 
-	@KafkaListener(topics = "people-topic", groupId = "people-group")
-	public void consume(Object message, Acknowledgment acknowledgment) {
+	@KafkaListener(topics = "person-topic", groupId = "person-group")
+	public void consume(PersonDTO message, Acknowledgment acknowledgment) {
 		try {
 			System.out.println("Received message: " + message);
-			acknowledgment.acknowledge();
+			// acknowledgment.acknowledge();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

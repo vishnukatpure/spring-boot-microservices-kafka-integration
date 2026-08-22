@@ -21,8 +21,6 @@ public class AuthenticationConfig {
 	AuthenticationProvider authenticationProvider(CustomUserDetailService userDetailsService,
 			PasswordEncoder passwordEncoder) {
 
-		System.out.println("Auth Provider");
-
 		DaoAuthenticationProvider provider = new DaoAuthenticationProvider(userDetailsService);
 
 		provider.setPasswordEncoder(passwordEncoder);
