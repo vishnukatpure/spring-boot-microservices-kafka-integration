@@ -30,7 +30,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
 		User user = userRepository.findByUsername(username)
 				.orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
-		List<Authorities> authorities = authoritiesRepository.findByUsername(user);
+		List<Authorities> authorities = authoritiesRepository.findByUser(user);
 		user.setAuthorities(authorities);
 
 		return org.springframework.security.core.userdetails.User.withUsername(user.getUsername())

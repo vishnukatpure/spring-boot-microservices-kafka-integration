@@ -4,15 +4,15 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
-public class KafkaMessageProducerService {
+public class KafkaMessageProducerService<K, V> {
 
-	private final KafkaTemplate<String, String> kafkaTemplate;
+	private final KafkaTemplate<K, V> kafkaTemplate;
 
-	public KafkaMessageProducerService(KafkaTemplate<String, String> kafkaTemplate) {
+	public KafkaMessageProducerService(KafkaTemplate<K, V> kafkaTemplate) {
 		this.kafkaTemplate = kafkaTemplate;
 	}
 
-	public void sendMessage(String topic, String message) {
-		kafkaTemplate.send(topic, message);
+	public void sendMessage(String topic, K key, V message) {
+		kafkaTemplate.send(topic, key, message);
 	}
 }

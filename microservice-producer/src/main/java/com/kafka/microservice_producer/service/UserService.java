@@ -24,8 +24,13 @@ public class UserService {
 	}
 
 	@Transactional
-	public List<User> findByName(String name) {
+	public List<User> findByFirstName(String name) {
 		return userRepository.findByFirstName(name);
+	}
+
+	@Transactional
+	public Optional<User> findByUserName(String name) {
+		return userRepository.findByUsername(name);
 	}
 
 	@Transactional

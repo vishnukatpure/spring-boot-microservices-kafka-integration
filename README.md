@@ -51,23 +51,27 @@ Few Commands to remember
 	Count Topic messages
 		bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --describe --group employee-group
 
+# Current Implementation
+	1. Manual offset acknowledgement
+	2. Kafka producer acknowledgements
+	3. Error handling in Single Place using @RestControllerAdvice
+	4. Swagger UI
+	5. Kafka message keys
+	6. JSON Schema serialization
+	 
+	
+
 # Future Improvements
 
 This basic project can be extended with:
 
-Employee JSON objects instead of String messages
-Multiple Kafka partitions
-Multiple consumer instances
-Kafka producer acknowledgements
-Retry and dead-letter topics
-Error handling
-Kafka message keys
-Avro/JSON Schema serialization
-Kafka UI
-Docker-based Kafka
-Spring Kafka ConcurrentKafkaListenerContainerFactory
-Manual offset acknowledgement
-Kafka transactions
+1. Employee JSON objects instead of String messages
+2. Multiple Kafka partitions
+3. Multiple consumer instances
+4. Retry and dead-letter topics. 
+5. Kafka UI (http://localhost:8081/swagger-ui/index.html)
+6. Docker-based Kafka
+
 
 # License
 

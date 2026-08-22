@@ -1,14 +1,20 @@
 package com.kafka.microservice_notification_consumer.service;
 
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.stereotype.Service;
 
 @Service
 public class KafkaMessageConsumer {
 
 	@KafkaListener(topics = "employee-topic", groupId = "employee-group")
-	public void consume(String message) {
+	public void consume(String message, Acknowledgment acknowledgment) {
 
-		System.out.println("Received message: " + message);
+		try {
+			System.out.println("Received message: " + message);
+			acknowledgment.acknowledge();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -4,7 +4,10 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
@@ -16,6 +19,10 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1020230L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@Column(unique = true)
 	private String username;
 	private String firstName;
 	private String lastName;

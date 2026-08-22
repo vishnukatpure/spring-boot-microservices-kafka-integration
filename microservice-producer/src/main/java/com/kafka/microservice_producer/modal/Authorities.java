@@ -22,8 +22,8 @@ public class Authorities implements Serializable {
 	private long id;
 
 	@ManyToOne
-	@JoinColumn(name = "username")
-	private User username;
+	@JoinColumn(name = "user")
+	private User user;
 
 	private String authority;
 
@@ -35,12 +35,12 @@ public class Authorities implements Serializable {
 		this.id = id;
 	}
 
-	public User getUsername() {
-		return username;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUsername(User username) {
-		this.username = username;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public String getAuthority() {
