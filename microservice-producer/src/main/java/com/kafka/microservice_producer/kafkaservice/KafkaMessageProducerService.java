@@ -1,4 +1,4 @@
-package com.kafka.microservice_producer.service;
+package com.kafka.microservice_producer.kafkaservice;
 
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;

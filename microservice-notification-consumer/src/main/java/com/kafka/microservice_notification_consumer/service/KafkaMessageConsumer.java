@@ -7,9 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaMessageConsumer {
 
-	@KafkaListener(topics = "employee-topic", groupId = "employee-group")
-	public void consume(String message, Acknowledgment acknowledgment) {
-
+	@KafkaListener(topics = "people-topic", groupId = "people-group")
+	public void consume(Object message, Acknowledgment acknowledgment) {
 		try {
 			System.out.println("Received message: " + message);
 			acknowledgment.acknowledge();

@@ -19,8 +19,8 @@
                          │
                          ▼
                 ┌──────────────────┐
-                │ Employee Consumer│
-                │ employee-group   │
+                │ Person Consumer  │
+                │ person-group     │
                 └──────────────────┘
 # Technologies
 Java 17, 
@@ -53,24 +53,24 @@ Few Commands to remember
 
 # Current Implementation
 	1. Manual offset acknowledgement
-	2. Kafka producer acknowledgements
+	2. Kafka producer acknowledgement
 	3. Error handling in Single Place using @RestControllerAdvice
 	4. Swagger UI
 	5. Kafka message keys
-	6. JSON Schema serialization
+	6. Kafka JSON Schema serialization
 	 
 	
 
 # Future Improvements
 
-This basic project can be extended with:
+	This basic project can be extended with:
 
-1. Employee JSON objects instead of String messages
-2. Multiple Kafka partitions
-3. Multiple consumer instances
-4. Retry and dead-letter topics. 
-5. Kafka UI (http://localhost:8081/swagger-ui/index.html)
-6. Docker-based Kafka
+	1. Employee JSON objects instead of String messages
+	2. Multiple Kafka partitions
+	3. Multiple consumer instances
+	4. Retry and dead-letter topics. 
+	5. Kafka UI (http://localhost:8081/swagger-ui/index.html)
+	6. Docker-based Kafka
 
 
 # License

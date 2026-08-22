@@ -1,14 +1,12 @@
 package com.kafka.microservice_producer.repository;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.kafka.microservice_producer.modal.User;
+import com.kafka.microservice_producer.model.User;
 
-public interface UserRepository<P> extends CrudRepository<User, String> {
-	List<User> findByFirstName(String firstName);
+public interface UserRepository extends CrudRepository<User, Long> {
 
-	Optional<User> findByUsername(String username);
+	public List<User> findByUsername(String username);
 }

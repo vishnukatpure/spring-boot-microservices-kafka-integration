@@ -7,7 +7,7 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.kafka.microservice_producer.service.CustomUserDetailsService;
+import com.kafka.microservice_producer.services.CustomUserDetailService;
 
 @Configuration
 public class AuthenticationConfig {
@@ -18,8 +18,10 @@ public class AuthenticationConfig {
 	}
 
 	@Bean
-	AuthenticationProvider authenticationProvider(CustomUserDetailsService userDetailsService,
+	AuthenticationProvider authenticationProvider(CustomUserDetailService userDetailsService,
 			PasswordEncoder passwordEncoder) {
+
+		System.out.println("Auth Provider");
 
 		DaoAuthenticationProvider provider = new DaoAuthenticationProvider(userDetailsService);
 

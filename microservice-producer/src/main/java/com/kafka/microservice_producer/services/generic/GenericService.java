@@ -1,6 +1,4 @@
-package com.kafka.microservice_producer.service.generic;
-
-import java.util.List;
+package com.kafka.microservice_producer.services.generic;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.Authentication;
@@ -10,11 +8,11 @@ import org.springframework.stereotype.Service;
 
 import com.kafka.microservice_producer.dto.ResponseDTO;
 import com.kafka.microservice_producer.enums.StatusEnum;
-import com.kafka.microservice_producer.modal.User;
-import com.kafka.microservice_producer.service.UserService;
+import com.kafka.microservice_producer.model.User;
+import com.kafka.microservice_producer.services.UserService;
 
 @Service
-public abstract class GenericService<K> {
+public abstract class GenericService {
 
 	private static final ModelMapper mapper = new ModelMapper();
 
@@ -39,7 +37,7 @@ public abstract class GenericService<K> {
 			if (userDetails instanceof User)
 				user = (User) userDetails;
 			else
-				user = userService.findByUserName(userDetails.getUsername()).get();
+				user = userService.findByUsername(userDetails.getUsername());
 		}
 		return user;
 	}
@@ -47,15 +45,5 @@ public abstract class GenericService<K> {
 	public Authentication getAuthentication() {
 		return SecurityContextHolder.getContext().getAuthentication();
 	}
-
-	public abstract K create(K entity);
-
-	public abstract K update(K entity);
-
-	public abstract void delete(K entity);
-
-	public abstract K findById(Long Id);
-
-	public abstract List<K> getAll();
 
 }
