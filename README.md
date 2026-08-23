@@ -2,32 +2,35 @@
 
 # Architecture
 
-	             ┌─────────────────┐
+	             ┌──────────────────┐
                 │  Spring Boot App │
-                │  localhost:8010  │
+                │  Message Producer│                
+                │  localhost:8081  │
                 └────────┬─────────┘
                          │
                     Producer
                          │
                          ▼
                 ┌──────────────────┐
-                │  Kafka Broker     │
-                │  localhost:9092   │
+                │  Kafka Broker    │
+                │  localhost:9092  │
                 └────────┬─────────┘
                          │
-                  employee-topic
+                  Consumer(person-topic)
                          │
                          ▼
                 ┌──────────────────┐
                 │ Person Consumer  │
                 │ person-group     │
+                │ Localhost:8082   │              
                 └──────────────────┘
 # Technologies
-Java 17, 
-Spring-boot
-Spring Kafka
-Apace Kafka
-Maven
+	Java 17, 
+	Spring-boot  4.1.0
+	Spring Kafka 4.2.1
+	Apache Kafka 4.3.1
+	Swagger 		2.8.13	
+	Maven 
 
 # Kafka Configuration
 Kafka is running locally on: 9092(Default)
@@ -53,11 +56,13 @@ Few Commands to remember
 
 # Current Implementation
 	1. Manual offset acknowledgement
-	2. Kafka producer acknowledgement
-	3. Error handling in Single Place using @RestControllerAdvice
-	4. Swagger UI
-	5. Kafka message keys
-	6. Kafka JSON Schema serialization
+	2. Error handling in Single Place using @RestControllerAdvice
+	3. Swagger UI (http://localhost:8081/swagger-ui/index.html)
+	4. Kafka message keys
+	5. Kafka JSON Schema serialization/De-serialization
+	6. API access log with URL / time to process API
+	7. PersonDTO passed to Broker same received in Consumer Listener
+	8. Auto update createdBy, createdDate, updatedBy, UpdatedDate
 	 
 	
 
@@ -65,11 +70,9 @@ Few Commands to remember
 
 	This basic project can be extended with:
 
-	1. Employee JSON objects instead of String messages
-	2. Multiple Kafka partitions
-	3. Multiple consumer instances
+	2. Multiple Kafka partitions with Multiple consumer instances
 	4. Retry and dead-letter topics. 
-	5. Kafka UI (http://localhost:8081/swagger-ui/index.html)
+	5. Kafka UI 
 	6. Docker-based Kafka
 
 

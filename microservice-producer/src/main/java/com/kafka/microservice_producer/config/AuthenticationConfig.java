@@ -27,4 +27,6 @@ public class AuthenticationConfig {
 
 		return provider;
 	}
+
+	
 }

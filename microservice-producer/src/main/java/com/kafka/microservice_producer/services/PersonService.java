@@ -1,6 +1,5 @@
 package com.kafka.microservice_producer.services;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kafka.microservice_producer.custom.exception.BadRequestException;
+import com.kafka.microservice_producer.custom.exception.DuplicateRecordException;
 import com.kafka.microservice_producer.custom.exception.FormValidationException;
 import com.kafka.microservice_producer.dto.PersonDTO;
 import com.kafka.microservice_producer.dto.ResponseDTO;
@@ -54,17 +54,17 @@ public class PersonService extends GenericService {
 
 	@Transactional
 	public ResponseDTO addPerson(PersonDTO personDto) {
-		personDto.setCreateBy(getLoggedInUser().getId());
-		personDto.setCreateDate(LocalDateTime.now());
-		Person person = getMapper().map(personDto, Person.class);
+		Person person = personRepository.findByFirstNameAndLastName(personDto.getFirstName(), personDto.getLastName());
+		if (person != null)
+			throw new DuplicateRecordException("Person with given Name already exists");
+		person = getMapper().map(personDto, Person.class);
 		person.validate();
+
 		return bindResponse(getMapper().map(personRepository.save(person), PersonDTO.class));
 	}
 
 	@Transactional
 	public ResponseDTO updatePerson(PersonDTO personDto) {
-		personDto.setUpdatedBy(getLoggedInUser().getId());
-		personDto.setUpdatedDate(LocalDateTime.now());
 		Person person = getMapper().map(personDto, Person.class);
 		return bindResponse(getMapper().map(personRepository.save(person), PersonDTO.class));
 	}

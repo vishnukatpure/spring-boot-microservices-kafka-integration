@@ -13,7 +13,7 @@ public class KafkaMessageConsumer {
 	public void consume(PersonDTO message, Acknowledgment acknowledgment) {
 		try {
 			System.out.println("Received message: " + message);
-			// acknowledgment.acknowledge();
+			acknowledgment.acknowledge();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
