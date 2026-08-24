@@ -17,9 +17,6 @@ import org.springframework.stereotype.Component;
 public class SecurityUtil {
 
 	private static final String ALGORITHM = "AES";
-	// private static final byte[] ALGO_KEY = new byte[] { 'g', 'r', 'e', 'x', 'e',
-	// 'n', 'c', 'd', 'e', 'c', 'k', 'e', 'y',
-	// 'v', 'e', 'r' };
 
 	public String encrypt(String valueToEnc, String algoKey) throws NoSuchAlgorithmException, NoSuchPaddingException,
 			IllegalBlockSizeException, BadPaddingException, InvalidKeyException {

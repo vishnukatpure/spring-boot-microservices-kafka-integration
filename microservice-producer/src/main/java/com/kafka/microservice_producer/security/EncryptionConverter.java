@@ -9,7 +9,7 @@ import jakarta.persistence.Converter;
 public class EncryptionConverter implements AttributeConverter<String, String> {
 
 	private final SecurityUtil securityUtil;
-	private String sectretKey = "";
+	private String sectretKey = "secret";
 
 	public EncryptionConverter(SecurityUtil securityUtil) {
 		this.securityUtil = securityUtil;
