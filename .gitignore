@@ -3,8 +3,10 @@
 /bin/
 /.settings/
 
+/microservice-producer/log/
 /microservice-producer/target/
 /microservice-producer/target/bin/
+/microservice-notification-consumer/log/
 /microservice-notification-consumer/target/
 /microservice-notification-consumer/bin/
 
