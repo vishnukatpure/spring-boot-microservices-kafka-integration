@@ -57,6 +57,7 @@ Few Commands to remember
 		bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --describe --group person-group
 
 # Current Implementation
+	Note: Use UserName: testt01021990@gmail.com & password: admin@123 from default DB entry
 	
 	Consumer Service, 
 	1. Manual offset acknowledgement
@@ -73,6 +74,7 @@ Few Commands to remember
 	6. Auto update createdBy, createdDate, updatedBy, UpdatedDate
 	7. Enabled Cache for Person Table (in-memory cache so it will empty after restart server)
 	8. JWT Token enabled
+	9. Field value in DB store using Encryption and retrieve using Decryption
 	 
 	
 

@@ -4,8 +4,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.util.StringUtils;
 
 import com.kafka.microservice_producer.custom.exception.FormValidationException;
+import com.kafka.microservice_producer.security.EncryptionConverter;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
@@ -18,11 +20,15 @@ public class Person extends EntityBase {
 	 * 
 	 */
 	private static final long serialVersionUID = 1676382221207795923L;
+
 	@Column(name = "age")
 	private Integer age;
+
 	@Column(name = "first_name")
 	private String firstName;
+
 	@Column(name = "last_name")
+	@Convert(converter = EncryptionConverter.class)
 	private String lastName;
 
 	public Integer getAge() {
