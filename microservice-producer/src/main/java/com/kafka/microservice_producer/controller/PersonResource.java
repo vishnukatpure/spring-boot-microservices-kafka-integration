@@ -1,5 +1,11 @@
 package com.kafka.microservice_producer.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import javax.security.auth.login.AccountNotFoundException;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,9 +16,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kafka.microservice_producer.custom.exception.BadRequestException;
+import com.kafka.microservice_producer.custom.exception.FormValidationException;
 import com.kafka.microservice_producer.dto.PersonDTO;
 import com.kafka.microservice_producer.dto.ResponseDTO;
 import com.kafka.microservice_producer.kafkaservice.KafkaMessageProducerService;
+import com.kafka.microservice_producer.model.Person;
 import com.kafka.microservice_producer.services.PersonService;
 import com.kafka.microservice_producer.services.UserService;
 
@@ -33,23 +42,34 @@ public class PersonResource extends AbstractResource {
 
 	@GetMapping(value = "/{id}")
 	public ResponseDTO getAllUsers(@PathVariable Long id) {
-		return personService.getById(id);
+		return bindResponse(getMapper().map(personService.getById(id).get(), PersonDTO.class));
 	}
 
 	@GetMapping(value = "/aop/testing/{type}")
 	public ResponseDTO aopTesting(@PathVariable String type) throws Exception {
-		ResponseDTO dto = personService.aopTesting(type);
-		return dto;
+		if (type.equals("1")) {
+			throw new BadRequestException("in BadRequestException exception");
+		}
+		if (type.equals("2")) {
+			throw new FormValidationException("Form Validation error");
+		}
+
+		throw new NullPointerException("in BadRequestException");
 	}
 
 	@GetMapping(value = "/personByName/{name}")
 	public ResponseDTO getPersoneByName(@PathVariable String name) {
-		return personService.findByName(name);
+		List<PersonDTO> dto = new ArrayList<>();
+		personService.findByName(name).forEach(ob -> dto.add(getMapper().map(ob, PersonDTO.class)));
+		return bindResponse(dto);
 	}
 
 	@GetMapping(value = "/all")
 	public ResponseDTO getAll() {
-		return personService.getAllPersons();
+		List<PersonDTO> dto = new ArrayList<>();
+		personService.getAllPersons().forEach(ob -> dto.add(getMapper().map(ob, PersonDTO.class)));
+
+		return bindResponse(dto);
 	}
 
 	@DeleteMapping(value = "/{id}")
@@ -60,15 +80,29 @@ public class PersonResource extends AbstractResource {
 	}
 
 	@PostMapping
-	public ResponseDTO insertPersone(@RequestBody PersonDTO person) {
-		ResponseDTO responseDTO = personService.addPerson(person);
+	public ResponseDTO insertPersone(@RequestBody PersonDTO personDTO) {
+
+		Person person = getMapper().map(personDTO, Person.class);
+		person.validate();
+
+		person = personService.addPerson(person);
+		ResponseDTO responseDTO = bindResponse(getMapper().map(person, PersonDTO.class));
 		kafkaMessageProducerService.sendMessage("person-topic", person.getId(), responseDTO.getObject());
 		return responseDTO;
 	}
 
 	@PutMapping
-	public ResponseDTO updatePerson(@RequestBody PersonDTO personDto) {
-		ResponseDTO responseDTO = personService.updatePerson(personDto);
+	public ResponseDTO updatePerson(@RequestBody PersonDTO personDto) throws AccountNotFoundException {
+		Optional<Person> p = personService.getById(personDto.getId());
+		if (p.isEmpty())
+			throw new AccountNotFoundException();
+
+		Person person = p.get();
+		person.setAge(personDto.getAge());
+		person.setFirstName(personDto.getFirstName());
+		person.setLastName(personDto.getLastName());
+		person = personService.updatePerson(person);
+		ResponseDTO responseDTO = bindResponse(getMapper().map(person, PersonDTO.class));
 		kafkaMessageProducerService.sendMessage("person-topic", personDto.getId(), responseDTO.getObject());
 		return responseDTO;
 	}

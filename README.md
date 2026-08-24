@@ -25,12 +25,14 @@
                 │ Localhost:8082   │              
                 └──────────────────┘
 # Technologies
-	Java 17, 
+	Java         17 
 	Spring-boot  4.1.0
 	Spring Kafka 4.2.1
 	Apache Kafka 4.3.1
-	Swagger 		2.8.13	
-	Maven 
+	Swagger UI   2.8.13	
+	Apache Maven 3.2.5
+	Slf4j        2.0.18
+	 
 
 # Kafka Configuration
 Kafka is running locally on: 9092(Default)
@@ -55,14 +57,22 @@ Few Commands to remember
 		bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --describe --group person-group
 
 # Current Implementation
+	
+	Consumer Service, 
 	1. Manual offset acknowledgement
-	2. Error handling in Single Place using @RestControllerAdvice
-	3. Swagger UI (http://localhost:8081/swagger-ui/index.html)
-	4. Kafka message keys
-	5. Kafka JSON Schema serialization/De-serialization
-	6. API access log with URL / time to process API
-	7. PersonDTO passed to Broker same received in Consumer Listener
-	8. Auto update createdBy, createdDate, updatedBy, UpdatedDate
+	2. Email Configuration
+	3. Kafka JSON Schema De-serialization(PersonDTO)
+	
+	Producer Service
+	
+	1. Error handling in Single Place using @RestControllerAdvice
+	2. Swagger UI (http://localhost:8081/swagger-ui/index.html)
+	3. Kafka message keys to maintain same Consumer
+	4. Kafka JSON Schema serialization (PersonDTO)
+	5. API access log with URL / time to process API
+	6. Auto update createdBy, createdDate, updatedBy, UpdatedDate
+	7. Enabled Cache for Person Table (in-memory cache so it will empty after restart server)
+	8. JWT Token enabled
 	 
 	
 
@@ -70,10 +80,10 @@ Few Commands to remember
 
 	This basic project can be extended with:
 
-	2. Multiple Kafka partitions with Multiple consumer instances
-	4. Retry and dead-letter topics. 
-	5. Kafka UI 
-	6. Docker-based Kafka
+	Multiple Kafka partitions with Multiple consumer instances
+	Retry and dead-letter topics. 
+	Kafka UI 
+	Docker-based Kafka
 
 
 # License

@@ -1,16 +1,15 @@
 package com.kafka.microservice_producer.services;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.kafka.microservice_producer.custom.exception.BadRequestException;
 import com.kafka.microservice_producer.custom.exception.DuplicateRecordException;
-import com.kafka.microservice_producer.custom.exception.FormValidationException;
-import com.kafka.microservice_producer.dto.PersonDTO;
-import com.kafka.microservice_producer.dto.ResponseDTO;
 import com.kafka.microservice_producer.model.Person;
 import com.kafka.microservice_producer.repository.PersonRepository;
 import com.kafka.microservice_producer.services.generic.GenericService;
@@ -28,55 +27,42 @@ public class PersonService extends GenericService {
 	}
 
 	@Transactional
-	public ResponseDTO getAllPersons() {
-		List<PersonDTO> dto = new ArrayList<>();
-		personRepository.findAll().forEach(ob -> dto.add(getMapper().map(ob, PersonDTO.class)));
+	public Iterable<Person> getAllPersons() {
 
-		return bindResponse(dto);
+		return personRepository.findAll();
 	}
 
 	@Transactional
-	public ResponseDTO findByName(String name) {
-		List<PersonDTO> dto = new ArrayList<>();
-		personRepository.findByFirstName(name).forEach(ob -> dto.add(getMapper().map(ob, PersonDTO.class)));
-		return bindResponse(dto);
+	public List<Person> findByName(String name) {
+		return personRepository.findByFirstName(name);
 	}
 
 	@Transactional
-	public ResponseDTO getById(Long id) {
-		return bindResponse(getMapper().map(personRepository.findById(id).get(), PersonDTO.class));
+	@Cacheable(value = "person", key = "#id")
+	public Optional<Person> getById(Long id) {
+		return personRepository.findById(id);
 	}
 
 	@Transactional
-	public void deletePerson(Long personId) {
-		personRepository.deleteById(personId);
+	@CacheEvict(value = "person", key = "#id")
+	public void deletePerson(Long id) {
+		personRepository.deleteById(id);
 	}
 
 	@Transactional
-	public ResponseDTO addPerson(PersonDTO personDto) {
-		Person person = personRepository.findByFirstNameAndLastName(personDto.getFirstName(), personDto.getLastName());
-		if (person != null)
+
+	public Person addPerson(Person person) {
+		Person personOld = personRepository.findByFirstNameAndLastName(person.getFirstName(), person.getLastName());
+		if (personOld != null)
 			throw new DuplicateRecordException("Person with given Name already exists");
-		person = getMapper().map(personDto, Person.class);
-		person.validate();
 
-		return bindResponse(getMapper().map(personRepository.save(person), PersonDTO.class));
+		return personRepository.save(person);
 	}
 
 	@Transactional
-	public ResponseDTO updatePerson(PersonDTO personDto) {
-		Person person = getMapper().map(personDto, Person.class);
-		return bindResponse(getMapper().map(personRepository.save(person), PersonDTO.class));
+	@CachePut(value = "person", key = "#person.id")
+	public Person updatePerson(Person person) {
+		return personRepository.save(person);
 	}
 
-	public ResponseDTO aopTesting(String type) throws Exception {
-		if (type.equals("1")) {
-			throw new BadRequestException("in BadRequestException exception");
-		}
-		if (type.equals("2")) {
-			throw new FormValidationException("Form Validation error");
-		}
-
-		throw new NullPointerException("in BadRequestException");
-	}
 }
