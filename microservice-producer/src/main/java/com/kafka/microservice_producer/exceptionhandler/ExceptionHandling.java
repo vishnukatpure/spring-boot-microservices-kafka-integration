@@ -25,5 +25,4 @@ public class ExceptionHandling {
 	public ResponseDTO duplicateRecord(Exception ex) {
 		return new ResponseDTO().status(StatusEnum.EXCEPTION_OCCIRED).message(ex.getMessage());
 	}
-
 }

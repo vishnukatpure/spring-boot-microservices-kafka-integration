@@ -74,7 +74,16 @@ Few Commands to remember
 	6. Auto update createdBy, createdDate, updatedBy, UpdatedDate
 	7. Enabled Cache for Person Table (in-memory cache so it will empty after restart server)
 	8. JWT Token enabled
-	9. Field value in DB store using Encryption and retrieve using Decryption
+	9. Field value in DB store using Encryption and retrieve using De-cryptionp
+	10. Application Health check-up
+		(GET APIs to check Health: 
+			/actuator/health 
+			/actuator/info 
+			/actuator/metrics
+			/actuator/metrics/jvm.memory.used
+			/actuator/metrics/system.cpu.usage
+			/actuator/metrics/http.server.requests) 			
+	11.
 	 
 	
 

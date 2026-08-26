@@ -14,7 +14,9 @@ public class SecurityConfig {
 
 		http.authorizeHttpRequests(auth -> auth
 
-				.requestMatchers("/non-secured/**", "/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll()
+				.requestMatchers("/non-secured/**", "/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**",
+						"/actuator/**")
+				.permitAll()
 
 				.anyRequest().hasAnyRole("USER", "ADMIN")).csrf(csrf -> csrf.disable())
 				.httpBasic(Customizer.withDefaults());
