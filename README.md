@@ -83,7 +83,7 @@ Few Commands to remember
 			/actuator/metrics/jvm.memory.used
 			/actuator/metrics/system.cpu.usage
 			/actuator/metrics/http.server.requests) 			
-	11.
+	11. Custom Logging(API Access Log, Console Log)
 	 
 	
 

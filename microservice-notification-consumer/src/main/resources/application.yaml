@@ -25,6 +25,6 @@ spring:
             value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
             enable-auto-commit: false
         properties:
-            spring.json.trusted.packages: "com.kafka.microservice_producer.dto"
+            '[spring.json.trusted.packages]': "com.kafka.microservice_producer.dto"
 server:
     port: 8082
