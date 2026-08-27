@@ -2,7 +2,6 @@ package com.kafka.microservice_producer.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import javax.security.auth.login.AccountNotFoundException;
 
@@ -80,7 +79,7 @@ public class PersonResource extends AbstractResource {
 	}
 
 	@PostMapping
-	public ResponseDTO insertPersone(@RequestBody PersonDTO personDTO) {
+	public ResponseDTO insertPerson(@RequestBody PersonDTO personDTO) {
 
 		Person person = getMapper().map(personDTO, Person.class);
 		person.validate();
@@ -93,15 +92,8 @@ public class PersonResource extends AbstractResource {
 
 	@PutMapping
 	public ResponseDTO updatePerson(@RequestBody PersonDTO personDto) throws AccountNotFoundException {
-		Optional<Person> p = personService.getById(personDto.getId());
-		if (p.isEmpty())
-			throw new AccountNotFoundException();
-
-		Person person = p.get();
-		person.setAge(personDto.getAge());
-		person.setFirstName(personDto.getFirstName());
-		person.setLastName(personDto.getLastName());
-		person = personService.updatePerson(person);
+		
+		Person person = personService.updatePerson(personDto);
 		ResponseDTO responseDTO = bindResponse(getMapper().map(person, PersonDTO.class));
 		kafkaMessageProducerService.sendMessage("person-topic", personDto.getId(), responseDTO.getObject());
 		return responseDTO;

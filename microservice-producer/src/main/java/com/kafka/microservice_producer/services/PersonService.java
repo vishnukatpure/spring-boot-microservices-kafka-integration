@@ -3,6 +3,8 @@ package com.kafka.microservice_producer.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.security.auth.login.AccountNotFoundException;
+
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kafka.microservice_producer.custom.exception.DuplicateRecordException;
+import com.kafka.microservice_producer.dto.PersonDTO;
 import com.kafka.microservice_producer.model.Person;
 import com.kafka.microservice_producer.repository.PersonRepository;
 import com.kafka.microservice_producer.services.generic.GenericService;
@@ -19,11 +22,14 @@ public class PersonService extends GenericService {
 
 	PersonRepository personRepository;
 
+	UpdateService updateService;
+
 	UserService userService;
 
-	PersonService(PersonRepository personRepository, UserService userService) {
+	PersonService(PersonRepository personRepository, UserService userService, UpdateService updateService) {
 		super(userService);
 		this.personRepository = personRepository;
+		this.updateService = updateService;
 	}
 
 	@Transactional
@@ -59,10 +65,9 @@ public class PersonService extends GenericService {
 		return personRepository.save(person);
 	}
 
-	@Transactional
-	@CachePut(value = "person", key = "#person.id")
-	public Person updatePerson(Person person) {
-		return personRepository.save(person);
+	@CachePut(value = "person", key = "#personDTO.id")
+	public Person updatePerson(PersonDTO personDTO) throws AccountNotFoundException {
+		return updateService.updatePersonWithRetry(personDTO);
 	}
 
 }

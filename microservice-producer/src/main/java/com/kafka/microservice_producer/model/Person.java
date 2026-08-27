@@ -10,6 +10,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 
 @Entity
 @Table(name = "people")
@@ -30,6 +31,9 @@ public class Person extends EntityBase {
 	@Column(name = "last_name")
 	@Convert(converter = EncryptionConverter.class)
 	private String lastName;
+
+	@Version
+	private Long version;
 
 	public Integer getAge() {
 		return age;
@@ -53,6 +57,18 @@ public class Person extends EntityBase {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public Long getVersion() {
+		return version;
+	}
+
+	public void setVersion(Long version) {
+		this.version = version;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override
