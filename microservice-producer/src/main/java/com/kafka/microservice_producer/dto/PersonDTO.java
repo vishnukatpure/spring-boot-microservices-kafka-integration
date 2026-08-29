@@ -6,6 +6,15 @@ public class PersonDTO extends AbstractEntityBaseDTO {
 	private String firstName;
 	private String lastName;
 
+	public PersonDTO() {
+	}
+
+	public PersonDTO(long id, String firstName, String lastName) {
+		setId(id);
+		setFirstName(firstName);
+		setLastName(lastName);
+	}
+
 	public Integer getAge() {
 		return age;
 	}

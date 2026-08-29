@@ -8,6 +8,8 @@ import javax.security.auth.login.AccountNotFoundException;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,9 +35,9 @@ public class PersonService extends GenericService {
 	}
 
 	@Transactional
-	public Iterable<Person> getAllPersons() {
+	public Page<Person> getAllPersons(Pageable pageable) {
 
-		return personRepository.findAll();
+		return personRepository.findAll(pageable);
 	}
 
 	@Transactional

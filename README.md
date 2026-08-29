@@ -84,6 +84,7 @@ Few Commands to remember
 			/actuator/metrics/system.cpu.usage
 			/actuator/metrics/http.server.requests) 			
 	11. Added Optimistic locking for Person table update call
+	12. Added Pagination in getAllPerson API 
 	 
 	
 

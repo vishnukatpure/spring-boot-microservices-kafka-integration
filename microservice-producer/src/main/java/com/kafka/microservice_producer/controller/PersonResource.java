@@ -5,6 +5,10 @@ import java.util.List;
 
 import javax.security.auth.login.AccountNotFoundException;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kafka.microservice_producer.custom.exception.BadRequestException;
@@ -40,7 +45,7 @@ public class PersonResource extends AbstractResource {
 	}
 
 	@GetMapping(value = "/{id}")
-	public ResponseDTO getAllUsers(@PathVariable Long id) {
+	public ResponseDTO getPersonById(@PathVariable Long id) {
 		return bindResponse(getMapper().map(personService.getById(id).get(), PersonDTO.class));
 	}
 
@@ -64,11 +69,13 @@ public class PersonResource extends AbstractResource {
 	}
 
 	@GetMapping(value = "/all")
-	public ResponseDTO getAll() {
-		List<PersonDTO> dto = new ArrayList<>();
-		personService.getAllPersons().forEach(ob -> dto.add(getMapper().map(ob, PersonDTO.class)));
+	public ResponseDTO getAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size) {
+		Pageable pageable = PageRequest.of(page, size, Sort.by("firstName").ascending());
+		Page<Person> pageData = personService.getAllPersons(pageable);
 
-		return bindResponse(dto);
+		Page<PersonDTO> dtoData = pageData.map(person -> getMapper().map(person, PersonDTO.class));
+
+		return bindResponse(dtoData);
 	}
 
 	@DeleteMapping(value = "/{id}")
@@ -92,7 +99,7 @@ public class PersonResource extends AbstractResource {
 
 	@PutMapping
 	public ResponseDTO updatePerson(@RequestBody PersonDTO personDto) throws AccountNotFoundException {
-		
+
 		Person person = personService.updatePerson(personDto);
 		ResponseDTO responseDTO = bindResponse(getMapper().map(person, PersonDTO.class));
 		kafkaMessageProducerService.sendMessage("person-topic", personDto.getId(), responseDTO.getObject());
