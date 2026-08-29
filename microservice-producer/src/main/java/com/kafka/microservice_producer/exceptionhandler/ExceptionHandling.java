@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.kafka.microservice_producer.custom.exception.BadRequestException;
 import com.kafka.microservice_producer.custom.exception.DuplicateRecordException;
+import com.kafka.microservice_producer.custom.exception.TooManyRequestsException;
 import com.kafka.microservice_producer.dto.ResponseDTO;
 import com.kafka.microservice_producer.enums.StatusEnum;
 
@@ -58,5 +59,11 @@ public class ExceptionHandling {
 				.forEach(error -> errors.put(error.getPropertyPath().toString(), error.getMessage()));
 
 		return new ResponseDTO().status(StatusEnum.VALIDATION_FAILURE).object(errors);
+	}
+
+	@ExceptionHandler(TooManyRequestsException.class)
+	public ResponseDTO handleRateLimit(TooManyRequestsException ex) {
+
+		return new ResponseDTO().status(StatusEnum.TOO_MANY_REQUESTS).message("Rate limit exceeded");
 	}
 }

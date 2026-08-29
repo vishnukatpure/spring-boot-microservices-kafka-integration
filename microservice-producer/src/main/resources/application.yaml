@@ -38,3 +38,16 @@ logging:
     level:
         "[org.springframework.security]": TRACE
         "[org.springframework.web]": TRACE
+
+rate-limit:
+    endpoints:
+        - path: /person
+          method: POST
+          capacity: 10
+          refill-minutes: 1
+
+        - path: /person/all
+          method: GET
+          capacity: 1
+          refill-minutes: 1
+
