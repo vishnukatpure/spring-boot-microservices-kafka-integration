@@ -135,54 +135,31 @@ http://localhost:8081/swagger-ui/index.html
 
 ### Consumer Service
 
-1. **Manual Kafka Offset Acknowledgement** – Controls offset commits and acknowledges messages only after successful processing.
-
-2. **Email Notification** – Sends email notifications from the Kafka consumer service.
-
-3. **Kafka JSON Deserialization** – Deserializes Kafka JSON messages into `PersonDTO` objects.
+| Feature                                 | Implementation                                                                                        |
+| --------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Manual Kafka Offset Acknowledgement** | Implemented manual offset acknowledgement to commit offsets only after successful message processing. |
+| **Email Notification**                  | Configured email notification processing in the Kafka consumer service.                               |
+| **Kafka JSON Deserialization**          | Implemented JSON deserialization of Kafka messages into `PersonDTO` objects.                          |
 
 ### Producer Service
 
-1. **Centralized Exception Handling** – Global exception handling using `@RestControllerAdvice` with standardized API responses.
-
-2. **Swagger / OpenAPI** – Interactive API documentation and testing using Swagger UI.
-
-3. **Kafka Message Keys** – Uses Kafka message keys to route messages with the same key to the same partition and, within a consumer group, to the consumer assigned to that partition.
-
-4. **Kafka JSON Serialization** – Serializes `PersonDTO` objects into JSON before publishing messages to Kafka.
-
-5. **Custom Logging with MDC** – API access and console logging with MDC-based request/user context for request tracing.
-
-6. **JPA Auditing** – Automatically maintains:
-   	* `createdBy`
-   	* `createdDate`
-   	* `updatedBy`
-   	* `updatedDate`
-
-7. **In-Memory Caching** – Caches Person data in memory. Cache entries are cleared when the application restarts.
-
-8. **JWT Authentication** – Secures REST APIs using JWT-based authentication.
-
-9. **Database Field Encryption** – Encrypts sensitive values before storing them in the database and decrypts them during retrieval.
-
-10. **Application Monitoring** – Spring Boot Actuator for application health, system information, JVM metrics, and HTTP metrics.
-
-    ```text
-    GET /actuator/health
-    GET /actuator/info
-    GET /actuator/metrics
-    GET /actuator/metrics/jvm.memory.used
-    GET /actuator/metrics/system.cpu.usage
-    GET /actuator/metrics/http.server.requests
-    ```
-
-11. **Optimistic Locking** – Prevents concurrent update conflicts during Person update operations.
-
-12. **Pagination & Sorting** – Implemented pagination and sorting for the `getAllPerson` API using Spring Data `Pageable`.
-
-13. **Request Validation** – Request-body validation using `@Valid` and method/path/query parameter validation using `@Validated`.
-
-14. **API Rate Limiting** – Implemented Bucket4j-based rate limiting using **Remote Address + API Endpoint + HTTP Method**, with configurable limits per API and HTTP 429 responses when the limit is exceeded.
+| Feature                            | Implementation                                                                                                                                                                          |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Centralized Exception Handling** | Implemented global exception handling using `@RestControllerAdvice` with standardized API error responses.                                                                              |
+| **Swagger / OpenAPI**              | Integrated Swagger UI for interactive API documentation and API testing.                                                                                                                |
+| **Kafka Message Keys**             | Implemented Kafka message keys to route messages with the same key to the same partition and consumer within a consumer group.                                                          |
+| **Kafka JSON Serialization**       | Implemented JSON serialization of `PersonDTO` objects before publishing messages to Kafka.                                                                                              |
+| **Custom Logging with MDC**        | Implemented API access and console logging using MDC for request/user context and request tracing.                                                                                      |
+| **JPA Auditing**                   | Automatically maintains `createdBy`, `createdDate`, `updatedBy`, and `updatedDate` fields.                                                                                              |
+| **In-Memory Caching**              | Enabled caching for Person data using an in-memory cache. Cache entries are cleared when the application restarts.                                                                      |
+| **JWT Authentication**             | Implemented JWT-based authentication and secured REST APIs.                                                                                                                             |
+| **Database Field Encryption**      | Implemented encryption of sensitive field values before storing them in the database and decryption during retrieval.                                                                   |
+| **Application Monitoring**         | Integrated Spring Boot Actuator for application health, system information, JVM metrics, and HTTP metrics.                                                                              |
+| **Optimistic Locking**             | Implemented optimistic locking for Person update operations to prevent concurrent update conflicts.                                                                                     |
+| **Pagination & Sorting**           | Implemented pagination and sorting for the `getAllPerson` API using Spring Data `Pageable`.                                                                                             |
+| **Request Validation**             | Implemented request-body validation using `@Valid` and method/path/query parameter validation using `@Validated`.                                                                       |
+| **API Rate Limiting**              | Implemented Bucket4j-based API rate limiting using **Remote Address + API Endpoint + HTTP Method**, with configurable limits per API and HTTP 429 responses when the limit is exceeded. |
+| **HikariCP Configuration**         | Configured HikariCP connection pooling with optimized pool size, connection timeout, idle timeout, maximum lifetime, and leak detection settings.                                       |
 
 ## API Endpoints
 

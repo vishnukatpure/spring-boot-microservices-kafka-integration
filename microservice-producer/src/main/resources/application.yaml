@@ -7,6 +7,17 @@ spring:
         username: root
         password: root
         driver-class-name: com.mysql.cj.jdbc.Driver
+
+        # Its Default Configuration this can be changed based on requirement
+        hikari:
+            pool-name: PersonHikariPool
+            maximum-pool-size: 10
+            minimum-idle: 10
+            connection-timeout: 30000 # 30 Sec
+            idle-timeout: 600000 # 10 min
+            max-lifetime: 1800000 #30 min
+            validation-timeout: 5000 #5 Sec
+            leak-detection-threshold: 60000 #60 sec
     jpa:
         database-platform: org.hibernate.dialect.MySQLDialect
         hibernate:
@@ -50,4 +61,3 @@ rate-limit:
           method: GET
           capacity: 1
           refill-minutes: 1
-
