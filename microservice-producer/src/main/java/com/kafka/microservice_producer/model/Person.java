@@ -32,6 +32,10 @@ public class Person extends EntityBase {
 	@Convert(converter = EncryptionConverter.class)
 	private String lastName;
 
+	private String mobile;
+
+	private String email;
+
 	@Version
 	private Long version;
 
@@ -71,10 +75,26 @@ public class Person extends EntityBase {
 		return serialVersionUID;
 	}
 
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Override
 	public String toString() {
-		return "Person{" + "id=" + getId() + ", age=" + age + ", firstName='" + firstName + '\'' + ", lastName='"
-				+ lastName + '\'' + '}';
+		return "Person [age=" + age + ", firstName=" + firstName + ", lastName=" + lastName + ", mobile=" + mobile
+				+ ", email=" + email + ", version=" + version + "]";
 	}
 
 	public void validate() {

@@ -1,7 +1,6 @@
 package com.kafka.microservice_producer.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.security.auth.login.AccountNotFoundException;
 
@@ -47,8 +46,8 @@ public class PersonService extends GenericService {
 
 	@Transactional
 	@Cacheable(value = "person", key = "#id")
-	public Optional<Person> getById(Long id) {
-		return personRepository.findById(id);
+	public Person getById(Long id) {
+		return personRepository.findById(id).get();
 	}
 
 	@Transactional

@@ -70,9 +70,9 @@ Few Commands to remember
 	2. Swagger UI (http://localhost:8081/swagger-ui/index.html)
 	3. Kafka message keys to maintain same Consumer
 	4. Kafka JSON Schema serialization (PersonDTO)
-	5. Custom Logging(API Access Log, Console Log)
+	5. Custom Logging(API Access Log, Console Log)using MDC
 	6. Auto update createdBy, createdDate, updatedBy, UpdatedDate
-	7. Enabled Cache for Person Table (in-memory cache so it will empty after restart server)
+	7. Enabled Cache for Person Table (in-memory cache, it will empty after server restart)
 	8. JWT Token enabled
 	9. Field value in DB store using Encryption and retrieve using De-cryptionp
 	10. Application Health check-up
@@ -84,7 +84,9 @@ Few Commands to remember
 			/actuator/metrics/system.cpu.usage
 			/actuator/metrics/http.server.requests) 			
 	11. Added Optimistic locking for Person table update call
-	12. Added Pagination in getAllPerson API 
+	12. Added Pagination in getAllPerson API
+	13. Added RequestBody validation using @valid and @validated to validate Path variable
+	 
 	 
 	
 
