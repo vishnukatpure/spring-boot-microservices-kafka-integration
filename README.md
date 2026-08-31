@@ -160,15 +160,18 @@ http://localhost:8081/swagger-ui/index.html
 | **Request Validation**             | Implemented request-body validation using `@Valid` and method/path/query parameter validation using `@Validated`.                                                                       |
 | **API Rate Limiting**              | Implemented Bucket4j-based API rate limiting using **Remote Address + API Endpoint + HTTP Method**, with configurable limits per API and HTTP 429 responses when the limit is exceeded. |
 | **HikariCP Configuration**         | Configured HikariCP connection pooling with optimized pool size, connection timeout, idle timeout, maximum lifetime, and leak detection settings.                                       |
+| **Graceful Shutdown** | Enabled Spring Boot graceful shutdown to stop accepting new requests while allowing in-flight HTTP requests and application tasks to complete before the application terminates. |
+| **Database Indexing** | Added database indexes on frequently queried Person fields to improve search and query performance, particularly for filtering and pagination-related operations. |
+
 
 ## API Endpoints
 
-| Method   | Endpoint           | Description                 |
-| -------- | ------------------ | --------------------------- |
-| `POST`   | `/api/person`      | Create Person               |
-| `GET`    | `/api/person/{id}` | Get Person                  |
-| `GET`    | `/api/person`      | Get Persons with pagination |
-| `PUT`    | `/api/person/{id}` | Update Person               |
+| Method     | Endpoint           | Description                 |
+| ---------  | ------------------ | --------------------------- |
+| `POST`    | `/api/person`      | Create Person               |
+| `GET`     | `/api/person/{id}` | Get Person                  |
+| `GET`     | `/api/person/getAll`| Get Persons with pagination |
+| `PUT`     | `/api/person/{id}` | Update Person               |
 | `DELETE` | `/api/person/{id}` | Delete Person               |
 
 ## Future Improvements

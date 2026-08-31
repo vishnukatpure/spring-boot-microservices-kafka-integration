@@ -1,6 +1,9 @@
 spring:
     application:
         name: microservice-producer
+    lifecycle:
+        # Maximum time allowed for ongoing requests/tasks to complete
+        timeout-per-shutdown-phase: 30s
 
     datasource:
         url: jdbc:mysql://localhost:3306/demo?useSSL=false&serverTimezone=UTC
@@ -30,6 +33,8 @@ spring:
             value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 server:
     port: 8081
+    # Gracefully complete in-flight HTTP requests before shutting down
+    shutdown: graceful
 
 management:
     endpoints:

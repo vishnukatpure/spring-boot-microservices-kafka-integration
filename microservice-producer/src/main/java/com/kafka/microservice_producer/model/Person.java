@@ -9,11 +9,13 @@ import com.kafka.microservice_producer.security.EncryptionConverter;
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Index;
 import jakarta.persistence.Table;
 import jakarta.persistence.Version;
 
 @Entity
-@Table(name = "people")
+@Table(name = "people", indexes = { @Index(name = "idx_person_email", columnList = "email"),
+		@Index(name = "idx_person_mobile", columnList = "mobile") })
 @EnableJpaAuditing
 public class Person extends EntityBase {
 
