@@ -26,7 +26,7 @@ public class UpdateService {
 
 	@Retryable(includes = { OptimisticLockException.class,
 			ObjectOptimisticLockingFailureException.class }, maxRetries = 2, delay = 100, multiplier = 2, maxDelay = 1000)
-	@Transactional
+	@Transactional(rollbackFor = Exception.class)
 	public Person updatePersonWithRetry(PersonDTO personDTO) throws AccountNotFoundException {
 		Optional<Person> p = personRepository.findById(personDTO.getId());
 		if (p.isEmpty())

@@ -40,13 +40,10 @@ public class PersonResource extends AbstractResource {
 
 	final PersonService personService;
 
-	final KafkaMessageProducerService<Long, Object> kafkaMessageProducerService;
-
 	PersonResource(PersonService personService, UserService userService,
 			KafkaMessageProducerService<Long, Object> kafkaMessageProducerService) {
 		super(userService);
 		this.personService = personService;
-		this.kafkaMessageProducerService = kafkaMessageProducerService;
 	}
 
 	@PostMapping
@@ -55,7 +52,6 @@ public class PersonResource extends AbstractResource {
 		Person person = getMapper().map(personDTO, Person.class);
 		person = personService.addPerson(person);
 		ResponseDTO responseDTO = bindResponse(getMapper().map(person, PersonDTO.class));
-		kafkaMessageProducerService.sendMessage("person-topic", person.getId(), responseDTO.getObject());
 		return responseDTO;
 	}
 
@@ -65,14 +61,12 @@ public class PersonResource extends AbstractResource {
 		personDto.setId(id);
 		Person person = personService.updatePerson(personDto);
 		ResponseDTO responseDTO = bindResponse(getMapper().map(person, PersonDTO.class));
-		kafkaMessageProducerService.sendMessage("person-topic", personDto.getId(), responseDTO.getObject());
 		return responseDTO;
 	}
 
 	@DeleteMapping(value = "/{id}")
 	public HttpStatus deletePerson(@PathVariable Long id) {
 		personService.deletePerson(id);
-		kafkaMessageProducerService.sendMessage("person-topic", id, null);
 		return HttpStatus.NO_CONTENT;
 	}
 
