@@ -30,11 +30,11 @@ public class EntityBase implements Serializable {
 	private Long id;
 
 	@CreatedBy
-	private Long createBy;
+	private Long createdBy;
 
 	@CreatedDate
 	@Column(nullable = false, updatable = false)
-	private LocalDateTime createDate;
+	private LocalDateTime createdDate;
 
 	@LastModifiedBy
 	private Long updatedBy;
@@ -51,20 +51,20 @@ public class EntityBase implements Serializable {
 		this.id = id;
 	}
 
-	public Long getCreateBy() {
-		return createBy;
+	public Long getCreatedBy() {
+		return createdBy;
 	}
 
-	public void setCreateBy(Long createBy) {
-		this.createBy = createBy;
+	public void setCreatedBy(Long createdBy) {
+		this.createdBy = createdBy;
 	}
 
-	public LocalDateTime getCreateDate() {
-		return createDate;
+	public LocalDateTime getCreatedDate() {
+		return createdDate;
 	}
 
-	public void setCreateDate(LocalDateTime createDate) {
-		this.createDate = createDate;
+	public void setCreatedDate(LocalDateTime createdDate) {
+		this.createdDate = createdDate;
 	}
 
 	public Long getUpdatedBy() {

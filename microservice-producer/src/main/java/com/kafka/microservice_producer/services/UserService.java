@@ -1,6 +1,5 @@
 package com.kafka.microservice_producer.services;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,8 +71,6 @@ public class UserService {
 	public User addUser(String firstName, String lastName, String email, String sex, String password) {
 
 		User user = new User();
-		user.setCreateDate(LocalDateTime.now());
-		user.setUpdatedDate(LocalDateTime.now());
 		user.setEmail(email);
 		user.setFirstName(firstName);
 		user.setLastName(lastName);

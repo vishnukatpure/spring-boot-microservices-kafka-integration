@@ -38,6 +38,9 @@ public class Person extends EntityBase {
 
 	private String email;
 
+	@Column(name = "profile_picture")
+	private String profilePicture;
+
 	@Version
 	private Long version;
 
@@ -91,6 +94,14 @@ public class Person extends EntityBase {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getProfilePicture() {
+		return profilePicture;
+	}
+
+	public void setProfilePicture(String profilePicture) {
+		this.profilePicture = profilePicture;
 	}
 
 	@Override

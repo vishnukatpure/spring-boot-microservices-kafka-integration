@@ -3,14 +3,31 @@ spring:
         name: microservice-notification-consumer
 
     datasource:
-        url: jdbc:mysql://localhost:3306/demo?useSSL=false&serverTimezone=UTC
-        username: root
-        password: root
+        url: jdbc:mysql://localhost:3306/demo?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+        username: ${DB_USERNAME}
+        password: ${DB_PASSWORD}
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+        # Its Default Configuration this can be changed based on requirement
+        hikari:
+            pool-name: PersonHikariPool
+            maximum-pool-size: 10
+            minimum-idle: 10
+            connection-timeout: 30000 # 30 Sec
+            idle-timeout: 600000 # 10 min
+            max-lifetime: 1800000 #30 min
+            validation-timeout: 5000 #5 Sec
+            leak-detection-threshold: 60000 #60 sec
+    jpa:
+        database-platform: org.hibernate.dialect.MySQLDialect
+        hibernate:
+            ddl-auto: update
+
     mail:
         host: smtp.gmail.com
         port: 587
-        username: testt01021990@gmail.com
-        password: qfyzcykgvncqaadl
+        username: ${MAIL_USERNAME}
+        password: ${MAIL_PASSWORD}
         properties:
             mail:
                 smtp:
@@ -25,6 +42,6 @@ spring:
             value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
             enable-auto-commit: false
         properties:
-            '[spring.json.trusted.packages]': "com.kafka.microservice_producer.dto"
+            "[spring.json.trusted.packages]": "com.kafka.microservice_producer.dto"
 server:
     port: 8082

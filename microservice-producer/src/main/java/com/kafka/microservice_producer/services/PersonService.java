@@ -1,5 +1,6 @@
 package com.kafka.microservice_producer.services;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.security.auth.login.AccountNotFoundException;
@@ -11,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.kafka.microservice_producer.custom.exception.DuplicateRecordException;
 import com.kafka.microservice_producer.dto.PersonDTO;
@@ -28,14 +30,18 @@ public class PersonService extends GenericService {
 
 	UserService userService;
 
+	FileOperationService fileOperationService;
+
 	final KafkaMessageProducerService<Long, Object> kafkaMessageProducerService;
 
 	PersonService(KafkaMessageProducerService<Long, Object> kafkaMessageProducerService,
-			PersonRepository personRepository, UserService userService, UpdateService updateService) {
+			PersonRepository personRepository, UserService userService, UpdateService updateService,
+			FileOperationService fileOperationService) {
 		super(userService);
 		this.kafkaMessageProducerService = kafkaMessageProducerService;
 		this.personRepository = personRepository;
 		this.updateService = updateService;
+		this.fileOperationService = fileOperationService;
 	}
 
 	@Transactional(rollbackFor = Exception.class)
@@ -63,11 +69,13 @@ public class PersonService extends GenericService {
 	}
 
 	@Transactional(rollbackFor = Exception.class)
-	public Person addPerson(Person person) {
+	public Person addPerson(Person person, MultipartFile profilePicture) throws IOException {
 		Person personOld = personRepository.findByFirstNameAndLastName(person.getFirstName(), person.getLastName());
 		if (personOld != null)
 			throw new DuplicateRecordException("Person with given Name already exists");
 
+		String key = fileOperationService.uploadFile(profilePicture);
+		person.setProfilePicture(key);
 		person = personRepository.save(person);
 		kafkaMessageProducerService.sendMessage("person-topic", person.getId(),
 				getMapper().map(person, PersonDTO.class));

@@ -1,5 +1,6 @@
 package com.kafka.microservice_producer.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +21,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kafka.microservice_producer.custom.exception.BadRequestException;
 import com.kafka.microservice_producer.custom.exception.FormValidationException;
 import com.kafka.microservice_producer.dto.PersonDTO;
@@ -46,11 +51,14 @@ public class PersonResource extends AbstractResource {
 		this.personService = personService;
 	}
 
-	@PostMapping
-	public ResponseDTO insertPerson(@Valid @RequestBody PersonDTO personDTO) {
+	@PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	public ResponseDTO insertPerson(@Valid @RequestPart("person") String personJson,
+			@RequestPart(value = "profilePicture", required = false) MultipartFile profilePicture) throws IOException {
+
+		PersonDTO personDTO = new ObjectMapper().readValue(personJson, PersonDTO.class);
 
 		Person person = getMapper().map(personDTO, Person.class);
-		person = personService.addPerson(person);
+		person = personService.addPerson(person, profilePicture);
 		ResponseDTO responseDTO = bindResponse(getMapper().map(person, PersonDTO.class));
 		return responseDTO;
 	}
