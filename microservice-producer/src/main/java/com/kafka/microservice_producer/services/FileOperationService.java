@@ -7,7 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.kafka.microservice_producer.dto.FileDownload;
 
-public interface FileOperationService {
+public sealed interface FileOperationService permits S3BucketService, DatabaseFileService {
 
 	public String uploadFile(MultipartFile file) throws IOException;
 

@@ -19,7 +19,7 @@ import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 
 @Service
 @ConditionalOnProperty(name = "file-storage.type", havingValue = "s3")
-public class S3BucketService implements FileOperationService {
+public final class S3BucketService implements FileOperationService {
 
 	private final S3Client s3Client;
 

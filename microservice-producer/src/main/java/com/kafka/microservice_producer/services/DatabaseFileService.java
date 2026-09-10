@@ -16,7 +16,7 @@ import com.kafka.microservice_producer.repository.FileRepository;
 
 @Service
 @ConditionalOnProperty(name = "file-storage.type", havingValue = "database")
-public class DatabaseFileService implements FileOperationService {
+public final class DatabaseFileService implements FileOperationService {
 
 	private final FileRepository fileRepository;
 
