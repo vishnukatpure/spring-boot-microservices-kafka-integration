@@ -162,7 +162,7 @@ http://localhost:8081/swagger-ui/index.html
 | **HikariCP Configuration**         | Configured HikariCP connection pooling with optimized pool size, connection timeout, idle timeout, maximum lifetime, and leak detection settings.                                       |
 | **Graceful Shutdown** | Enabled Spring Boot graceful shutdown to stop accepting new requests while allowing in-flight HTTP requests and application tasks to complete before the application terminates. |
 | **Database Indexing** | Added database indexes on frequently queried Person fields to improve search and query performance, particularly for filtering and pagination-related operations. |
-| **File Storage – Database / S3** | Implemented a pluggable file storage service with support for storing and retrieving files from both the database and Amazon S3. The storage implementation can be switched. |
+| **File Storage – Database / S3** | Implemented a pluggable file storage service with support for storing and retrieving files from both the database and Amazon S3. The storage implementation can be switched using `application-config.yaml`. |
 | **Environment-Based Configuration** | Removed sensitive and environment-specific properties from `application.yaml` and externalized configuration using environment variables, improving security and simplifying configuration management across environments. |
 
 

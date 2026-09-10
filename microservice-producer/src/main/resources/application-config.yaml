@@ -1,0 +1,3 @@
+file-storage:
+    # File can be stored in database/s3 based on availiblity/requirements
+    type: database

@@ -3,6 +3,7 @@ package com.kafka.microservice_producer.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.security.auth.login.AccountNotFoundException;
 
@@ -18,16 +19,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kafka.microservice_producer.custom.exception.BadRequestException;
-import com.kafka.microservice_producer.custom.exception.FormValidationException;
 import com.kafka.microservice_producer.dto.PersonDTO;
 import com.kafka.microservice_producer.dto.ResponseDTO;
 import com.kafka.microservice_producer.kafkaservice.KafkaMessageProducerService;
@@ -35,7 +35,9 @@ import com.kafka.microservice_producer.model.Person;
 import com.kafka.microservice_producer.services.PersonService;
 import com.kafka.microservice_producer.services.UserService;
 
-import jakarta.validation.Valid;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.Validator;
 import jakarta.validation.constraints.Min;
 
 @RestController
@@ -44,18 +46,22 @@ import jakarta.validation.constraints.Min;
 public class PersonResource extends AbstractResource {
 
 	final PersonService personService;
+	private final Validator validator;
 
 	PersonResource(PersonService personService, UserService userService,
-			KafkaMessageProducerService<Long, Object> kafkaMessageProducerService) {
+			KafkaMessageProducerService<Long, Object> kafkaMessageProducerService, Validator validator) {
 		super(userService);
 		this.personService = personService;
+		this.validator = validator;
 	}
 
 	@PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-	public ResponseDTO insertPerson(@Valid @RequestPart("person") String personJson,
+	public ResponseDTO insertPerson(@RequestPart("person") String personJson,
 			@RequestPart(value = "profilePicture", required = false) MultipartFile profilePicture) throws IOException {
 
 		PersonDTO personDTO = new ObjectMapper().readValue(personJson, PersonDTO.class);
+
+		validatePerson(personDTO);
 
 		Person person = getMapper().map(personDTO, Person.class);
 		person = personService.addPerson(person, profilePicture);
@@ -63,11 +69,26 @@ public class PersonResource extends AbstractResource {
 		return responseDTO;
 	}
 
-	@PutMapping("/{id}")
+	private void validatePerson(PersonDTO personDTO) {
+		Set<ConstraintViolation<PersonDTO>> violations = validator.validate(personDTO);
+
+		if (!violations.isEmpty()) {
+			throw new ConstraintViolationException(violations);
+		}
+	}
+
+	@PutMapping(name = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public ResponseDTO updatePerson(@PathVariable @Min(value = 1, message = "ID must be greater than 0") Long id,
-			@Valid @RequestBody PersonDTO personDto) throws AccountNotFoundException {
-		personDto.setId(id);
-		Person person = personService.updatePerson(personDto);
+			@RequestPart("person") String personJson,
+			@RequestPart(value = "profilePicture", required = false) MultipartFile profilePicture)
+			throws AccountNotFoundException, JsonMappingException, JsonProcessingException {
+
+		PersonDTO personDTO = new ObjectMapper().readValue(personJson, PersonDTO.class);
+		personDTO.setId(id);
+
+		validatePerson(personDTO);
+
+		Person person = personService.updatePerson(personDTO);
 		ResponseDTO responseDTO = bindResponse(getMapper().map(person, PersonDTO.class));
 		return responseDTO;
 	}
@@ -98,17 +119,5 @@ public class PersonResource extends AbstractResource {
 		Page<PersonDTO> dtoData = pageData.map(person -> getMapper().map(person, PersonDTO.class));
 
 		return bindResponse(dtoData);
-	}
-
-	@GetMapping(value = "/aop/testing/{type}")
-	public ResponseDTO aopTesting(@PathVariable String type) throws Exception {
-		if (type.equals("1")) {
-			throw new BadRequestException("in BadRequestException exception");
-		}
-		if (type.equals("2")) {
-			throw new FormValidationException("Form Validation error");
-		}
-
-		throw new NullPointerException("in BadRequestException");
 	}
 }

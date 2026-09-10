@@ -4,7 +4,8 @@ spring:
     lifecycle:
         # Maximum time allowed for ongoing requests/tasks to complete
         timeout-per-shutdown-phase: 30s
-
+    config:
+        import: optional:classpath:application-config.yaml
     datasource:
         url: jdbc:mysql://localhost:3306/demo?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
         username: ${DB_USERNAME}

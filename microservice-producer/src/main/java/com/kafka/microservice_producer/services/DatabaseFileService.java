@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
 
-import org.springframework.context.annotation.Primary;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,7 +15,7 @@ import com.kafka.microservice_producer.model.FileEntity;
 import com.kafka.microservice_producer.repository.FileRepository;
 
 @Service
-@Primary
+@ConditionalOnProperty(name = "file-storage.type", havingValue = "database")
 public class DatabaseFileService implements FileOperationService {
 
 	private final FileRepository fileRepository;

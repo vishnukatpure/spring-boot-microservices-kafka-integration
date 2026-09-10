@@ -24,6 +24,8 @@ public class PersonDTO extends AbstractEntityBaseDTO {
 	@Pattern(regexp = "^[0-9]{10}$", message = "Mobile number must contain 10 digits")
 	private String mobile;
 
+	private String profilePicture;
+
 	public Integer getAge() {
 		return age;
 	}
@@ -62,6 +64,14 @@ public class PersonDTO extends AbstractEntityBaseDTO {
 
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
+	}
+
+	public String getProfilePicture() {
+		return profilePicture;
+	}
+
+	public void setProfilePicture(String profilePicture) {
+		this.profilePicture = profilePicture;
 	}
 
 }
