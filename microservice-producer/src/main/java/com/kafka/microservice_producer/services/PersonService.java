@@ -77,16 +77,14 @@ public class PersonService extends GenericService {
 		String key = fileOperationService.uploadFile(profilePicture);
 		person.setProfilePicture(key);
 		person = personRepository.save(person);
-		kafkaMessageProducerService.sendMessage("person-topic", person.getId(),
-				getMapper().map(person, PersonDTO.class));
+		kafkaMessageProducerService.sendMessage("person-topic", person.getId(), objectToJsonString(person));
 		return person;
 	}
 
 	@CachePut(value = "person", key = "#personDTO.id")
 	public Person updatePerson(PersonDTO personDTO) throws AccountNotFoundException {
 		Person person = updateService.updatePersonWithRetry(personDTO);
-		kafkaMessageProducerService.sendMessage("person-topic", person.getId(),
-				getMapper().map(person, PersonDTO.class));
+		kafkaMessageProducerService.sendMessage("person-topic", person.getId(), objectToJsonString(person));
 		return person;
 	}
 

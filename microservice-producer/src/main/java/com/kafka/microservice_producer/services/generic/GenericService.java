@@ -11,10 +11,14 @@ import com.kafka.microservice_producer.enums.StatusEnum;
 import com.kafka.microservice_producer.model.User;
 import com.kafka.microservice_producer.services.UserService;
 
+import tools.jackson.databind.ObjectMapper;
+
 @Service
 public abstract class GenericService {
 
-	private static final ModelMapper mapper = new ModelMapper();
+	private final ModelMapper mapper = new ModelMapper();
+
+	private final ObjectMapper objectMapper = new ObjectMapper();
 
 	final UserService userService;
 
@@ -44,6 +48,19 @@ public abstract class GenericService {
 
 	public Authentication getAuthentication() {
 		return SecurityContextHolder.getContext().getAuthentication();
+	}
+
+	public ObjectMapper getObjectMapper() {
+		return objectMapper;
+	}
+
+	public String objectToJsonString(Object object) {
+
+		return getObjectMapper().writeValueAsString(object);
+	}
+
+	public UserService getUserService() {
+		return userService;
 	}
 
 }

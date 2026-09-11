@@ -1,4 +1,4 @@
-package com.kafka.microservice_producer.dto;
+package com.kafka.microservice_notification_consumer.dto;
 
 import java.time.LocalDateTime;
 

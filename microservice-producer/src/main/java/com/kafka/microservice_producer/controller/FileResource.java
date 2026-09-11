@@ -23,8 +23,11 @@ public class FileResource {
 
 	final FileOperationService fileOperationService;
 
-	FileResource(FileOperationService fileOperationService) {
+	final FileOperationService fileOperationServiceS3;
+
+	FileResource(FileOperationService fileOperationService, FileOperationService fileOperationServiceS3) {
 		this.fileOperationService = fileOperationService;
+		this.fileOperationServiceS3 = fileOperationServiceS3;
 	}
 
 	@GetMapping(value = "/{key}")

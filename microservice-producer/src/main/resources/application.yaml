@@ -31,7 +31,7 @@ spring:
         bootstrap-servers: localhost:9092
         producer:
             key-serializer: org.apache.kafka.common.serialization.LongSerializer
-            value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+            value-serializer: org.apache.kafka.common.serialization.StringSerializer
 server:
     port: 8081
     # Gracefully complete in-flight HTTP requests before shutting down

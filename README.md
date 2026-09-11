@@ -168,13 +168,13 @@ http://localhost:8081/swagger-ui/index.html
 
 ## API Endpoints
 
-| Method     | Endpoint           | Description                 |
-| ---------  | ------------------ | --------------------------- |
-| `POST`    | `/api/person`      | Create Person               |
-| `GET`     | `/api/person/{id}` | Get Person                  |
+| Method     | Endpoint           		| Description                 |
+| ---------  | -----------------------	| --------------------------- |
+| `POST`    | `/api/person`      	| Create Person               |
+| `GET`     | `/api/person/{id}` 	| Get Person                  |
 | `GET`     | `/api/person/getAll`| Get Persons with pagination |
-| `PUT`     | `/api/person/{id}` | Update Person               |
-| `DELETE` | `/api/person/{id}` | Delete Person               |
+| `PUT`     | `/api/person/{id}` 	| Update Person               |
+| `DELETE` | `/api/person/{id}` 	| Delete Person               |
 
 ## Future Improvements
 
@@ -199,7 +199,8 @@ This project is intended for **learning, experimentation, and interview preparat
 ## Local Development 
 
 > **Note:** For local development, environment variables can be configured through **Eclipse → Run Configurations → Environment**.
-	Example: DB_USERNAME=****, DB_PASSWORD=****, AWS_REGION=ap-south-1, AWS_S3_BUCKET=my-bucket, AWS_ACCESS_KEY=****, AWS_SECRET_KEY=****.
+	Example: DB_USERNAME=*, DB_PASSWORD=*, AWS_REGION=ap-south-1, AWS_S3_BUCKET=my-bucket, AWS_ACCESS_KEY=*, AWS_SECRET_KEY=*,
+	MAIL_PASSWORD=*, MAIL_USERNAME=*.
 
 ## License
 

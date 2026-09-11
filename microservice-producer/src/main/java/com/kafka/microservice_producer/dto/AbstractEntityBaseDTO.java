@@ -6,9 +6,9 @@ public abstract class AbstractEntityBaseDTO {
 
 	private Long id;
 
-	private Long createBy;
+	private Long createdBy;
 
-	private LocalDateTime createDate;
+	private LocalDateTime createdDate;
 
 	private Long updatedBy;
 
@@ -22,20 +22,20 @@ public abstract class AbstractEntityBaseDTO {
 		this.id = id;
 	}
 
-	public Long getCreateBy() {
-		return createBy;
+	public Long getCreatedBy() {
+		return createdBy;
 	}
 
-	public void setCreateBy(Long createBy) {
-		this.createBy = createBy;
+	public void setCreatedBy(Long createdBy) {
+		this.createdBy = createdBy;
 	}
 
-	public LocalDateTime getCreateDate() {
-		return createDate;
+	public LocalDateTime getCreatedDate() {
+		return createdDate;
 	}
 
-	public void setCreateDate(LocalDateTime createDate) {
-		this.createDate = createDate;
+	public void setCreatedDate(LocalDateTime createdDate) {
+		this.createdDate = createdDate;
 	}
 
 	public Long getUpdatedBy() {

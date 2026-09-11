@@ -39,7 +39,7 @@ spring:
             group-id: person-group
             auto-offset-reset: earliest
             key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
-            value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
             enable-auto-commit: false
         properties:
             "[spring.json.trusted.packages]": "com.kafka.microservice_producer.dto"
