@@ -6,7 +6,11 @@
 /microservice-producer/logs/
 /microservice-producer/target/
 /microservice-producer/target/bin/
+
 /microservice-notification-consumer/log/
 /microservice-notification-consumer/target/
 /microservice-notification-consumer/bin/
 
+/microservice-notification-consumer-two/log/
+/microservice-notification-consumer-two/target/
+/microservice-notification-consumer-two/bin/

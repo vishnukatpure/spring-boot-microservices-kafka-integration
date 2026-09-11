@@ -103,7 +103,7 @@ bin\windows\kafka-server-start.bat config\server.properties
 bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --list
 ```
 
-### Describe Topic
+###  Describe Topic / get no of partition
 
 ```bat
 bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --describe --topic person-topic
@@ -113,6 +113,12 @@ bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --describe --topi
 
 ```bat
 bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --describe --group person-group
+```
+
+### Add New Partition to person-topic
+
+```bat
+bin\windows\kafka-topics.bat --alter --topic person-topic --partitions 2 --bootstrap-server localhost:9092
 ```
 
 ## API Documentation
