@@ -170,7 +170,8 @@ http://localhost:8081/swagger-ui/index.html
 | **Database Indexing** | Added database indexes on frequently queried Person fields to improve search and query performance, particularly for filtering and pagination-related operations. |
 | **File Storage – Database / S3** | Implemented a pluggable file storage service with support for storing and retrieving files from both the database and Amazon S3. The storage implementation can be switched using `application-config.yaml`. |
 | **Environment-Based Configuration** | Removed sensitive and environment-specific properties from `application.yaml` and externalized configuration using environment variables, improving security and simplifying configuration management across environments. |
-| **Multiple Kafka Partition** | Added total two consumer for listening same topic with different partition, To create partition command added above. |
+| **Multiple Kafka Partition** | Run multiple instances of the same `microservice-notification-consumer' on different ports (java -jar your-app.jar --server.port=8083) with the same groupId.
+Kafka distributes topic partitions among the instances; ensure partitions >= consumers for full utilization. |
 
 
 ## API Endpoints

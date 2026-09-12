@@ -13,6 +13,5 @@
 	<modules>
 		<module>microservice-producer</module>
 		<module>microservice-notification-consumer</module>
-		<module>microservice-notification-consumer-two</module>
 	</modules>
 </project>
