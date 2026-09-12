@@ -21,7 +21,7 @@ public class KafkaMessageConsumer {
 		this.objectMapper = objectMapper;
 	}
 
-	@KafkaListener(topics = "person-topic", groupId = "person-group")
+	@KafkaListener(topics = "notification-topic", groupId = "notification-group")
 	public void consume(String message, Acknowledgment acknowledgment) {
 		try {
 			PersonDTO dto = objectMapper.readValue(message, PersonDTO.class);

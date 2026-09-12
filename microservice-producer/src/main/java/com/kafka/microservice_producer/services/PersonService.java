@@ -65,7 +65,6 @@ public class PersonService extends GenericService {
 	@CacheEvict(value = "person", key = "#id")
 	public void deletePerson(Long id) {
 		personRepository.deleteById(id);
-		kafkaMessageProducerService.sendMessage("person-topic", id, null);
 	}
 
 	@Transactional(rollbackFor = Exception.class)
@@ -77,14 +76,14 @@ public class PersonService extends GenericService {
 		String key = fileOperationService.uploadFile(profilePicture);
 		person.setProfilePicture(key);
 		person = personRepository.save(person);
-		kafkaMessageProducerService.sendMessage("person-topic", person.getId(), objectToJsonString(person));
+		kafkaMessageProducerService.sendMessage("notification-topic", person.getId(), objectToJsonString(person));
 		return person;
 	}
 
 	@CachePut(value = "person", key = "#personDTO.id")
 	public Person updatePerson(PersonDTO personDTO) throws AccountNotFoundException {
 		Person person = updateService.updatePersonWithRetry(personDTO);
-		kafkaMessageProducerService.sendMessage("person-topic", person.getId(), objectToJsonString(person));
+		kafkaMessageProducerService.sendMessage("notification-topic", person.getId(), objectToJsonString(person));
 		return person;
 	}
 

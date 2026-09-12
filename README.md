@@ -16,14 +16,14 @@ A Spring Boot microservices project demonstrating **REST APIs, Apache Kafka inte
 │      Apache Kafka        │
 │      localhost:9092      │
 │                          │
-│      person-topic        │
+│   notification-topic     │
 └────────────┬─────────────┘
              │
              │ Kafka Consumer
              ▼
 ┌──────────────────────────┐
-│   Person Consumer        │
-│      person-group        │
+│   Notification Consumer  │
+│   Notification-group     │
 │      localhost:8082      │
 └────────────┬─────────────┘
              │
@@ -48,7 +48,7 @@ Producer Service
    Kafka Producer
         │
         ▼
-   person-topic
+   notification-topic
         │
         ▼
   Kafka Consumer
@@ -106,19 +106,19 @@ bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --list
 ###  Describe Topic / get no of partition
 
 ```bat
-bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --describe --topic person-topic
+bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --describe --topic notification-topic
 ```
 
 ### Check Consumer Group
 
 ```bat
-bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --describe --group person-group
+bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --describe --group notification-group
 ```
 
-### Add New Partition to person-topic
+### Add New Partition to notification-topic
 
 ```bat
-bin\windows\kafka-topics.bat --alter --topic person-topic --partitions 2 --bootstrap-server localhost:9092
+bin\windows\kafka-topics.bat --alter --topic notification-topic --partitions 2 --bootstrap-server localhost:9092
 ```
 
 ## API Documentation
