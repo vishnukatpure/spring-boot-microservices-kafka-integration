@@ -143,9 +143,12 @@ http://localhost:8081/swagger-ui/index.html
 
 | Feature                                 | Implementation                                                                                        |
 | --------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Manual Kafka Offset Acknowledgement** | Implemented manual offset acknowledgement to commit offsets only after successful message processing. |
+| **Manual Kafka Offset Acknowledgement** | Manual offset acknowledgement code is retained in commented form and can be enabled in the future when explicit offset control is required, allowing offsets to be acknowledged only after successful message processing. |
 | **Email Notification**                  | Configured email notification processing in the Kafka consumer service.                               |
-| **Kafka JSON Deserialization**          | Implemented JSON deserialization of Kafka messages into `PersonDTO` objects.                          |
+| **Kafka message Deserialization**       | Implemented JSON deserialization of Kafka messages into `PersonDTO` objects.                        |
+| **Kafka Retry Mechanism** | Use Spring Kafka @RetryableTopic to automatically retry failed messages. Configured 4 total attempts with exponential backoff: 2 sec → 4 sec → 8 sec. Failed messages are moved to retry topics, allowing the main consumer to continue processing other messages while the failed message waits for retry. |
+| **Dead Letter Topics (DLT)** | Messages that continue to fail after all configured retry attempts are automatically moved to a Dead Letter Topic (DLT). Use @DltHandler to handle/log DLT messages separately without blocking the main topic. |
+| **Kafka Exponential Backoff** | Configure @BackOff(delay = 2000, multiplier = 2.0) to progressively increase the retry delay: 1st retry → 2 sec, 2nd → 4 sec, 3rd → 8 sec. |
 
 ### Producer Service
 
@@ -154,7 +157,7 @@ http://localhost:8081/swagger-ui/index.html
 | **Centralized Exception Handling** | Implemented global exception handling using `@RestControllerAdvice` with standardized API error responses.                                                                              |
 | **Swagger / OpenAPI**              | Integrated Swagger UI for interactive API documentation and API testing.                                                                                                                |
 | **Kafka Message Keys**             | Implemented Kafka message keys to route messages with the same key to the same partition and consumer within a consumer group.                                                          |
-| **Kafka JSON Serialization**       | Implemented JSON serialization of `PersonDTO` objects before publishing messages to Kafka.                                                                                              |
+| **Kafka JSON Serialization**       | Implemented JSON serialization of `PersonDTO` objects in string before publishing messages to Kafka.                                                                                              |
 | **Custom Logging with MDC**        | Implemented API access and console logging using MDC for request/user context and request tracing.                                                                                      |
 | **JPA Auditing**                   | Automatically maintains `createdBy`, `createdDate`, `updatedBy`, and `updatedDate` fields.                                                                                              |
 | **In-Memory Caching**              | Enabled caching for Person data using an in-memory cache. Cache entries are cleared when the application restarts.                                                                      |
@@ -170,8 +173,9 @@ http://localhost:8081/swagger-ui/index.html
 | **Database Indexing** | Added database indexes on frequently queried Person fields to improve search and query performance, particularly for filtering and pagination-related operations. |
 | **File Storage – Database / S3** | Implemented a pluggable file storage service with support for storing and retrieving files from both the database and Amazon S3. The storage implementation can be switched using `application-config.yaml`. |
 | **Environment-Based Configuration** | Removed sensitive and environment-specific properties from `application.yaml` and externalized configuration using environment variables, improving security and simplifying configuration management across environments. |
-| **Multiple Kafka Partition** | Run multiple instances of the same `microservice-notification-consumer' on different ports (java -jar your-app.jar --server.port=8083) with the same groupId.
-Kafka distributes topic partitions among the instances(command added above to create multiple partiation); ensure partitions >= consumers for full utilization. |
+| **Multiple Kafka Partition** | Run multiple instances of the same microservice-notification-consumer on different ports (e.g. java -jar your-app.jar --server.port=8083) using the same groupId. Kafka distributes partitions among consumer instances in the same consumer group. Ensure partitions >= consumers for maximum consumer parallelism. |
+
+
 
 
 ## API Endpoints
@@ -186,8 +190,7 @@ Kafka distributes topic partitions among the instances(command added above to cr
 
 ## Future Improvements
 
-* Kafka retry mechanism
-* Dead Letter Topics (DLT)
+
 * Idempotent Kafka consumer processing
 * Kafka UI for topic and consumer monitoring
 * Redis-based distributed caching
