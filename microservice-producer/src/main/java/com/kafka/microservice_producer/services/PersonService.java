@@ -15,7 +15,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.kafka.microservice_producer.custom.exception.DuplicateRecordException;
+import com.kafka.microservice_producer.dto.NotificationEvent;
 import com.kafka.microservice_producer.dto.PersonDTO;
+import com.kafka.microservice_producer.enums.NotificationEventTypes;
 import com.kafka.microservice_producer.kafkaservice.KafkaMessageProducerService;
 import com.kafka.microservice_producer.model.Person;
 import com.kafka.microservice_producer.repository.PersonRepository;
@@ -76,14 +78,18 @@ public class PersonService extends GenericService {
 		String key = fileOperationService.uploadFile(profilePicture);
 		person.setProfilePicture(key);
 		person = personRepository.save(person);
-		kafkaMessageProducerService.sendMessage("notification-topic", person.getId(), objectToJsonString(person));
+		NotificationEvent event = new NotificationEvent(NotificationEventTypes.NEW.toString(),
+				person.getId().toString(), person.getEmail(), person.getFirstName(), person.getLastName(), "", "");
+		kafkaMessageProducerService.sendMessage("notification-topic", person.getId(), objectToJsonString(event));
 		return person;
 	}
 
 	@CachePut(value = "person", key = "#personDTO.id")
 	public Person updatePerson(PersonDTO personDTO) throws AccountNotFoundException {
 		Person person = updateService.updatePersonWithRetry(personDTO);
-		kafkaMessageProducerService.sendMessage("notification-topic", person.getId(), objectToJsonString(person));
+		NotificationEvent event = new NotificationEvent(NotificationEventTypes.UPDATE.toString(),
+				person.getId().toString(), person.getEmail(), person.getFirstName(), person.getLastName(), "", "");
+		kafkaMessageProducerService.sendMessage("notification-topic", person.getId(), objectToJsonString(event));
 		return person;
 	}
 

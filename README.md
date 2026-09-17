@@ -145,10 +145,13 @@ http://localhost:8081/swagger-ui/index.html
 | --------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Manual Kafka Offset Acknowledgement** | Manual offset acknowledgement code is retained in commented form and can be enabled in the future when explicit offset control is required, allowing offsets to be acknowledged only after successful message processing. |
 | **Email Notification**                  | Configured email notification processing in the Kafka consumer service.                               |
-| **Kafka message Deserialization**       | Implemented JSON deserialization of Kafka messages into `PersonDTO` objects.                        |
+| **Kafka message Deserialization**       | Implemented JSON deserialization of Kafka messages into `PersonDTO` objects.                       |
+| **Multiple Kafka Partition** | Run multiple instances of the same microservice-notification-consumer on different ports (e.g. java -jar your-app.jar --server.port=8083) using the same groupId. Kafka distributes partitions among consumer instances in the same consumer group. Ensure partitions >= consumers for maximum consumer parallelism. |
 | **Kafka Retry Mechanism** | Use Spring Kafka @RetryableTopic to automatically retry failed messages. Configured 4 total attempts with exponential backoff: 2 sec → 4 sec → 8 sec. Failed messages are moved to retry topics, allowing the main consumer to continue processing other messages while the failed message waits for retry. |
 | **Dead Letter Topics (DLT)** | Messages that continue to fail after all configured retry attempts are automatically moved to a Dead Letter Topic (DLT). Use @DltHandler to handle/log DLT messages separately without blocking the main topic. |
 | **Kafka Exponential Backoff** | Configure @BackOff(delay = 2000, multiplier = 2.0) to progressively increase the retry delay: 1st retry → 2 sec, 2nd → 4 sec, 3rd → 8 sec. |
+| **Idempotent Kafka Processing** | Implemented MySQL-based idempotency using a unique `eventKey` (`eventType + eventId`) to prevent duplicate processing when the same Kafka message is delivered multiple times. |
+
 
 ### Producer Service
 
@@ -173,7 +176,7 @@ http://localhost:8081/swagger-ui/index.html
 | **Database Indexing** | Added database indexes on frequently queried Person fields to improve search and query performance, particularly for filtering and pagination-related operations. |
 | **File Storage – Database / S3** | Implemented a pluggable file storage service with support for storing and retrieving files from both the database and Amazon S3. The storage implementation can be switched using `application-config.yaml`. |
 | **Environment-Based Configuration** | Removed sensitive and environment-specific properties from `application.yaml` and externalized configuration using environment variables, improving security and simplifying configuration management across environments. |
-| **Multiple Kafka Partition** | Run multiple instances of the same microservice-notification-consumer on different ports (e.g. java -jar your-app.jar --server.port=8083) using the same groupId. Kafka distributes partitions among consumer instances in the same consumer group. Ensure partitions >= consumers for maximum consumer parallelism. |
+
 
 
 
@@ -191,7 +194,6 @@ http://localhost:8081/swagger-ui/index.html
 ## Future Improvements
 
 
-* Idempotent Kafka consumer processing
 * Kafka UI for topic and consumer monitoring
 * Redis-based distributed caching
 * Redis-based distributed rate limiting

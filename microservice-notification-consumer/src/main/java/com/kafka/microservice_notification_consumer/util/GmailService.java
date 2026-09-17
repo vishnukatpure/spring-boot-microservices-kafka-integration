@@ -1,4 +1,4 @@
-package com.kafka.microservice_notification_consumer.service;
+package com.kafka.microservice_notification_consumer.util;
 
 import java.io.File;
 import java.util.List;
