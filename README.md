@@ -71,6 +71,12 @@ Producer Service
 
 ## Kafka Configuration
 
+Kafka Download from 
+
+```text
+	(https://dlcdn.apache.org/kafka/4.3.1/kafka_2.13-4.3.1.tgz);
+```
+
 Kafka runs locally on:
 
 ```text
@@ -176,7 +182,7 @@ http://localhost:8081/swagger-ui/index.html
 | **Database Indexing** | Added database indexes on frequently queried Person fields to improve search and query performance, particularly for filtering and pagination-related operations. |
 | **File Storage – Database / S3** | Implemented a pluggable file storage service with support for storing and retrieving files from both the database and Amazon S3. The storage implementation can be switched using `application-config.yaml`. |
 | **Environment-Based Configuration** | Removed sensitive and environment-specific properties from `application.yaml` and externalized configuration using environment variables, improving security and simplifying configuration management across environments. |
-
+| **Kafka UI** | Used (https://www.kafkatool.com/download.html) offset explorer to view/list topics, groups, partition, messages . |
 
 
 
@@ -194,7 +200,7 @@ http://localhost:8081/swagger-ui/index.html
 ## Future Improvements
 
 
-* Kafka UI for topic and consumer monitoring
+
 * Redis-based distributed caching
 * Redis-based distributed rate limiting
 * Resilience4j Circuit Breaker and Retry

@@ -34,23 +34,18 @@ public class NotificationService {
 			RuntimeException.class }, dltTopicSuffix = ".DLT")
 	@Transactional
 	public void serveNotification(String message) {
-		try {
-			NotificationEvent event = objectMapper.readValue(message, NotificationEvent.class);
-			log.info("Received notification message: {}", event);
-			String eventKey = event.eventType() + ":" + event.eventId();
+		NotificationEvent event = objectMapper.readValue(message, NotificationEvent.class);
+		log.info("Received notification message: {}", event);
+		String eventKey = event.eventType() + ":" + event.eventId();
 
-			boolean newEvent = processedEventService.markIfNew(eventKey);
+		boolean newEvent = processedEventService.markIfNew(eventKey);
 
-			if (!newEvent) {
-				log.info("Duplicate event ignored: {}", eventKey);
-				return;
-			}
-
-			emailService.sendEmail(Arrays.asList(event.email()), null, null, "Test Email", "Test Email");
-
-		} catch (Exception e) {
-			log.error("Exception occured: {}", e);
-			throw e;
+		if (!newEvent) {
+			log.info("Duplicate event ignored: {}", eventKey);
+			return;
 		}
+
+		emailService.sendEmail(Arrays.asList(event.email()), null, null, "Test Email", "Test Email");
+
 	}
 }
