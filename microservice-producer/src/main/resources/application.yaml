@@ -24,14 +24,30 @@ spring:
             leak-detection-threshold: 60000 #60 sec
     jpa:
         database-platform: org.hibernate.dialect.MySQLDialect
+        show-sql: true
         hibernate:
             ddl-auto: update
+        properties:
+            hibernate:
+                "[format_sql]": true
 
     kafka:
         bootstrap-servers: localhost:9092
         producer:
             key-serializer: org.apache.kafka.common.serialization.LongSerializer
             value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    cache:
+        type: redis
+        redis:
+            # time-to-live: 10m
+            cache-null-values: false
+    data:
+        redis:
+            host: localhost
+            port: 6379
+            connect-timeout: 2s
+            timeout: 2s
+
 server:
     port: 8081
     # Gracefully complete in-flight HTTP requests before shutting down
@@ -53,8 +69,8 @@ info:
 
 logging:
     level:
-        "[org.springframework.security]": TRACE
-        "[org.springframework.web]": TRACE
+        "[org.springframework.security]": DEBUG
+        "[org.springframework.web]": DEBUG
 
 rate-limit:
     endpoints:

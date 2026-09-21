@@ -169,7 +169,7 @@ http://localhost:8081/swagger-ui/index.html
 | **Kafka JSON Serialization**       | Implemented JSON serialization of `PersonDTO` objects in string before publishing messages to Kafka.                                                                                              |
 | **Custom Logging with MDC**        | Implemented API access and console logging using MDC for request/user context and request tracing.                                                                                      |
 | **JPA Auditing**                   | Automatically maintains `createdBy`, `createdDate`, `updatedBy`, and `updatedDate` fields.                                                                                              |
-| **In-Memory Caching**              | Enabled caching for Person data using an in-memory cache. Cache entries are cleared when the application restarts.                                                                      |
+| **Spring Cache with Redis**        | Implemented Spring Cache using Redis for @Cacheable database lookups such as findById(), reducing repeated MySQL queries and improving application response time.|
 | **JWT Authentication**             | Implemented JWT-based authentication and secured REST APIs.                                                                                                                             |
 | **Database Field Encryption**      | Implemented encryption of sensitive field values before storing them in the database and decryption during retrieval.                                                                   |
 | **Application Monitoring**         | Integrated Spring Boot Actuator for application health, system information, JVM metrics, and HTTP metrics.                                                                              |
@@ -183,6 +183,9 @@ http://localhost:8081/swagger-ui/index.html
 | **File Storage – Database / S3** | Implemented a pluggable file storage service with support for storing and retrieving files from both the database and Amazon S3. The storage implementation can be switched using `application-config.yaml`. |
 | **Environment-Based Configuration** | Removed sensitive and environment-specific properties from `application.yaml` and externalized configuration using environment variables, improving security and simplifying configuration management across environments. |
 | **Kafka UI** | Used (https://www.kafkatool.com/download.html) offset explorer to view/list topics, groups, partition, messages . |
+| **Docker Compose** | Containerized and orchestrated Kafka and Redis services using docker-compose.yaml, enabling consistent and simplified development environment setup. |
+| **Redis Caching** | Integrated Redis with Spring Cache for high-performance caching of frequently accessed data, reducing database load and improving API response time. |
+| **Spring Cache** | Implemented @Cacheable, @CachePut, and @CacheEvict for database operations such as findById(), with Redis-backed cache storage and TTL-based expiration. |
 
 
 
@@ -201,7 +204,6 @@ http://localhost:8081/swagger-ui/index.html
 
 
 
-* Redis-based distributed caching
 * Redis-based distributed rate limiting
 * Resilience4j Circuit Breaker and Retry
 * Distributed tracing and correlation IDs

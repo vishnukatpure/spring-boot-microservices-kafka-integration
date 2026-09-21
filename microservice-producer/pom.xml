@@ -145,6 +145,12 @@
 			<artifactId>s3</artifactId>
 		</dependency>
 
+		<!-- Redis spring cache data storing-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+
 
 		<!-- Test Dependencies-->
 		<dependency>

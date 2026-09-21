@@ -58,7 +58,7 @@ public class UserService {
 	 * @param username
 	 * @return
 	 */
-	@Cacheable(cacheNames = "users")
+	
 	public User findByUsername(String username) {
 		List<User> users = userRepository.findByUsername(username);
 		if (users.isEmpty()) {
@@ -84,6 +84,7 @@ public class UserService {
 		return userRepository.save(user);
 	}
 
+	@Cacheable(cacheNames = "users")
 	public UserDetails loadUserByUsernameWithAuthorities(String username) {
 		User user = findByUsername(username);
 		user.setAuthorities(findGrantedAuthoritiesForUser(user));
