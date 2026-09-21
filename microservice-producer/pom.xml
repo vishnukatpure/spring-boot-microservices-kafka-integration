@@ -132,7 +132,12 @@
 			<version>8.19.0</version>
 			<scope>compile</scope>
 		</dependency>
-
+		<!-- redis supported bucket-->
+		<dependency>
+			<groupId>com.bucket4j</groupId>
+			<artifactId>bucket4j_jdk17-lettuce</artifactId>
+			<version>8.19.0</version>
+		</dependency>
 		<!-- yaml file new element processing -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
