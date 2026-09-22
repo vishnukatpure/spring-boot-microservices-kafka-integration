@@ -1,4 +1,4 @@
-package com.kafka.microservice_producer.config;
+package com.kafka.microservice_producer.rate_limit;
 
 import java.io.IOException;
 
@@ -10,7 +10,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kafka.microservice_producer.dto.ResponseDTO;
 import com.kafka.microservice_producer.enums.StatusEnum;
-import com.kafka.microservice_producer.utils.RateLimitService;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

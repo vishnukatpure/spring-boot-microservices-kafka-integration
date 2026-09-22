@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.resilience.annotation.EnableResilientMethods;
 
-import com.kafka.microservice_producer.config.RateLimitProperties;
+import com.kafka.microservice_producer.rate_limit.RateLimitProperties;
 
 @SpringBootApplication
 @EnableCaching

@@ -24,7 +24,8 @@ spring:
             leak-detection-threshold: 60000 #60 sec
     jpa:
         database-platform: org.hibernate.dialect.MySQLDialect
-        show-sql: true
+        # Hide/ show query
+        show-sql: false
         hibernate:
             ddl-auto: update
         properties:

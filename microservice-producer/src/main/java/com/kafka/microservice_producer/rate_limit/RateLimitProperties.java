@@ -1,4 +1,4 @@
-package com.kafka.microservice_producer.config;
+package com.kafka.microservice_producer.rate_limit;
 
 import java.util.List;
 

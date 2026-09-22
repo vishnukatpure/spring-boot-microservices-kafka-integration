@@ -1,4 +1,4 @@
-package com.kafka.microservice_producer.utils;
+package com.kafka.microservice_producer.rate_limit;
 
 
 public interface RateLimitService {

@@ -1,11 +1,9 @@
-package com.kafka.microservice_producer.utils;
+package com.kafka.microservice_producer.rate_limit;
 
 import java.time.Duration;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
-
-import com.kafka.microservice_producer.config.RateLimitProperties;
 
 import io.github.bucket4j.Bucket;
 import io.github.bucket4j.BucketConfiguration;
