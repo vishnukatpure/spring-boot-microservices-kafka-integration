@@ -23,7 +23,7 @@ spring:
             validation-timeout: 5000 #5 Sec
             leak-detection-threshold: 60000 #60 sec
     jpa:
-        database-platform: org.hibernate.dialect.MySQLDialect
+        # database-platform: org.hibernate.dialect.MySQLDialect
         # Hide/ show query
         show-sql: false
         hibernate:
@@ -48,6 +48,8 @@ spring:
             port: 6379
             connect-timeout: 2s
             timeout: 2s
+            repositories:
+                enabled: false
 
 server:
     port: 8081
@@ -73,7 +75,7 @@ logging:
         "[org.springframework.security]": DEBUG
         "[org.springframework.web]": DEBUG
 
-rate-limit:
+api-rate-limit:
     endpoints:
         - path: /person
           method: POST

@@ -8,10 +8,13 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kafka.microservice_producer.model.Authorities;
+import com.kafka.microservice_producer.model.Roles;
 import com.kafka.microservice_producer.model.User;
 import com.kafka.microservice_producer.repository.UserRepository;
 
@@ -19,12 +22,14 @@ import com.kafka.microservice_producer.repository.UserRepository;
 public class UserService {
 
 	final UserRepository userRepository;
+	final PasswordEncoder passwordEncoder;
 
 	final AuthoritiesService authoritiesService;
 
 	UserService(UserRepository userRepository, AuthoritiesService authoritiesService) {
 		this.userRepository = userRepository;
 		this.authoritiesService = authoritiesService;
+		passwordEncoder = new BCryptPasswordEncoder();
 	}
 
 	@Transactional
@@ -58,7 +63,7 @@ public class UserService {
 	 * @param username
 	 * @return
 	 */
-	
+
 	public User findByUsername(String username) {
 		List<User> users = userRepository.findByUsername(username);
 		if (users.isEmpty()) {
@@ -68,16 +73,27 @@ public class UserService {
 	}
 
 	@Transactional
-	public User addUser(String firstName, String lastName, String email, String sex, String password) {
+	public User addUser(String firstName, String lastName, String email, String sex, String password, Roles role) {
 
 		User user = new User();
 		user.setEmail(email);
+		user.setUsername(email);
 		user.setFirstName(firstName);
 		user.setLastName(lastName);
 		user.setSex(sex);
-		user.setPassword(password);
+		user.setAccountNonExpired(true);
+		user.setAccountNonLocked(true);
+		user.setCredentialsNonExpired(true);
+		user.setEnabled(true);
+		user.setPassword(passwordEncoder.encode(password));
 
-		return userRepository.save(user);
+		user = userRepository.save(user);
+		Authorities authorities = new Authorities();
+		authorities.setRole(role);
+		authorities.setUsername(user);
+		authoritiesService.addAuthorities(authorities);
+
+		return user;
 	}
 
 	public User saveUser(User user) {

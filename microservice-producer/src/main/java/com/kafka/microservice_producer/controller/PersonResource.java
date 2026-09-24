@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -56,6 +57,7 @@ public class PersonResource extends AbstractResource {
 	}
 
 	@PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	@PreAuthorize("@authorizationService.hasRole('ROLE_ADMIN')")
 	public ResponseDTO insertPerson(@RequestPart("person") String personJson,
 			@RequestPart(value = "profilePicture", required = false) MultipartFile profilePicture) throws IOException {
 

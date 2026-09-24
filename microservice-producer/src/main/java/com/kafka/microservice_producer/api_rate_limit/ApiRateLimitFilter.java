@@ -1,4 +1,4 @@
-package com.kafka.microservice_producer.rate_limit;
+package com.kafka.microservice_producer.api_rate_limit;
 
 import java.io.IOException;
 
@@ -17,11 +17,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Component
-public class RateLimitFilter extends OncePerRequestFilter {
+public class ApiRateLimitFilter extends OncePerRequestFilter {
 
-	private RateLimitService rateLimitService;
+	private ApiRateLimitService rateLimitService;
 
-	RateLimitFilter(RateLimitService rateLimitService) {
+	ApiRateLimitFilter(ApiRateLimitService rateLimitService) {
 		this.rateLimitService = rateLimitService;
 	}
 

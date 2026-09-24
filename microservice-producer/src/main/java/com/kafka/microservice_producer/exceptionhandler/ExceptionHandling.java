@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.authorization.AuthorizationDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -64,6 +66,19 @@ public class ExceptionHandling {
 	@ExceptionHandler(TooManyRequestsException.class)
 	public ResponseDTO handleRateLimit(TooManyRequestsException ex) {
 
-		return new ResponseDTO().status(StatusEnum.TOO_MANY_REQUESTS).message("Rate limit exceeded");
+		return new ResponseDTO().status(StatusEnum.TOO_MANY_REQUESTS).message("API Rate limit exceeded");
 	}
+
+	@ExceptionHandler(DataIntegrityViolationException.class)
+	public ResponseDTO handleDuplicateRecord(DataIntegrityViolationException ex) {
+		String message = ex.getMessage();
+		String value = message.substring(message.indexOf("'") + 1, message.indexOf("'", message.indexOf("'") + 1));
+		return new ResponseDTO().status(StatusEnum.DUPLICATE_RECORD).message("Duplicate entry [" + value + "]");
+	}
+
+	@ExceptionHandler(AuthorizationDeniedException.class)
+	public ResponseDTO handleAccessDenied(AuthorizationDeniedException ex) {
+		return new ResponseDTO().status(StatusEnum.PERMISSION_DENIED).message("You Dont have permission !");
+	}
+
 }

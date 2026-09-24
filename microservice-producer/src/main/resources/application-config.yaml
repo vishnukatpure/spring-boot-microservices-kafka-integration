@@ -3,6 +3,6 @@ file-storage:
     type: database
 
 # Transaction rate limit
-rate-limit:
+api-rate-limit:
     # can be redis/in-memory
     type: redis

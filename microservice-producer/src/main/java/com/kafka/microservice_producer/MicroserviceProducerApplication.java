@@ -6,12 +6,12 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.resilience.annotation.EnableResilientMethods;
 
-import com.kafka.microservice_producer.rate_limit.RateLimitProperties;
+import com.kafka.microservice_producer.api_rate_limit.ApiRateLimitProperties;
 
 @SpringBootApplication
 @EnableCaching
 @EnableResilientMethods
-@EnableConfigurationProperties(RateLimitProperties.class)
+@EnableConfigurationProperties(ApiRateLimitProperties.class)
 public class MicroserviceProducerApplication {
 
 	public static void main(String[] args) {

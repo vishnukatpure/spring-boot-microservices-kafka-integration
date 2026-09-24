@@ -1,4 +1,4 @@
-package com.kafka.microservice_producer.rate_limit;
+package com.kafka.microservice_producer.api_rate_limit;
 
 import java.time.Duration;
 import java.util.Map;
@@ -11,20 +11,20 @@ import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;
 
 @Service
-@ConditionalOnProperty(name = "rate-limit.type", havingValue = "in-memory")
-public class RateLimitInMemoryService implements RateLimitService {
+@ConditionalOnProperty(name = "api-rate-limit.type", havingValue = "in-memory")
+public class ApiRateLimitInMemoryService implements ApiRateLimitService {
 
 	private final Map<String, Bucket> buckets = new ConcurrentHashMap<>();
-	private final RateLimitProperties properties;
+	private final ApiRateLimitProperties properties;
 
-	public RateLimitInMemoryService(RateLimitProperties properties) {
+	public ApiRateLimitInMemoryService(ApiRateLimitProperties properties) {
 		this.properties = properties;
 	}
 
 	@Override
 	public boolean isAllowed(String client, String path, String method) {
 
-		RateLimitProperties.EndpointLimit config = findConfig(path, method);
+		ApiRateLimitProperties.EndpointLimit config = findConfig(path, method);
 
 		if (config == null) {
 			return true;
@@ -37,7 +37,7 @@ public class RateLimitInMemoryService implements RateLimitService {
 		return bucket.tryConsume(1);
 	}
 
-	private Bucket createBucket(RateLimitProperties.EndpointLimit config) {
+	private Bucket createBucket(ApiRateLimitProperties.EndpointLimit config) {
 
 		Bandwidth limit = Bandwidth.builder().capacity(config.getCapacity())
 				.refillGreedy(config.getCapacity(), Duration.ofMinutes(config.getRefillMinutes())).build();
@@ -45,7 +45,7 @@ public class RateLimitInMemoryService implements RateLimitService {
 		return Bucket.builder().addLimit(limit).build();
 	}
 
-	private RateLimitProperties.EndpointLimit findConfig(String path, String method) {
+	private ApiRateLimitProperties.EndpointLimit findConfig(String path, String method) {
 
 		return properties.getEndpoints().stream().filter(e -> e.getMethod().equalsIgnoreCase(method))
 				.filter(e -> e.getPath().equals(path)).findFirst().orElse(null);

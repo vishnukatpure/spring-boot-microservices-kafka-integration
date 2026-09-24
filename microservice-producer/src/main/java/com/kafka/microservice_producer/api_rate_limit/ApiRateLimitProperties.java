@@ -1,11 +1,11 @@
-package com.kafka.microservice_producer.rate_limit;
+package com.kafka.microservice_producer.api_rate_limit;
 
 import java.util.List;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = "rate-limit")
-public class RateLimitProperties {
+@ConfigurationProperties(prefix = "api-rate-limit")
+public class ApiRateLimitProperties {
 	private List<EndpointLimit> endpoints;
 
 	public List<EndpointLimit> getEndpoints() {

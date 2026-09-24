@@ -8,71 +8,56 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kafka.microservice_producer.dto.ResponseDTO;
 import com.kafka.microservice_producer.dto.UserDTO;
-import com.kafka.microservice_producer.dto.UserStatusDTO;
 import com.kafka.microservice_producer.enums.StatusEnum;
+import com.kafka.microservice_producer.model.Roles;
 import com.kafka.microservice_producer.model.User;
+import com.kafka.microservice_producer.services.RolesService;
 import com.kafka.microservice_producer.services.UserService;
+import com.kafka.microservice_producer.services.generic.GenericService;
 
 @RestController
-public class UserResource {
+public class UserResource extends GenericService {
 
 	private final UserService userService;
 
-	UserResource(UserService userService) {
+	final RolesService rolesService;
+
+	UserResource(UserService userService, RolesService rolesService) {
+		super(userService);
 		this.userService = userService;
+		this.rolesService = rolesService;
 	}
 
-	@GetMapping(value = { "/user-json-meta" })
-	public ResponseDTO getUser() {
-		UserDTO userDTO = new UserDTO();
-		userDTO.setEmail("jajfaddf");
-		userDTO.setFirstName("jayaram");
-		userDTO.setLastName("poks");
-		userDTO.setPassword("passwd");
-		userDTO.setSex("male");
-		userDTO.setUserId("101");
-
-		return new ResponseDTO().object(userDTO).status(StatusEnum.SUCCESS);
-	}
-
-	@GetMapping(value = { "/user-info/{userId}" })
-	public ResponseDTO getUser(@PathVariable("userId") String userId) {
-
-		UserStatusDTO userStatus = new UserStatusDTO();
-		User user = userService.findByUsername(userId);
-		UserDTO userDTO = new UserDTO();
+	@GetMapping(value = { "/user-info/{usersName}" })
+	public ResponseDTO getUser(@PathVariable("usersName") String userName) {
+		ResponseDTO responseDTO = new ResponseDTO().status(StatusEnum.SUCCESS);
+		User user = userService.findByUsername(userName);
 		if (user != null) {
-			userStatus.setStatus(200);
-			userStatus.setMessage("User info");
-			userDTO.setEmail(user.getEmail());
-			userDTO.setFirstName(user.getFirstName());
-			userDTO.setLastName(user.getLastName());
-			userDTO.setSex(user.getSex());
-			userDTO.setUserId(userId);
-			userStatus.setUser(userDTO);
+			responseDTO.setObject(getMapper().map(user, UserDTO.class));
 		} else {
-			userStatus.setStatus(205);
-			userStatus.setMessage("User info");
+			responseDTO.setStatus(StatusEnum.NOT_FOUND);
+			responseDTO.setMessage("User info not found");
 		}
-		return new ResponseDTO().object(userStatus).status(StatusEnum.SUCCESS);
+		return responseDTO;
 	}
 
 	@PostMapping(value = { "/create-user" })
 	public ResponseDTO createUser(@RequestBody UserDTO userDTO) {
-		UserStatusDTO status = new UserStatusDTO();
-		try {
-			User user = userService.addUser(userDTO.getFirstName(), userDTO.getLastName(), userDTO.getEmail(),
-					userDTO.getSex(), userDTO.getPassword());
-			userDTO.setUserId(user.getUsername());
-			status.setUser(userDTO);
-			status.setMessage("User Created Successfully");
 
-		} catch (Exception e) {
-			status.setStatus(205);
-			status.setMessage("Error in Creating users:" + e.getMessage());
+		ResponseDTO responseDTO = new ResponseDTO().status(StatusEnum.SUCCESS);
+		Roles role = rolesService.findByRole("ROLE_" + userDTO.getRole());
+		if (role == null) {
+			responseDTO.setMessage("Role not found");
+			responseDTO.setStatus(StatusEnum.NOT_FOUND);
+			return responseDTO;
 		}
 
-		return new ResponseDTO().object(status).status(StatusEnum.SUCCESS);
+		User user = userService.addUser(userDTO.getFirstName(), userDTO.getLastName(), userDTO.getEmail(),
+				userDTO.getSex(), userDTO.getPassword(), role);
+		responseDTO.setObject(getMapper().map(user, UserDTO.class));
+		responseDTO.setMessage("User Created");
+
+		return responseDTO;
 	}
 
 }
