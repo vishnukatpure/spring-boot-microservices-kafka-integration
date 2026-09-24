@@ -1,18 +1,25 @@
 package com.kafka.microservice_producer.security;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 import com.kafka.microservice_producer.utils.SecurityUtil;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 
+@Component
 @Converter
 public class EncryptionConverter implements AttributeConverter<String, String> {
 
 	private final SecurityUtil securityUtil;
-	private String sectretKey = "secret";
+	/** Default "secret" keeps existing encrypted rows decryptable. Override via app.encryption.secret-key. */
+	private final String secretKey;
 
-	public EncryptionConverter(SecurityUtil securityUtil) {
+	public EncryptionConverter(SecurityUtil securityUtil,
+			@Value("${app.encryption.secret-key:secret}") String secretKey) {
 		this.securityUtil = securityUtil;
+		this.secretKey = secretKey;
 	}
 
 	@Override
@@ -21,7 +28,7 @@ public class EncryptionConverter implements AttributeConverter<String, String> {
 			return null;
 		}
 		try {
-			return securityUtil.encrypt(attribute, sectretKey);
+			return securityUtil.encrypt(attribute, secretKey);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -34,7 +41,7 @@ public class EncryptionConverter implements AttributeConverter<String, String> {
 			return null;
 		}
 		try {
-			return securityUtil.decrypt(dbData, sectretKey);
+			return securityUtil.decrypt(dbData, secretKey);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -79,7 +79,7 @@ public class PersonResource extends AbstractResource {
 		}
 	}
 
-	@PutMapping(name = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	@PutMapping(value = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public ResponseDTO updatePerson(@PathVariable @Min(value = 1, message = "ID must be greater than 0") Long id,
 			@RequestPart("person") String personJson,
 			@RequestPart(value = "profilePicture", required = false) MultipartFile profilePicture)

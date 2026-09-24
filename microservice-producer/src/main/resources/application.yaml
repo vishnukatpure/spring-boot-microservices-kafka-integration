@@ -37,6 +37,11 @@ spring:
         producer:
             key-serializer: org.apache.kafka.common.serialization.LongSerializer
             value-serializer: org.apache.kafka.common.serialization.StringSerializer
+            acks: all
+            retries: 3
+            properties:
+                enable.idempotence: true
+                max.in.flight.requests.per.connection: 5
     cache:
         type: redis
         redis:
@@ -63,17 +68,25 @@ management:
                 include: health,info,metrics
     endpoint:
         health:
-            show-details: always
+            show-details: when_authorized
 info:
     app:
         name: Kafka Producer Service
         version: 1.0.0
         description: Kafka Producer Microservice
 
+app:
+    jwt:
+        secret: ${JWT_SECRET:=======================Spring=Security==========================}
+        expiration-seconds: ${JWT_EXPIRATION_SECONDS:300}
+    encryption:
+        # Keep default "secret" so existing encrypted DB values still decrypt (SecurityUtil unchanged).
+        secret-key: ${ENCRYPTION_SECRET_KEY:secret}
+
 logging:
     level:
-        "[org.springframework.security]": DEBUG
-        "[org.springframework.web]": DEBUG
+        "[org.springframework.security]": INFO
+        "[org.springframework.web]": INFO
 
 api-rate-limit:
     endpoints:

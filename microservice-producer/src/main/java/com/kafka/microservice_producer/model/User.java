@@ -2,7 +2,6 @@ package com.kafka.microservice_producer.model;
 
 import java.util.Collection;
 
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -15,7 +14,6 @@ import jakarta.persistence.Transient;
 
 @Table(name = "users")
 @Entity
-@EnableJpaAuditing
 public class User extends EntityBase implements UserDetails {
 
 	private static final long serialVersionUID = 4937227490828688135L;

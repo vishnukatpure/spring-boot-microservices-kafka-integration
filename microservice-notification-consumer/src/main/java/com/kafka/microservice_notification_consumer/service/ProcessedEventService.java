@@ -18,6 +18,10 @@ public class ProcessedEventService {
 		return processedEventRepository.save(processedEvent);
 	}
 
+	public boolean isProcessed(String eventKey) {
+		return processedEventRepository.existsById(eventKey);
+	}
+
 	public boolean markIfNew(String eventKey) {
 		int rows = processedEventRepository.markIfNew(eventKey);
 		return rows == 1;

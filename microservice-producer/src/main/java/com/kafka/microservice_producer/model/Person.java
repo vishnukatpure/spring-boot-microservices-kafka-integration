@@ -1,6 +1,5 @@
 package com.kafka.microservice_producer.model;
 
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.util.StringUtils;
 
 import com.kafka.microservice_producer.custom.exception.FormValidationException;
@@ -16,7 +15,6 @@ import jakarta.persistence.Version;
 @Entity
 @Table(name = "people", indexes = { @Index(name = "idx_person_email", columnList = "email"),
 		@Index(name = "idx_person_mobile", columnList = "mobile") })
-@EnableJpaAuditing
 public class Person extends EntityBase {
 
 	/**

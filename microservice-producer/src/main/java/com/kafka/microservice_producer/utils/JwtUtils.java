@@ -9,6 +9,7 @@ import javax.crypto.SecretKey;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -27,14 +28,19 @@ public class JwtUtils {
 
 	private static Logger logger = LogManager.getLogger(JwtUtils.class);
 
-	private String jwtSecret = "=======================Spring=Security==========================";
+	@Value("${app.jwt.secret}")
+	private String jwtSecret;
 
-	private int jwtExpirationSecond = 300;// 5 minute
-	private int jwtExpirationMs = jwtExpirationSecond * 1000;
+	@Value("${app.jwt.expiration-seconds:300}")
+	private int jwtExpirationSecond;
+
+	private int jwtExpirationMs() {
+		return jwtExpirationSecond * 1000;
+	}
 
 	public JsonObject generateJwtToken(Authentication authentication) {
 		UserDetails userPrincipal = (UserDetails) authentication.getPrincipal();
-		Date expirationTime = new Date((new Date()).getTime() + jwtExpirationMs);
+		Date expirationTime = new Date((new Date()).getTime() + jwtExpirationMs());
 		List<String> roles = new ArrayList<String>();
 		authentication.getAuthorities().stream().forEach(e -> roles.add(e.getAuthority()));
 		JwtBuilder builder = Jwts.builder().claim("role", roles).subject((userPrincipal.getUsername()))
