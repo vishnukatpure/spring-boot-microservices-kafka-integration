@@ -4,7 +4,11 @@ import java.util.concurrent.TimeUnit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.KafkaHeaders;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,7 +25,12 @@ public class KafkaMessageProducerService<K, V> {
 
 	public void sendMessage(String topic, K key, V message) {
 		try {
-			kafkaTemplate.send(topic, key, message).get(SEND_TIMEOUT_SECONDS, TimeUnit.SECONDS);
+			String correlationId = MDC.get("correlationId");
+
+			Message<V> messageData = MessageBuilder.withPayload(message).setHeader(KafkaHeaders.KEY, key)
+					.setHeader(KafkaHeaders.TOPIC, topic).setHeader("correlationId", correlationId).build();
+
+			kafkaTemplate.send(messageData).get(SEND_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 			log.debug("Published message to topic={} key={}", topic, key);
 		} catch (InterruptedException e) {
 			Thread.currentThread().interrupt();

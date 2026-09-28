@@ -69,6 +69,7 @@ Producer Service
 | Apache Maven      | 3.2.5   |
 | SLF4J             | 2.0.18  |
 
+## 
 ## Kafka Configuration
 
 Kafka Download from 
@@ -83,7 +84,10 @@ Kafka runs locally on:
 localhost:9092
 ```
 
+
 The project uses **KRaft mode**, without ZooKeeper.
+
+Kafka Useful Commands 
 
 ### Generate Storage UUID
 
@@ -127,6 +131,7 @@ bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --descri
 bin\windows\kafka-topics.bat --alter --topic notification-topic --partitions 2 --bootstrap-server localhost:9092
 ```
 
+## 
 ## API Documentation
 
 Swagger UI:
@@ -143,6 +148,7 @@ http://localhost:8081/swagger-ui/index.html
 | ----------------------------| --------- |
 | testt01021990@gmail.com     | admin@123 |
 
+## 
 ## Current Implementation
 
 ### Consumer Service
@@ -151,7 +157,7 @@ http://localhost:8081/swagger-ui/index.html
 | --------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Manual Kafka Offset Acknowledgement** | Manual offset acknowledgement code is retained in commented form and can be enabled in the future when explicit offset control is required, allowing offsets to be acknowledged only after successful message processing. |
 | **Email Notification**                  | Configured email notification processing in the Kafka consumer service.                               |
-| **Kafka message Deserialization**       | Implemented JSON deserialization of Kafka messages into `PersonDTO` objects.                       |
+| **Kafka message Deserialization**       | Implemented JSON deserialization of Kafka messages.                       |
 | **Multiple Kafka Partition** | Run multiple instances of the same microservice-notification-consumer on different ports (e.g. java -jar your-app.jar --server.port=8083) using the same groupId. Kafka distributes partitions among consumer instances in the same consumer group. Ensure partitions >= consumers for maximum consumer parallelism. |
 | **Kafka Retry Mechanism** | Use Spring Kafka @RetryableTopic to automatically retry failed messages. Configured 4 total attempts with exponential backoff: 2 sec → 4 sec → 8 sec. Failed messages are moved to retry topics, allowing the main consumer to continue processing other messages while the failed message waits for retry. |
 | **Dead Letter Topics (DLT)** | Messages that continue to fail after all configured retry attempts are automatically moved to a Dead Letter Topic (DLT). Use @DltHandler to handle/log DLT messages separately without blocking the main topic. |
@@ -166,7 +172,7 @@ http://localhost:8081/swagger-ui/index.html
 | **Centralized Exception Handling** | Implemented global exception handling using `@RestControllerAdvice` with standardized API error responses.                                                                              |
 | **Swagger / OpenAPI**              | Integrated Swagger UI for interactive API documentation and API testing.                                                                                                                |
 | **Kafka Message Keys**             | Implemented Kafka message keys to route messages with the same key to the same partition and consumer within a consumer group.                                                          |
-| **Kafka JSON Serialization**       | Implemented JSON serialization of `PersonDTO` objects in string before publishing messages to Kafka.                                                                                              |
+| **Kafka JSON Serialization**       | Implemented JSON serialization java objects in string before publishing messages to Kafka.                                                                                              |
 | **Custom Logging with MDC**        | Implemented API access and console logging using MDC for request/user context and request tracing.                                                                                      |
 | **JPA Auditing**                   | Automatically maintains `createdBy`, `createdDate`, `updatedBy`, and `updatedDate` fields.                                                                                              |
 | **Spring Cache with Redis**        | Implemented Spring Cache using Redis for @Cacheable database lookups such as findById(), reducing repeated MySQL queries and improving application response time.|
@@ -186,10 +192,13 @@ http://localhost:8081/swagger-ui/index.html
 | **Docker Compose** | Containerized and orchestrated Kafka and Redis services using docker-compose.yaml, enabling consistent and simplified development environment setup. |
 | **Redis Caching** | Integrated Redis with Spring Cache for high-performance caching of frequently accessed data, reducing database load and improving API response time. |
 | **Spring Cache** | Implemented @Cacheable, @CachePut, and @CacheEvict for database operations such as findById(), with Redis-backed cache storage and TTL-based expiration. |
+| **Distributed tracing and correlation IDs** | Implemented Distributed tracing correlationId over producer to consumer service. |
 
 
 
 
+
+## 
 ## API Endpoints
 
 | Method     | Endpoint           		| Description                 |
@@ -200,11 +209,9 @@ http://localhost:8081/swagger-ui/index.html
 | `PUT`     | `/api/person/{id}` 	| Update Person               |
 | `DELETE` | `/api/person/{id}` 	| Delete Person               |
 
+## 
 ## Future Improvements
 
-
-
-* Redis-based distributed rate limiting
 * Resilience4j Circuit Breaker and Retry
 * Distributed tracing and correlation IDs
 * Docker / Docker Compose deployment
