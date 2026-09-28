@@ -65,7 +65,7 @@ Producer Service
 | Spring Boot       | 4.1.0   |
 | Spring Kafka      | 4.2.1   |
 | Apache Kafka      | 4.3.1   |
-| Swagger / OpenAPI | 2.8.13  |
+| Swagger / OpenAPI | 3.1.1   |
 | Apache Maven      | 3.2.5   |
 | SLF4J             | 2.0.18  |
 
