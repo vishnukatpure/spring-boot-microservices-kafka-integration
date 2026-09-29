@@ -192,11 +192,80 @@ http://localhost:8081/swagger-ui/index.html
 | **Docker Compose** | Containerized and orchestrated Kafka and Redis services using docker-compose.yaml, enabling consistent and simplified development environment setup. |
 | **Redis Caching** | Integrated Redis with Spring Cache for high-performance caching of frequently accessed data, reducing database load and improving API response time. |
 | **Spring Cache** | Implemented @Cacheable, @CachePut, and @CacheEvict for database operations such as findById(), with Redis-backed cache storage and TTL-based expiration. |
-| **Distributed tracing and correlation IDs** | Implemented Distributed tracing correlationId over producer to consumer service. |
+| **Distributed Tracing and Correlation IDs** | Implemented distributed tracing using `correlationId` propagation from Producer to Consumer through Kafka message headers and MDC-based logging. |
+| **Docker Support** | Added Docker Compose support for Kafka, Redis, Producer, and Notification Consumer with persistent Kafka/Redis volumes, application log bind mounts, and separate internal/external Kafka networking. |
+
+## 
+## Docker Support
+
+The project supports running Kafka, Redis, Producer Service, and Notification Consumer Service using Docker Compose.
 
 
+### Docker Architecture
+
+```text
+                         Docker Compose
+                              |
+          +-------------------+-------------------+
+          |                   |                   |
+        Kafka                Redis             Services
+     kafka:29092           redis:6379              |
+          |                                       |
+          |                         +-------------+-------------+
+          |                         |                           |
+          |                  Producer Service          Notification Consumer
+          |                     :8081                        :8082
+          |
+          +---------------------------------------------------+
+                              |
+                         Kafka Topics
+```
 
 
+Start All Services:
+
+```text
+docker compose up -d
+```
+
+To build the Spring Boot services before Starting:
+
+```text
+docker compose up -d --build
+```
+
+Build and start:
+
+```text
+docker compose up -d --build microservice-producer microservice-notification-consumer
+```
+
+Start Individual Services:
+
+```text
+docker compose up -d kafka redis
+docker compose up -d microservice-producer
+docker compose up -d --build microservice-producer
+```
+
+ReStart Individual Services:
+
+```text
+docker compose restart microservice-producer
+```
+
+Stop All/Individual Services:
+
+```text
+docker compose stop
+docker compose stop microservice-producer
+```
+
+View Individual Services Logs:
+
+```text
+docker compose logs -f microservice-producer
+```
 
 ## 
 ## API Endpoints
@@ -213,8 +282,6 @@ http://localhost:8081/swagger-ui/index.html
 ## Future Improvements
 
 * Resilience4j Circuit Breaker and Retry
-* Distributed tracing and correlation IDs
-* Docker / Docker Compose deployment
 * CI/CD pipeline
 * JUnit 5 and Mockito unit tests
 * Kafka integration testing with Testcontainers

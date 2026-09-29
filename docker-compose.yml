@@ -1,4 +1,7 @@
 services:
+    #=========================
+    # Redis
+    #=========================
     redis:
         image: redis:8
         container_name: redis
@@ -7,9 +10,11 @@ services:
         volumes:
             - redis-data:/data
         command: redis-server --appendonly yes
-
+    # =========================
+    # Kafka
+    # =========================
     kafka:
-        image: apache/kafka:latest
+        image: apache/kafka:4.3.1
         container_name: kafka
         ports:
             - "9092:9092"
@@ -18,17 +23,78 @@ services:
         environment:
             KAFKA_NODE_ID: 1
             KAFKA_PROCESS_ROLES: broker,controller
-            KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
-            KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+            KAFKA_LISTENERS: INTERNAL://:29092,EXTERNAL://:9092,CONTROLLER://:9093
+            KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:29092,EXTERNAL://localhost:9092
+            KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
+            KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
             KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
-            KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
-            KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+            KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
             KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
             KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
             KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
             KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
             KAFKA_NUM_PARTITIONS: 3
+            KAFKA_LOG_DIRS: /var/lib/kafka/data
+    # =========================
+    # Producer
+    # =========================
+    microservice-producer:
+        build:
+            context: ./microservice-producer
+        container_name: microservice-producer
+        ports:
+            - "8081:8081"
 
+        environment:
+            KAFKA_URL: kafka:29092
+            REDIS_HOST: redis
+            REDIS_PORT: 6379
+
+            DB_URL: jdbc:mysql://host.docker.internal:3306/demo?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+            DB_USERNAME: root
+            DB_PASSWORD: root
+        volumes:
+            - ./microservice-producer/logs:/app/logs
+        depends_on:
+            - kafka
+            - redis
+
+    # =========================
+    # Notification Consumer
+    # =========================
+    microservice-notification-consumer:
+        build:
+            context: ./microservice-notification-consumer
+
+        container_name: microservice-notification-consumer
+
+        ports:
+            - "8082:8082"
+
+        environment:
+            KAFKA_URL: kafka:29092
+
+            REDIS_HOST: redis
+            REDIS_PORT: 6379
+
+            DB_URL: jdbc:mysql://host.docker.internal:3306/demo?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+            DB_USERNAME: root
+            DB_PASSWORD: root
+
+            AWS_REGION: q
+            AWS_ACCESS_KEY: s
+            AWS_SECRET_KEY: k
+            AWS_S3_BUCKET: k
+
+        volumes:
+            - ./microservice-notification-consumer/logs:/app/logs
+        depends_on:
+            - kafka
+            - redis
+
+# =========================
+# Volumes
+# =========================
 volumes:
     redis-data:
     kafka-data:
