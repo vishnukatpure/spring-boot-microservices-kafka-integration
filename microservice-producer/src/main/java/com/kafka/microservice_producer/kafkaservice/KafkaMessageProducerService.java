@@ -27,7 +27,7 @@ public class KafkaMessageProducerService<K, V> {
 		try {
 			String correlationId = MDC.get("correlationId");
 
-			Message<V> messageData = MessageBuilder.withPayload(message).setHeader(KafkaHeaders.KEY, key)
+			Message<V> messageData = MessageBuilder.withPayload(message).setHeader(KafkaHeaders.KEY, key.toString())
 					.setHeader(KafkaHeaders.TOPIC, topic).setHeader("correlationId", correlationId).build();
 
 			kafkaTemplate.send(messageData).get(SEND_TIMEOUT_SECONDS, TimeUnit.SECONDS);
