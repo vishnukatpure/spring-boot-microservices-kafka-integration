@@ -194,6 +194,7 @@ http://localhost:8081/swagger-ui/index.html
 | **Spring Cache** | Implemented @Cacheable, @CachePut, and @CacheEvict for database operations such as findById(), with Redis-backed cache storage and TTL-based expiration. |
 | **Distributed Tracing and Correlation IDs** | Implemented distributed tracing using `correlationId` propagation from Producer to Consumer through Kafka message headers and MDC-based logging. |
 | **Docker Support** | Added Docker Compose support for Kafka, Redis, Producer, and Notification Consumer with persistent Kafka/Redis volumes, application log bind mounts, and separate internal/external Kafka networking. |
+| **Interceptor ** | RequestInterceptor class is an additional component that will intercept every request and response dispatch and perform some operations on it. |
 
 ## 
 ## Docker Support
